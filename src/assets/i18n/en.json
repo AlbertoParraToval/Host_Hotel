@@ -1,0 +1,52 @@
+{
+    "change-picture":{
+        "title":"Change image",
+        "library":"From gallery",
+        "camera":"From camera",
+        "file":"From your computer"
+    },
+    "modal":{
+        "close":"Close",
+        "edit":"Edit",
+        "new":"New",
+        "delete":"Delete",
+        "export":"Export"
+    },
+    "folder":{
+        "Home":"Home",
+        "Drivers":"Drivers",
+        "Teams":"Teams",
+        "DriverManage":"DriverManage",
+        "Circuits":"Circuits",
+        "AboutMe":"About Me"
+    },
+    "home":{
+        "title":"HostHotel",
+        "langButton":"Change Language",
+        "close":"Sign out"
+    },
+    "validators":{
+        "passwordMatch": "Passwords do not match",
+        "passwordProto": "At least 8 characters, one uppercase letter, one lowercase letter and one number",
+        "email": "You must introduce a valid email"
+    },
+    "login":{
+        "title":"Sign in",
+        "email":"Email",
+        "password":"Password",
+        "send":"Sign in"
+    },
+    "register":{
+        "title":"Welcome to HostHotel Registration",
+        "register":"You don't have an account, ",
+        "first_name":"First name",
+        "last_name":"Last name",
+        "email":"Email",
+        "password":"Password",
+        "confirm_password":"Confirm password",
+        "send":"Send",
+        "forgot":"Forgot your password?"
+    }
+
+    
+}

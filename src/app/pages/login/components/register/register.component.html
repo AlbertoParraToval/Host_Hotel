@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>{{ "register.title" | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="light">
+    <ion-img src="./../../../../../assets/icon/icono-removebg-preview (1).png"></ion-img>
+    <form class="register" [formGroup]="form" (ngSubmit)="onRegister()">
+      <ion-list >
+        <ion-item color="light" lines="none">
+          <ion-label position="stacked">
+            {{ "register.first_name" | translate
+            }}<span class="required" *ngIf="form.controls.first_name.errors"
+              >&nbsp;&#42;</span
+            >
+          </ion-label>
+          <ion-input
+            autocomplete=""
+            placeHolder="Alberto"
+            type="text"
+            formControlName="first_name"
+          ></ion-input>
+          <span
+            class="validationError"
+            *ngFor="let error of errorsToArray(form.controls.first_name.errors)"
+            >{{ "validators." + error | translate }}</span
+          >
+        </ion-item>
+        <ion-item  color="light" lines="none">
+          <ion-label position="stacked">
+            {{ "register.last_name" | translate
+            }}<span class="required" *ngIf="form.controls.last_name.errors"
+              >>&nbsp;&#42;</span
+            >
+          </ion-label>
+          <ion-input
+            autocomplete=""
+            placeHolder="Cueto Cano"
+            type="text"
+            formControlName="last_name"
+          ></ion-input>
+          <span
+            class="validationError"
+            *ngFor="let error of errorsToArray(form.controls.last_name.errors)"
+            >{{ "validators." + error | translate }}</span
+          >
+        </ion-item>
+        <ion-item  color="light" lines="none">
+          <ion-label position="stacked">
+            {{ "register.email" | translate
+            }}<span class="required" *ngIf="form.controls.email.errors"
+              >&nbsp;&#42;</span
+            >
+          </ion-label>
+          <ion-input
+            autocomplete="email"
+            placeHolder="usuario@dominio"
+            type="text"
+            formControlName="email"
+          ></ion-input>
+          <span
+            class="validationError"
+            *ngFor="let error of errorsToArray(form.controls.email.errors)"
+            >{{ "validators." + error | translate }}</span
+          >
+        </ion-item>
+        <ion-item  color="light" lines="none">
+          <ion-label position="stacked">
+            {{ "register.password" | translate
+            }}<span class="required" *ngIf="form.controls.password.errors"
+              >&nbsp;&#42;</span
+            >
+          </ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+          <span class="validationError" *ngIf="hasFormError('passwordProto')">{{
+            "validators.passwordProto" | translate
+          }}</span>
+        </ion-item>
+        <ion-item  color="light" lines="none">
+          <ion-label position="stacked">
+            {{ "register.confirm_password" | translate
+            }}<span class="required" *ngIf="form.controls.confirmPassword.errors"
+              >&nbsp;&#42;</span
+            >
+          </ion-label>
+          <ion-input
+            (keyup.enter)="form.valid ? onRegister() : null"
+            [enterkeyhint]="'enter'"
+            type="password"
+            formControlName="confirmPassword"
+          ></ion-input>
+          <span
+            class="validationError"
+            *ngIf="
+              hasFormError('passwordMatch') && form.get('confirmPassword').value
+            "
+            >{{ "validators.passwordMatch" | translate }}</span
+          >
+        </ion-item>
+      </ion-list>
+      <ion-row>
+        <ion-col>
+          <ion-button shape="round" [disabled]="!form.valid" (click)="onRegister()">
+            <ion-text color="dark">{{
+              "register.send" | translate
+            }}</ion-text></ion-button> 
+        </ion-col>
+      
+        <ion-col>
+          <ion-button color="secondary" shape="round" (click)="onCancelar()">{{
+            "modal.close" | translate
+          }}</ion-button> 
+        </ion-col>
+
+      </ion-row>
+        
+    </form> 
+</ion-content>

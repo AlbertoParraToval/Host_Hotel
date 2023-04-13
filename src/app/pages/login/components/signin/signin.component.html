@@ -1,0 +1,28 @@
+<ion-content color="light">
+  <ion-img src="./../../../../../assets/icon/icono-removebg-preview (1).png"></ion-img>
+  <ion-row color="light">
+    <ion-col color="light">
+      <form [formGroup]="form" (ngSubmit)="onSignIn()">    
+        <ion-list>
+          <ion-item color="medium" >
+            <ion-label color="dark" position="stacked">
+              {{'login.email' | translate}}
+            </ion-label>
+            <ion-input color="dark"  [enterkeyhint]="'next'" autocomplete="email" type="text" formControlName="identifier"></ion-input>
+          </ion-item>
+          <ion-item color="medium">
+            <ion-label color="dark" position="stacked">
+              {{'login.password' | translate}}
+            </ion-label>
+            <ion-input color="dark" (keyup.enter)="form.valid?onSignIn():null" [enterkeyhint]="'enter'" autocomplete="password" type="password" formControlName="password"></ion-input>
+          </ion-item>
+        </ion-list> 
+          <ion-button  shape="round" color="primary" [disabled]="!form.valid" (click)="onSignIn()">
+            <ion-text color="dark">{{'login.send' | translate}}</ion-text></ion-button>
+      </form>    
+    </ion-col>
+  </ion-row>
+    <ion-row class="optionals">
+      <ion-text color="dark">{{'register.register' | translate }}<a  (click)="register()">Register</a></ion-text>
+    </ion-row>
+</ion-content>

@@ -11,8 +11,17 @@
       "schematics": {},
       "architect": {
         "build": {
+          
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "moment",
+              "fast-deep-equal",
+              "localforage",
+              "moment-timezone",
+              "@fullcalendar/core/locales/es"
+              
+            ],
             "outputPath": "www",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -30,7 +39,11 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "styles": ["src/theme/variables.scss", "src/global.scss",
+            "./node_modules/@fullcalendar/common/main.css",
+            "./node_modules/@fullcalendar/daygrid/main.css",
+            "./node_modules/@fullcalendar/timegrid/main.css",
+            "./node_modules/@fullcalendar/list/main.css"],
             "scripts": [],
             "aot": false,
             "vendorChunk": true,
@@ -148,7 +161,8 @@
   "cli": {
     "schematicCollections": [
       "@ionic/angular-toolkit"
-    ]
+    ],
+    "analytics": false
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

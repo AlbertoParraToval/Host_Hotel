@@ -1,0 +1,54 @@
+{
+    "change-picture":{
+        "title":"Cambiar imagen",
+        "library":"Desde la galería",
+        "camera":"Desde la cámara",
+        "file":"Desde tu equipo"
+    },
+    "modal":{
+        "close":"Cerrar",
+        "edit":"Modificar",
+        "new":"Nuevo",
+        "delete":"Borrar",
+        "export":"Exportar"
+    },
+    "folder":{
+        "Home":"Inicio",
+        "Drivers":"Pilotos",
+        "Teams":"Equipos",
+        "DriverManage":"Fichajes",
+        "Circuits":"Circuitos",
+        "AboutMe":"Sobre Mí"
+    },
+    "home":{
+        "title":"F1_Firebase",
+        "welcome":"Bienvenido",
+        "langButton":"Cambia idioma",
+        "close":"Cerrar sesión"
+    },
+    "assignment":{
+        "edit":"Editar",
+        "new":"Enviar"
+    },
+    "validators":{
+        "passwordMatch": "Las contraseñas no coinciden",
+        "passwordProto": "Al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número",
+        "email": "Debe introducir un email válido"
+    },
+    "login":{
+        "title":"Iniciar sesión",
+        "email":"Email",
+        "password":"Contraseña",
+        "send":"Enviar"
+    },
+    "register":{
+        "title":"Bienvenido a la creación de cuenta formulero",
+        "register":"Quiero registrarme, ",
+        "first_name":"Nombre",
+        "last_name":"Apellidos",
+        "email":"Email",
+        "password":"Contraseña",
+        "confirm_password":"Repita la contraseña",
+        "send":"Enviar"
+    }
+}

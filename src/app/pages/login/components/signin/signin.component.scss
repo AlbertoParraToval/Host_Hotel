@@ -1,0 +1,72 @@
+// Estilos para dispositivos de escritorio
+@media only screen and (min-width: 768px) {
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+  ion-img{
+    width: 27%;
+    margin-left: 37%;
+    padding: 0;
+  }
+
+  #cssClass{
+    width: max-content;
+  } 
+
+  ion-list{
+    margin-bottom: 20px;
+    width: 37.5%;
+    margin-left: 32%;
+    padding: 0;
+  }
+
+
+  ion-button{
+    
+    width: 20%;
+    margin-left: 40%;
+  }
+
+  a{
+    color: rgb(165, 124, 0);
+  }
+
+  .optionals{
+    margin-left: 42%;
+    text-align: center;
+    padding: 3px;
+  }
+
+}
+
+
+// Estilos para dispositivos móviles
+@media only screen and (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    margin: 0;
+    }
+  ion-img{
+    width: 100%;
+    padding: 10px;
+  }
+  ion-content{
+    padding: 10px;
+  }
+  
+  ion-list{
+    width: 37.5%;
+    margin-left: 32%;
+    padding: 0;
+  }
+
+    ion-button{
+    width: 50%;
+    margin-left: 25%;
+  }
+
+}
+
+
