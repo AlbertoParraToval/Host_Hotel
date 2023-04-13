@@ -22,6 +22,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule),
     canActivate:[AuthGuard]
   },
+  {
+    path: 'hotels',
+    loadChildren: () => import('./pages/hotels/hotels.module').then( m => m.HotelsPageModule)
+  },
+  {
+    path: 'clients',
+    loadChildren: () => import('./pages/clients/clients.module').then( m => m.ClientsPageModule)
+  },
+
 
   
 ];

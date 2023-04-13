@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoadingController, ModalController } from '@ionic/angular';
+import { LoadingController, ModalController, ToastController } from '@ionic/angular';
 import { UserService } from 'src/app/core/services/user.service';
 import { RegisterComponent } from '../register/register.component';
+import { User } from 'src/app/core/models/user.model';
+import { lastValueFrom } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-signin',
@@ -12,12 +15,16 @@ import { RegisterComponent } from '../register/register.component';
 })
 export class SigninComponent implements OnInit {
   form: FormGroup;
+  @Input() user_: User;
+  
   constructor(
     private formBuilder: FormBuilder,
     private modalCtrl: ModalController,
     private user: UserService,
     private router: Router,
-    public loadingController: LoadingController
+    public loadingController: LoadingController,
+    private translate: TranslateService,
+    public toastcontroler: ToastController
   ) {
     this.form = this.formBuilder.group({
       identifier: ['', [Validators.required, Validators.email]],
@@ -65,16 +72,23 @@ export class SigninComponent implements OnInit {
     modal.present();
   }
 
-
+  
+  
   //Función que sincroniza con la firebase para la comprobación de datos del usuario.
   async onSignIn() {
     try {
       await this.user.login(this.form.value);
       this.router.navigate(['home'], { replaceUrl: true });
+      const toast = await this.toastcontroler.create({
+        message: 'Bienvenido ' + this.user_.first_name + ' ' + this.user_.last_name,
+        duration: 4000
+      });
+      await toast.present();
     } catch (error) {
       console.log(error);
     }
   }
+  
 
   hasFormError(error) {
     return (

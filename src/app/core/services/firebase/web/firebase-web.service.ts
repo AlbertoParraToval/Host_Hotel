@@ -37,10 +37,13 @@ import {
   initializeAuth,
   indexedDBLocalPersistence,
   UserCredential,
+  sendPasswordResetEmail,
 } from 'firebase/auth';
 
 @Injectable({ providedIn: 'root' })
 export class FirebaseWebService extends FirebaseService implements OnDestroy {
+  
+
   constructor() {
     super();
     this.init();
@@ -178,6 +181,22 @@ export class FirebaseWebService extends FirebaseService implements OnDestroy {
     });
   }
 
+  public resetPassword(email:string): Promise<void>{
+    return new Promise<void>((resolve, reject) => {
+      const actionCodeSettings = {
+        url: window.location.href,
+        handleCodeInApp: true
+      };
+      sendPasswordResetEmail(this.auth, email, actionCodeSettings)
+        .then(() => {
+          resolve();
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  }
+
   public getDocuments(collectionName: string): Promise<FirebaseDocument[]> {
     return new Promise(async (resolve, reject) => {
       const querySnapshot = await getDocs(collection(this.db, collectionName));
@@ -217,6 +236,10 @@ export class FirebaseWebService extends FirebaseService implements OnDestroy {
         where(field, '==', value)
       );
 
+
+        
+
+
       const querySnapshot = await getDocs(q);
       resolve(
         querySnapshot.docs.map<FirebaseDocument>((doc) => {
@@ -225,6 +248,8 @@ export class FirebaseWebService extends FirebaseService implements OnDestroy {
       );
     });
   }
+
+  
 
   public deleteDocument(collectionName: string, docId: string): Promise<void> {
     return new Promise(async (resolve, reject) => {

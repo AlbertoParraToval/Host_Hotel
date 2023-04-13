@@ -11,6 +11,7 @@ import { CoreModule } from 'src/app/core/core.module';
 import { createTranslateLoader } from 'src/app/core/utils/translate';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FpasswordComponent } from './components/fpassword/fpassword.component';
 
 
 @NgModule({
@@ -26,6 +27,6 @@ import { CommonModule } from '@angular/common';
       }),
     LoginPageRoutingModule
   ],
-  declarations: [LoginPage, SigninComponent, RegisterComponent]
+  declarations: [LoginPage, SigninComponent, RegisterComponent, FpasswordComponent]
 })
 export class LoginPageModule {}

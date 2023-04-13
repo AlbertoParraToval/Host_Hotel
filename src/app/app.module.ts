@@ -24,6 +24,7 @@ export function firebaseServiceFactory() {
   imports: [
     BrowserModule, 
     CoreModule,
+    
     HttpClientModule ,
     TranslateModule.forRoot({
       loader: {
