@@ -22,7 +22,7 @@ Por otro lado el modo cliente donde, el usuario podrá buscar el hotel donde ha 
 - [Link a Figma](https://www.figma.com/file/iqHdZ8hMSmV776VCocHdak/Figma-Ex?node-id=0%3A1&t=96XJG13YhSgDAEdr-1)
 
 ## Modelo de la base de datos
-![image](https://user-images.githubusercontent.com/91873665/231748189-0d796ede-ff92-40ac-aafd-245cbe66f930.png)
+![image](https://user-images.githubusercontent.com/91873665/231753017-327a4c65-93bb-4ed7-a0d5-45d34dd2e243.png)
 
 ## Desarrollo por Semanas
 ### Semana 1 (27 Marzo - 2 Abril)
