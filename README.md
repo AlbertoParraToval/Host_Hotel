@@ -21,6 +21,9 @@ Por otro lado el modo cliente donde, el usuario podrá buscar el hotel donde ha 
 ## Modelo Figma
 - [Link a Figma](https://www.figma.com/file/iqHdZ8hMSmV776VCocHdak/Figma-Ex?node-id=0%3A1&t=96XJG13YhSgDAEdr-1)
 
+## Modelo de la base de datos
+![image](https://user-images.githubusercontent.com/91873665/231748189-0d796ede-ff92-40ac-aafd-245cbe66f930.png)
+
 ## Desarrollo por Semanas
 ### Semana 1 (27 Marzo - 2 Abril)
 Creación del proyecto en Ionic con la conexión a Firebase y creado la funcionalidad de Login. Además realización del readme de github así como comenzar la base de datos de la App (En proceso), realización de la primera versión de Figma (adaptada a cambios futuros).
