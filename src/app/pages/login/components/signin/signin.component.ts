@@ -56,7 +56,7 @@ export class SigninComponent implements OnInit {
       try {
         if (response.role == 'ok') {
           await this.user.register(response.data);
-          this.router.navigate(['folder/Home'], { replaceUrl: true });
+          this.router.navigate(['home'], { replaceUrl: true });
         }
       } catch (error) {
         console.log(error);
@@ -70,7 +70,7 @@ export class SigninComponent implements OnInit {
   async onSignIn() {
     try {
       await this.user.login(this.form.value);
-      this.router.navigate(['folder/Home'], { replaceUrl: true });
+      this.router.navigate(['home'], { replaceUrl: true });
     } catch (error) {
       console.log(error);
     }

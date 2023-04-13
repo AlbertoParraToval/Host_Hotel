@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User, UserService } from 'src/app/core';
 
 
 
@@ -9,6 +10,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
   
-  constructor() {}
+  constructor(
+    public user:UserService
+  ) { }
+
+  ngOnInit() {}
 
 }

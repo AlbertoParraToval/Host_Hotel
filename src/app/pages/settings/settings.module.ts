@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { IonicModule } from '@ionic/angular';
+
+import { SettingsPageRoutingModule } from './settings-routing.module';
+
+import { SettingsPage } from './settings.page';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { createTranslateLoader } from 'src/app/core/utils/translate';
-
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
-    HomePageRoutingModule,
+    SettingsPageRoutingModule,
     TranslateModule.forChild({
       loader: {
       provide: TranslateLoader,
@@ -24,6 +26,6 @@ import { createTranslateLoader } from 'src/app/core/utils/translate';
       }
       }),
   ],
-  declarations: [HomePage ]
+  declarations: [SettingsPage]
 })
-export class HomePageModule {}
+export class SettingsPageModule {}

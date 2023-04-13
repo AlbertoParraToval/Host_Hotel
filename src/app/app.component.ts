@@ -44,9 +44,6 @@ export class AppComponent {
     }
   }
 
-  signOut(){
-    this.user.signOut();
-    this.router.navigate(['login']);
-  }
+  
 
 }

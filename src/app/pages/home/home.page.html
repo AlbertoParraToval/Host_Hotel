@@ -1,1 +1,19 @@
-<p>Marica</p>
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Home</ion-title>
+    
+    <ion-icon slot="end" name="settings-outline" routerLink="/settings"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-grid>
+
+    <ion-img src="./../../../assets/icon/icono-removebg-preview (1).png"></ion-img>
+    <div>    
+      <ion-text>Buenas {{(user.user$ | async).first_name}} {{(user.user$ | async).last_name}} bienvenido a HostHotel.</ion-text>
+    </div>
+    <ion-button routerLink="/about-me" shape="round">List of Hotels</ion-button>
+    <ion-button routerLink="/settings" shape="round">List of Clients</ion-button>
+  </ion-grid>
+</ion-content>
