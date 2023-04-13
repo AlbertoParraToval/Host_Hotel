@@ -12,6 +12,7 @@ Esta App tiene dos modos de verla, el primero modo administrador donde el admini
 Por otro lado el modo cliente donde, el usuario podrá buscar el hotel donde ha estado para dejar su reseña de manera gratuita y así ayudar a otros usuarios para encontrar el hotel ideal para sus vacaciones, los hoteles tendrán una valoración que será la media de las reseñas de los usuarios. Si un hotel no tiene todavía ninguna reseña se dejará sin valoración hasta que haya una como mínimo.
 
 ## Tecnologías utilizadas
+- Creación de la base de datos: MySQL WorkBench
 - Aplicación móvil: Android Studio, Kotlin, Material Design...
 - Aplicación híbrida: Visual Studio Code, Angular, Ionic, Bootstrap...
 - Tecnologías conjuntas: Firebase (Firestore & Authentication).
