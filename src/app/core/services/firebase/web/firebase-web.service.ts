@@ -41,19 +41,19 @@ import {
 
 @Injectable({ providedIn: 'root' })
 export class FirebaseWebService extends FirebaseService implements OnDestroy {
-  
   constructor() {
     super();
     this.init();
   }
   async init() {
     const firebaseConfig = {
-      apiKey: 'AIzaSyBWAeSua0kjy9Ti9v1ZFdKuZjXnKMgN3zk',
-      authDomain: 'hotelhost-f852d.firebaseapp.com',
-      projectId: 'hotelhost-f852d',
-      storageBucket: 'hotelhost-f852d.appspot.com',
-      messagingSenderId: '877686274375',
-      appId: '1:877686274375:web:3d72c9254cc56e86d73462',
+      apiKey: 'AIzaSyA3CBJEVuI225TAkSENOB94J6B9CAxv3Oo',
+      authDomain: 'hosthotel-3c0d2.firebaseapp.com',
+      projectId: 'hosthotel-3c0d2',
+      storageBucket: 'hosthotel-3c0d2.appspot.com',
+      messagingSenderId: '870619227037',
+      appId: '1:870619227037:web:de01ceba1fbb443b6f8574',
+      measurementId: 'G-3CKPN0GZNH',
     };
 
     // Initialize Firebase
@@ -151,9 +151,6 @@ export class FirebaseWebService extends FirebaseService implements OnDestroy {
         .catch((err) => reject(err));
     });
   }
-
-  
-
 
   public createDocumentWithId(
     collectionName: string,
@@ -323,8 +320,6 @@ export class FirebaseWebService extends FirebaseService implements OnDestroy {
       }
     });
   }
-
-  
 
   public async connectUserWithEmailAndPassword(
     email: string,

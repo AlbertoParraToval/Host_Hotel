@@ -30,7 +30,7 @@ export class UserService {
     this.firebase.isLogged$.subscribe(async (logged)=>{
       if(logged){
         this._user.next((await this.firebase.getDocument('users', this.firebase.getUser().uid)).data as User);
-        this.router.navigate(['folder/Home']);
+        this.router.navigate(['Home']);
       }
       this._isLogged.next(logged);
     });
