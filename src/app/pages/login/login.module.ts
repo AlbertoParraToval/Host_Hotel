@@ -12,6 +12,7 @@ import { createTranslateLoader } from 'src/app/core/utils/translate';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FpasswordComponent } from './components/fpassword/fpassword.component';
+import { PasswordFormComponent } from './components/password-form/password-form.component';
 
 
 @NgModule({
@@ -27,6 +28,6 @@ import { FpasswordComponent } from './components/fpassword/fpassword.component';
       }),
     LoginPageRoutingModule
   ],
-  declarations: [LoginPage, SigninComponent, RegisterComponent, FpasswordComponent]
+  declarations: [LoginPage, SigninComponent, RegisterComponent, FpasswordComponent, PasswordFormComponent]
 })
 export class LoginPageModule {}
