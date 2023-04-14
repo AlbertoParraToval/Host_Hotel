@@ -6,12 +6,13 @@ ion-icon{
 
 ion-grid{
   align-items: center;
-  width: 300px;
+  width: 400px;
   height: 400px;
 }
 
 ion-card{
   width: auto;
+  border-style: round($number: 25);
   height: auto;
   align-items: center;
 }

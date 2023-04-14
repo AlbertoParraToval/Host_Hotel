@@ -12,10 +12,12 @@
         padding: 0;
     }
     
-    #cssClass{
-        width: max-content;
-    } 
     
+    #home-icon{
+        margin-left: 15px;
+        width: 25px;
+        height: 25px;
+    }
     ion-list{
         margin-bottom: 20px;
         width: 37.5%;
@@ -23,13 +25,8 @@
         padding: 0;
     }
 
-    ion-text{
-        margin-left: 37.5%;
-        text-align: center;
-        padding: 15px;
-    }
     
-    ion-icon{
+    #settings-icon{
         padding: 20px;
         width: 25px;
         height: 25px;

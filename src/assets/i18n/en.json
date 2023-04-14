@@ -5,6 +5,7 @@
         "camera":"From camera",
         "file":"From your computer"
     },
+
     "modal":{
         "close":"Close",
         "edit":"Edit",
@@ -12,30 +13,43 @@
         "delete":"Delete",
         "export":"Export"
     },
-    "folder":{
-        "Home":"Home",
-        "Drivers":"Drivers",
-        "Teams":"Teams",
-        "DriverManage":"DriverManage",
-        "Circuits":"Circuits",
-        "AboutMe":"About Me"
-    },
+    
     "home":{
-        "title":"HostHotel",
-        "langButton":"Change Language",
-        "close":"Sign out"
+        "title":"Home",
+        "mssg1":"Hello, ",
+        "mssg2":"welcome to HostHotel.",
+        "list_hoteles":"List of Hotels",
+        "list_clientes":"List of Clients"
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     "validators":{
         "passwordMatch": "Passwords do not match",
         "passwordProto": "At least 8 characters, one uppercase letter, one lowercase letter and one number",
         "email": "You must introduce a valid email"
     },
+
     "login":{
         "title":"Sign in",
         "email":"Email",
         "password":"Password",
         "send":"Sign in"
     },
+
     "register":{
         "title":"Welcome to HostHotel Registration",
         "register":"You don't have an account, ",
