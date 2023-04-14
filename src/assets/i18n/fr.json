@@ -1,66 +1,53 @@
 {
-    
-  "change-picture":{
-      "title":"Cambiar imagen",
-      "library":"Desde la galería",
-      "camera":"Desde la cámara",
-      "file":"Desde tu equipo"
-  },
-
-  "modal":{
-      "close":"Cerrar",
-      "edit":"Modificar",
-      "new":"Nuevo",
-      "delete":"Borrar",
-      "export":"Exportar"
-  },
-
-  "home":{
-      "title":"tetas",
-      "mssg1":"Hola, ",
-      "mssg2":"bienvenido a HostHotel.",
-      "list_hoteles":"Lista de Hoteles",
-      "list_clientes":"Lista de Clientes",
-      "sign_out":"Cerrar sesión"
-  },
-
-  
+    "title":{
+        "home":"Foyer",
+        "settings":"Réglages",
+        "clientes":"Clients",
+        "hoteles":""
+    },
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  "validators":{
-      "passwordMatch": "Las contraseñas no coinciden",
-      "passwordProto": "Al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número",
-      "email": "Debe introducir un email válido"
-  },
-
-  "login":{
-      "title":"Iniciar sesión",
-      "email":"Email",
-      "password":"Contraseña",
-      "send":"Enviar"
-  },
-
-  "register":{
-      "title":"Bienvenido a la creación de cuenta formulero",
-      "register":"Quiero registrarme, ",
-      "first_name":"Nombre",
-      "last_name":"Apellidos",
-      "email":"Email",
-      "password":"Contraseña",
-      "confirm_password":"Repita la contraseña",
-      "send":"Enviar"
-  }
+    "change-picture" : {
+        "title" : "change-picture",
+        "library" : "De la galerie",
+        "camera" : "Depuis l'appareil photo",
+        "fichier" : "Depuis votre ordinateur"
+    },
+    "modal" : {
+        "close" : "Fermer",
+        "edit" : "Modifier",
+        "new" : "Nouveau",
+        "delete" : "Supprimer",
+        "export" : "Exporter"
+    },
+    "home" : {
+        "title" : "Home",
+        "mssg1" : "Bonjour",
+        "mssg2" : "Bienvenue chez HostHotel",
+        "list_hoteles" : "Liste des hôtels",
+        "list_clientes" : "Liste des clients",
+        "sign_out" : "S'inscrire"
+    },
+    "validators" : {
+        "passwordMatch" : "Les mots de passe ne correspondent pas",
+        "passwordProto" : "Au moins 8 caractères, une lettre majuscule, une lettre minuscule et un chiffre",
+        "email" : "Vous devez saisir une adresse électronique valide."
+    },
+    "login" : {
+        "title" : "Login",
+        "email" : "Email",
+        "password" : "Mot de passe",
+        "send" : "Envoyer"
+    },
+    "register" : {
+        "title" : "Welcome to formulero account creation",
+        "register" : "Je veux m'inscrire",
+        "first_name" : "Prénom",
+        "last_name" : "Last_name",
+        "email" : "Email",
+        "password" : "Mot de passe",
+        "confirm_password" : "Répéter le mot de passe",
+        "send" : "Envoyer"
+    }
 
 }

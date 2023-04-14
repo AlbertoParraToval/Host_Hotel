@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './core';
 import { FirebaseService } from './core/services/firebase/firebase-service';
 import { LocaleService } from './core/services/locale.service';
+import { Console } from 'console';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { LocaleService } from './core/services/locale.service';
 })
 export class AppComponent {
   language = 1; // 0 español, 1 inglés
+  currentLanguage
   constructor(
     private firebase:FirebaseService,
     private translate: TranslateService,
@@ -29,24 +31,23 @@ export class AppComponent {
   ngAfterViewInit(): void {
   
   }
+
   onLanguage(){
     this.language = (this.language+1)%3;
     switch(this.language){
       case 0:
         this.translate.setDefaultLang('es');
         this.locale.registerCulture('es');
-
+        
         break;
       case 1:
         this.translate.setDefaultLang('en');
         this.locale.registerCulture('en');
-        
         break;
 
       case 2:
         this.translate.setDefaultLang('fr');
         this.locale.registerCulture('fr');
-        
         break;
     }
   }
