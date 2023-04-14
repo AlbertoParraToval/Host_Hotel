@@ -5,33 +5,45 @@
     margin: 0 auto;
   }
 
-  ion-content{
+  @font-face {
+    font-family: "Mantinia Regular";
+    src: url("/src/assets/fonts/mantinia_regular/mantinia_regular.otf")
+      format("otf");
+  }
+  * {
+    font-family: "Mantinia Regular";
+  }
+  ion-header {
+    font-family: "Mantinia Regular", sans-serif;
+  }
+
+  ion-content {
+    font-family: "Mantinia Regular", sans-serif;
     padding: 10px;
     margin-top: 20%;
   }
 
-  ion-icon{
+  ion-icon {
     padding: 20px;
     width: 25px;
     height: 25px;
   }
 
-  ion-img{
+  ion-img {
     width: 50%;
     padding: 2px;
     margin-left: 25%;
   }
 
-  ion-button{
+  ion-button {
     width: 50%;
     margin-left: 25%;
   }
-  ion-item{
+  ion-item {
     width: 50%;
     margin-left: 25%;
   }
 }
-
 
 // Estilos para dispositivos móviles
 @media only screen and (max-width: 767px) {
@@ -39,12 +51,12 @@
     max-width: 100%;
     margin: 0;
   }
-  ion-img{
+  ion-img {
     width: 100%;
     padding: 5px;
   }
-  
-  ion-content{
+
+  ion-content {
     padding: 10px;
   }
 }

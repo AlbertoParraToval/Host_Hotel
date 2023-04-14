@@ -19,7 +19,8 @@
         "mssg1":"Hello, ",
         "mssg2":"welcome to HostHotel.",
         "list_hoteles":"List of Hotels",
-        "list_clientes":"List of Clients"
+        "list_clientes":"List of Clients",
+        "sign_out":"Sign out"
     },
 
 
@@ -36,7 +37,7 @@
 
 
 
-    
+
     "validators":{
         "passwordMatch": "Passwords do not match",
         "passwordProto": "At least 8 characters, one uppercase letter, one lowercase letter and one number",

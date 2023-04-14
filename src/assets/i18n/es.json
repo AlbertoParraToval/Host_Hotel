@@ -20,7 +20,8 @@
         "mssg1":"Hola, ",
         "mssg2":"bienvenido a HostHotel.",
         "list_hoteles":"Lista de Hoteles",
-        "list_clientes":"Lista de Clientes"
+        "list_clientes":"Lista de Clientes",
+        "sign_out":"Cerrar sesión"
     },
 
     
