@@ -1,6 +1,7 @@
+//Importacion de mi fuente personalizada
 @font-face {
   font-family: 'Mantinia Regular';
-  src: url('../assets/fonts/mantinia_regular.otf') format('otf');
+  src: url('/src/assets/fonts/mantinia_regular/mantinia_regular.otf') format('otf');
 }
 *{
   font-family: 'Mantinia Regular';

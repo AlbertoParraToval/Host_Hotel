@@ -1,9 +1,4 @@
-ion-icon{
-  padding: 20px;
-  width: 25px;
-  height: 25px;
-}
-
+//Importacion de mi fuente personalizada
 @font-face {
   font-family: 'Mantinia Regular';
   src: url('/src/assets/fonts/mantinia_regular/mantinia_regular.otf') format('otf');
@@ -11,3 +6,10 @@ ion-icon{
 *{
   font-family: 'Mantinia Regular';
 }
+
+ion-icon{
+  padding: 20px;
+  width: 25px;
+  height: 25px;
+}
+

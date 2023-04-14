@@ -1,3 +1,13 @@
+//Importacion de mi fuente personalizada
+@font-face {
+  font-family: 'Mantinia Regular';
+  src: url('/src/assets/fonts/mantinia_regular/mantinia_regular.otf') format('otf');
+}
+*{
+  font-family: 'Mantinia Regular';
+}
+
+
 ion-icon{
   padding: 20px;
   width: 25px;

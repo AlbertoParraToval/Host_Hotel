@@ -1,3 +1,4 @@
+//Importacion de mi fuente personalizada
 @font-face {
     font-family: 'Mantinia Regular';
     src: url('/src/assets/fonts/mantinia_regular/mantinia_regular.otf') format('otf');
@@ -5,6 +6,8 @@
   *{
     font-family: 'Mantinia Regular';
     }
+
+
 // Estilos para dispositivos de escritorio
 @media only screen and (min-width: 768px) {
     .container {
