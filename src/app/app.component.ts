@@ -30,7 +30,7 @@ export class AppComponent {
   
   }
   onLanguage(){
-    this.language = (this.language+1)%2;
+    this.language = (this.language+1)%3;
     switch(this.language){
       case 0:
         this.translate.setDefaultLang('es');
@@ -40,6 +40,13 @@ export class AppComponent {
       case 1:
         this.translate.setDefaultLang('en');
         this.locale.registerCulture('en');
+        
+        break;
+
+      case 2:
+        this.translate.setDefaultLang('fr');
+        this.locale.registerCulture('fr');
+        
         break;
     }
   }

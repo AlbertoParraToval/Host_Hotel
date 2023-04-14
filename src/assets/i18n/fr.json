@@ -1,0 +1,66 @@
+{
+    
+  "change-picture":{
+      "title":"Cambiar imagen",
+      "library":"Desde la galería",
+      "camera":"Desde la cámara",
+      "file":"Desde tu equipo"
+  },
+
+  "modal":{
+      "close":"Cerrar",
+      "edit":"Modificar",
+      "new":"Nuevo",
+      "delete":"Borrar",
+      "export":"Exportar"
+  },
+
+  "home":{
+      "title":"tetas",
+      "mssg1":"Hola, ",
+      "mssg2":"bienvenido a HostHotel.",
+      "list_hoteles":"Lista de Hoteles",
+      "list_clientes":"Lista de Clientes",
+      "sign_out":"Cerrar sesión"
+  },
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "validators":{
+      "passwordMatch": "Las contraseñas no coinciden",
+      "passwordProto": "Al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número",
+      "email": "Debe introducir un email válido"
+  },
+
+  "login":{
+      "title":"Iniciar sesión",
+      "email":"Email",
+      "password":"Contraseña",
+      "send":"Enviar"
+  },
+
+  "register":{
+      "title":"Bienvenido a la creación de cuenta formulero",
+      "register":"Quiero registrarme, ",
+      "first_name":"Nombre",
+      "last_name":"Apellidos",
+      "email":"Email",
+      "password":"Contraseña",
+      "confirm_password":"Repita la contraseña",
+      "send":"Enviar"
+  }
+
+}

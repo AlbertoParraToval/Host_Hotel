@@ -20,10 +20,16 @@ export class LocaleService {
     }
     switch (culture) {
       case 'es':
-      case 'es-es':
-        this._locale = 'es-es';
-        console.log('Application Culture Set to Spanish');
-        break;   
+        case 'es-es':
+          this._locale = 'es-es';
+          console.log('Application Culture Set to Spanish');
+          break;   
+
+      case 'fr':
+        case 'fr-fr':
+          this._locale = 'fr-fr';
+          console.log('Application Culture Set to French');
+          break;
       
       case 'en-us':
         this._locale = 'en-us';

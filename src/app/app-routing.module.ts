@@ -24,11 +24,13 @@ const routes: Routes = [
   },
   {
     path: 'hotels',
-    loadChildren: () => import('./pages/hotels/hotels.module').then( m => m.HotelsPageModule)
+    loadChildren: () => import('./pages/hotels/hotels.module').then( m => m.HotelsPageModule),
+    canActivate:[AuthGuard]
   },
   {
     path: 'clients',
-    loadChildren: () => import('./pages/clients/clients.module').then( m => m.ClientsPageModule)
+    loadChildren: () => import('./pages/clients/clients.module').then( m => m.ClientsPageModule),
+    canActivate:[AuthGuard]
   },
 
 

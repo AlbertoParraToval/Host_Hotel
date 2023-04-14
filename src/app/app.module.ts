@@ -13,6 +13,7 @@ import { CoreModule } from './core/core.module';
 import { HTTP } from '@awesome-cordova-plugins/http/ngx';
 import { FirebaseService } from './core/services/firebase/firebase-service';
 import { FirebaseWebService } from './core/services/firebase/web/firebase-web.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export function firebaseServiceFactory() {
   return  new FirebaseWebService();
@@ -24,7 +25,7 @@ export function firebaseServiceFactory() {
   imports: [
     BrowserModule, 
     CoreModule,
-    
+    ReactiveFormsModule,
     HttpClientModule ,
     TranslateModule.forRoot({
       loader: {
