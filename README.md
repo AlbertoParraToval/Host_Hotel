@@ -32,7 +32,7 @@ Creación del proyecto en Ionic con la conexión a Firebase y creado la funciona
 Modificaciones de la base de datos, asi como del figma debido a unas correcciones por parte de ambos integrantes. A su vez finalización del login, y reformulación del proyecto.
 
 ### Semana 3 (10 Abril - 16 Abril)
-Realización de las siguientes páginas (home, configuración), además de la conexión con las demás páginas que más adelante será utilizadas e implementadas con los modelos también creados ya. Otro feature añadido es la posibilidad de cambiar entre un diseño claro de la página a un diseño oscuro de la misma, gracias a la página de configuración que tiene un botón específico para ello.
+Realización de las siguientes páginas (home, configuración), además de la conexión con las demás páginas que más adelante será utilizadas e implementadas con los modelos también creados ya. Añadidos las features de traducción con posibilidad de ampliarlo a otro tipo de idioma como por ejemplo el Alemán. Añadido también estilos de fuente para toda la aplicación.
 
 ## Video Presentación
 - [Link Youtube](https://www.youtube.com/)
