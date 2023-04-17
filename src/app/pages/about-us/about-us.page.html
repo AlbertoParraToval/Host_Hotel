@@ -1,9 +1,45 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>aboutUs</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-title>About Us</ion-title>
+    <ion-icon slot="start" name="information-circle-outline" id="help-icon"></ion-icon>
+    <ion-icon *ngIf="esPc" id="back-icon" name="arrow-back-circle-outline" slot="primary" routerLink="/home"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="light">
+  <!-- Configuración dispositivo movil-->
+  <ion-grid>
+    <ion-text>
+      Esta aplicación se ha desarrollado para el trabajo de final de grado del curso 2º de Desarrollo de Aplicaciones Multiplataforma, del C.P.I.F.P Málaga Tech Park.
+    </ion-text>
 
+    <h3>¿De que trata?</h3>
+    <ion-text>
+      Este proyecto se basa en un foro de hoteles en el que los usuarios pueden añadir hoteles en los que ha estado y puntuarlos con estrellas y comuna reseña. Los hoteles     pertenecen a la comunidad de Andalucía, España; y pueden ser filtrados por las ciudades que se encuentran dentro de la misma.
+    </ion-text>
+
+    <h3>Desarrollador</h3>
+    Alberto Parra Toval 
+    <ion-row>
+      <a href="https://twitter.com/Parra_038"><ion-icon id="logo-twitter" name="logo-twitter"></ion-icon></a>
+      <a href="https://www.instagram.com/parra_038/"><ion-icon id="logo-instagram" name="logo-instagram"></ion-icon></a> 
+      <a href="https://github.com/AlbertoParraToval"><ion-icon id="logo-github" name="logo-github"></ion-icon></a>
+      <a href="https://es-la.facebook.com/"><ion-icon id="logo-facebook" name="logo-facebook"></ion-icon></a>
+
+    </ion-row>
+  </ion-grid>
+
+
+
+
+  <!-- Configuración dispositivo Escritorio-->
 </ion-content>
+
+<!--Para dispositivos moviles-->
+<ion-footer *ngIf="esMovil">
+  <ion-toolbar color="light">
+    <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="primary" routerLink="/home"></ion-icon>
+    
+    <ion-icon id="settings-icon" slot="secondary" name="settings-outline" routerLink="/settings"></ion-icon>
+  </ion-toolbar>
+  </ion-footer>

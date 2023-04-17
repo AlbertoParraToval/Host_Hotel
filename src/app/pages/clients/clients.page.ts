@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-clients',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clients.page.scss'],
 })
 export class ClientsPage implements OnInit {
+  esMovil:boolean
+  constructor(
+    
+  ) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() {  this.onResize();}
+ // Esta función se ejecuta cada vez que se redimensiona la pantalla
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
   }
-
 }

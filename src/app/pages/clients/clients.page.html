@@ -9,3 +9,12 @@
 <ion-content color="light">
 <p>Spursito marikon</p>
 </ion-content>
+
+
+<ion-footer *ngIf="esMovil">
+  <ion-toolbar color="secondary">
+    <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="end" routerLink="/home"></ion-icon>
+    
+    <ion-icon id="settings-icon" slot="end" name="settings-outline" routerLink="/settings"></ion-icon>
+  </ion-toolbar>
+  </ion-footer>

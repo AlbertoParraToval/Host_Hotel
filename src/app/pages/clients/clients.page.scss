@@ -1,21 +1,49 @@
 //Importacion de mi fuente personalizada
 @font-face {
-  font-family: 'Mantinia Regular';
-  src: url('/src/assets/fonts/mantinia_regular/mantinia_regular.otf') format('otf');
-}
-*{
-  font-family: 'Mantinia Regular';
+  font-family: "Mantinia Regular";
+  src: url("/src/assets/fonts/mantinia_regular/mantinia_regular.otf")
+      format("otf");
+  }
+  * {
+  font-family: "Mantinia Regular";
 }
 
+// Estilos para dispositivos de escritorio
+@media only screen and (min-width: 768px) {
+  .container {
+      max-width: 960px;
+      margin: 0 auto;
+  }
 
-#clientes-icon{
-  margin-left: 15px;
-  width: 25px;
-  height: 25px;
+  #clientes-icon{
+    margin-left: 15px;
+    width: 25px;
+    height: 25px;
+  }
+  #back-icon{
+    padding: 20px;
+    width: 25px;
+    height: 25px;
+  }
 }
-#back-icon{
-  padding: 20px;
-  width: 25px;
-  height: 25px;
+
+// Estilos para dispositivos de escritorio
+@media only screen and (max-width: 768px) {
+  .container {
+      max-width: 400px;
+      margin: 0 auto;
+  }
+
+  #clientes-icon{
+    margin-left: 15px;
+    width: 25px;
+    height: 25px;
+  }
+  #back-icon{
+    padding: 20px;
+    width: 25px;
+    height: 25px;
+  }
 }
+
 
