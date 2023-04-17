@@ -1,4 +1,12 @@
 {
+    "title":{
+        "home":"Inicio",
+        "settings":"Configuración",
+        "clientes":"Clientes",
+        "hoteles":"Hoteles",
+        "about-us":"Sobre nosotros"
+    },
+
     "change-picture": {
         "title": "Cambiar imagen",
         "library": "Desde la galería",

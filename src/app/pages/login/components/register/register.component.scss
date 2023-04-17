@@ -39,20 +39,31 @@
     }
 }
 
-  // Estilos para dispositivos móviles
-@media only screen and (max-width: 767px) {
+
+@media only screen and (max-width: 768px) {
     .container {
-        max-width: 100%;
-        margin: 0;
-    }
-    ion-img{
-        width: 100%;
-        padding: 2px;
-    }
-    
-    ion-content{
-        padding: 10px;
+        max-width: 400px;
+        margin: 0 auto;
     }
 
-    
+    ion-img{
+        width: 95%;
+        padding: 2px;
+        margin-left: 2.5%;
+    }
+
+    ion-list{
+        width: 100%;
+        padding: 0;
+    }
+
+    ion-button{
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    ion-item{
+        padding: 0;
+        width: 100%;
+    }
 }

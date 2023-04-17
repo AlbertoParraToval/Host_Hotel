@@ -5,13 +5,15 @@ import { UserService } from 'src/app/core';
 import { FirebaseService } from 'src/app/core/services/firebase/firebase-service';
 import { LocaleService } from 'src/app/core/services/locale.service';
 
+
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.page.html',
   styleUrls: ['./settings.page.scss'],
 })
 export class SettingsPage implements OnInit {
-
+  language = 1; // 0 español, 1 inglés
+  currentLanguage
   constructor(private firebase:FirebaseService,
     private translate: TranslateService,
     private locale:LocaleService,
@@ -27,4 +29,34 @@ export class SettingsPage implements OnInit {
     this.router.navigate(['login']);
   }
 
+
+  private async init(){
+    this.translate. setDefaultLang('en');
+  }
+  ngAfterViewInit(): void {
+  
+  }
+
+  onLanguage(){
+    this.language = (this.language+1)%3;
+    switch(this.language){
+      case 0:
+        this.translate.setDefaultLang('es');
+        this.locale.registerCulture('es');
+        
+        break;
+      case 1:
+        this.translate.setDefaultLang('en');
+        this.locale.registerCulture('en');
+        break;
+
+      default:
+        this.translate.setDefaultLang('fr');
+        this.locale.registerCulture('fr');
+        break;
+    }
+  }
+
 }
+
+

@@ -1,12 +1,12 @@
 //Importacion de mi fuente personalizada
 @font-face {
-    font-family: 'Mantinia Regular';
-    src: url('/src/assets/fonts/mantinia_regular/mantinia_regular.otf') format('otf');
+    font-family: "Mantinia Regular";
+    src: url("/src/assets/fonts/mantinia_regular/mantinia_regular.otf")
+        format("otf");
     }
-  *{
-    font-family: 'Mantinia Regular';
-    }
-
+    * {
+    font-family: "Mantinia Regular";
+}
 
 // Estilos para dispositivos de escritorio
 @media only screen and (min-width: 768px) {
@@ -14,77 +14,76 @@
         max-width: 960px;
         margin: 0 auto;
     }
-    
-    ion-img{
+
+    ion-img {
         width: 30%;
         margin-left: 35%;
         padding: 0;
     }
-    
-    
-    #home-icon{
+
+    ion-row {
+        align-items: center;
+    }
+
+    #home-icon {
         margin-left: 15px;
         width: 20px;
         height: 20px;
     }
-    ion-list{
-        margin-bottom: 20px;
-        width: 37.5%;
-        margin-left: 32%;
-        padding: 0;
-    }
 
-    
-    #settings-icon{
+    #settings-icon {
         padding: 20px;
         width: 20px;
         height: 20px;
     }
-    
-    ion-button{
-        
+
+    ion-button {
         width: 20%;
         margin-left: 40%;
     }
-    
-    a{
+
+    a {
         color: rgb(165, 124, 0);
     }
-    
-    .optionals{
+
+    .optionals {
         margin-left: 42%;
         text-align: center;
         padding: 3px;
     }
-    
-    }
-    
-    
-    // Estilos para dispositivos móviles
-    @media only screen and (max-width: 767px) {
+}
+
+// Estilos para dispositivos de escritorio
+@media only screen and (max-width: 768px) {
     .container {
-        max-width: 100%;
-        margin: 0;
-        }
-    ion-img{
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    ion-img {
         width: 100%;
-        padding: 10px;
-    }
-    ion-content{
-        padding: 10px;
-    }
-    
-    ion-list{
-        width: 37.5%;
-        margin-left: 32%;
         padding: 0;
     }
-    
-        ion-button{
-        width: 50%;
-        margin-left: 25%;
+
+    ion-grid {
+        align-items: center;
+        text-align: center;
     }
-    
+
+    #home-icon {
+        margin-left: 15px;
+        width: 20px;
+        height: 20px;
+    }
+
+    #settings-icon {
+        padding: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    ion-button {
+        width: 50%;
+        
+    }
 }
-    
-    

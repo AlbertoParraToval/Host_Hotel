@@ -8,6 +8,37 @@
 }
 
 
+.language-button {
+  padding: 10px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.language-es {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.language-en {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.language-fr {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.language-es, .language-en, .language-fr {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+
 ion-icon{
   padding: 20px;
   width: 25px;
