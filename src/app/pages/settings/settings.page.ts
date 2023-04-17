@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from 'src/app/core';
@@ -14,6 +14,10 @@ import { LocaleService } from 'src/app/core/services/locale.service';
 export class SettingsPage implements OnInit {
   language = 1; // 0 español, 1 inglés
   currentLanguage
+
+  esMovil: boolean;
+  esPc: boolean;
+  
   constructor(private firebase:FirebaseService,
     private translate: TranslateService,
     private locale:LocaleService,
@@ -55,6 +59,14 @@ export class SettingsPage implements OnInit {
         this.locale.registerCulture('fr');
         break;
     }
+  }
+
+
+  // Esta función se ejecuta cada vez que se redimensiona la pantalla
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
+    this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
   }
 
 }

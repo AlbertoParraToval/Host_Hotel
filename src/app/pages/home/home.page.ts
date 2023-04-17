@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { User, UserService } from 'src/app/core';
 
 @Component({
@@ -10,8 +11,14 @@ export class HomePage {
   esMovil: boolean;
   esPc: boolean;
   constructor(
-    public user:UserService
+    public user:UserService,
+    private router:Router
   ) { }
+
+  signOut(){
+    this.user.signOut();
+    this.router.navigate(['login']);
+  }
 
   ngOnInit() {  this.onResize();}
  // Esta función se ejecuta cada vez que se redimensiona la pantalla

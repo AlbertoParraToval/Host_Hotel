@@ -25,7 +25,7 @@
       <a href="https://www.instagram.com/parra_038/"><ion-icon id="logo-instagram" name="logo-instagram"></ion-icon></a> 
       <a href="https://github.com/AlbertoParraToval"><ion-icon id="logo-github" name="logo-github"></ion-icon></a>
       <a href="https://es-la.facebook.com/"><ion-icon id="logo-facebook" name="logo-facebook"></ion-icon></a>
-
+      
     </ion-row>
   </ion-grid>
 
@@ -39,7 +39,7 @@
 <ion-footer *ngIf="esMovil">
   <ion-toolbar color="light">
     <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="primary" routerLink="/home"></ion-icon>
-    
+    <ion-icon  id="out-icon" name="log-out-outline" slot="secondary"  (click)="signOut()" ></ion-icon>
     <ion-icon id="settings-icon" slot="secondary" name="settings-outline" routerLink="/settings"></ion-icon>
   </ion-toolbar>
   </ion-footer>
