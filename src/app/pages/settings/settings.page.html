@@ -46,12 +46,12 @@
         <ion-label>{{(user.user$ | async).last_name}}</ion-label>
       </ion-item>
 
-      <ion-button id="edit_btn" shape="round" color="tertiary"  >Edit</ion-button>
+      <ion-button id="edit_btn" shape="round" color="tertiary">{{ "settings.btn_edit"|translate}}</ion-button>
 
     </ion-card>
     
     <ion-row id="subtitle_row">
-      <ion-text>Language Configuration</ion-text>
+      <ion-text>{{ "settings.text_config"|translate}}</ion-text>
     </ion-row>
     <ion-row>
       <ion-img class="img_btn_language" (click)="onLanguage('es')" src="./../../../assets/fotos/country_fotos/espana.png" alt="Logo de España"></ion-img>

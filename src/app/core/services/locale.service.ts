@@ -58,7 +58,7 @@ export class LocaleService {
     }
     const toast = await this.toastController.create({
       message: `${msg}`,
-      duration: 1000
+      duration: 10
     });
     toast.present();
   }

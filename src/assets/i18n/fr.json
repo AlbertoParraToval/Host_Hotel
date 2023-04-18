@@ -22,12 +22,9 @@
         "export" : "Exporter"
     },
     "home" : {
-        "title" : "Home",
-        "mssg1" : "Bonjour",
-        "mssg2" : "Bienvenue chez HostHotel",
         "list_hoteles" : "Liste des hôtels",
         "list_clientes" : "Liste des clients",
-        "sign_out" : "S'inscrire"
+        "about":"Sur nous"
     },
     "validators" : {
         "passwordMatch" : "Les mots de passe ne correspondent pas",
@@ -49,6 +46,18 @@
         "password" : "Mot de passe",
         "confirm_password" : "Répéter le mot de passe",
         "send" : "Envoyer"
+    },
+
+    "settings":{
+        "btn_edit":"Éditer",
+        "text_config":"Paramètres linguistiques"
+    },
+
+    "aboutUs":{
+        "text1": "Cette application a été développée dans le cadre du projet de fin d'études de la deuxième année du cours de développement d'applications multiplateformes au C.P.I.F.P Málaga Tech Park.",
+        "text2":" Ce projet est basé sur un forum hôtelier où les utilisateurs peuvent ajouter des hôtels dans lesquels ils ont séjourné et les évaluer à l'aide d'étoiles et de commentaires de la communauté. Les hôtels appartiennent à la communauté d'Andalousie, en Espagne, et peuvent être filtrés par les villes qui la composent.",
+        "heading1": "De quoi s'agit-il?",
+        "heading2":"Développeur"
     }
 
 }

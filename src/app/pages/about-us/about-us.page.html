@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="secondary">
-    <ion-title>About Us</ion-title>
+    <ion-title>{{"title.about-us"|translate}}</ion-title>
     <ion-icon slot="start" name="information-circle-outline" id="help-icon"></ion-icon>
     <ion-icon *ngIf="esPc" id="back-icon" name="arrow-back-circle-outline" slot="primary" routerLink="/home"></ion-icon>
   </ion-toolbar>
@@ -10,15 +10,15 @@
   <!-- Configuración dispositivo movil-->
   <ion-grid>
     <ion-text>
-      Esta aplicación se ha desarrollado para el trabajo de final de grado del curso 2º de Desarrollo de Aplicaciones Multiplataforma, del C.P.I.F.P Málaga Tech Park.
+      {{"aboutUs.text1"|translate}}
     </ion-text>
 
-    <h3>¿De que trata?</h3>
+    <h3>{{"aboutUs.heading1"|translate}}</h3>
     <ion-text>
-      Este proyecto se basa en un foro de hoteles en el que los usuarios pueden añadir hoteles en los que ha estado y puntuarlos con estrellas y comuna reseña. Los hoteles     pertenecen a la comunidad de Andalucía, España; y pueden ser filtrados por las ciudades que se encuentran dentro de la misma.
+      {{"aboutUs.text2"|translate}}
     </ion-text>
 
-    <h3>Desarrollador</h3>
+    <h3>{{"aboutUs.heading2"|translate}}</h3>
     Alberto Parra Toval 
     <ion-row>
       <a href="https://twitter.com/Parra_038"><ion-img class="logos_size" src="./../../../assets/fotos/social_networks/gorjeo.png" alt="Logo de twitter"></ion-img></a>

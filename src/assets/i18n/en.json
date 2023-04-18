@@ -21,12 +21,10 @@
         "export": "Export"
     },
     "home" : {
-        "title" : "Home",
-        "mssg1" : "Bonjour",
-        "mssg2" : "Bienvenue chez HostHotel",
-        "list_hoteles" : "Liste des hôtels",
-        "list_clientes" : "Liste des clients",
-        "sign_out" : "Sign out"
+        "list_hoteles" : "List of hotels",
+        "list_clientes" : "List of Clients",
+        "about":"About us"
+        
     },
     "validators": {
         "passwordMatch": "Passwords do not match",
@@ -49,5 +47,17 @@
         "confirm_password": "Confirm password",
         "send": "Send",
         "forgot": "Forgot your password?"
+    },
+
+    "settings":{
+        "btn_edit": "Edit",
+        "text_config": "Language Configuration"
+    },
+
+    "aboutUs":{
+        "text1": "This application has been developed for the final degree project of the 2nd course of Multiplatform Applications Development, C.P.I.F.P Málaga Tech Park.",
+        "text2":" This project is based on a hotel forum where users can add hotels they have stayed in and rate them with stars and community reviews. The hotels belong to the community of Andalusia, Spain; and can be filtered by the cities within the community.",
+        "heading1": "What is it about?",
+        "heading2": "Developer"
     }
 }
