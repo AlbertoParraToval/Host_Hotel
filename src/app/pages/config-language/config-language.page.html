@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>{{"title.settings"|translate}}</ion-title>
+    <ion-icon id="settings-icon" slot="start" name="settings-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-grid *ngIf="esMovil">
+    <ion-row id="subtitle_row">
+      <ion-text>{{ "settings.text_config"|translate}}</ion-text>
+    </ion-row>
+    <ion-row>
+      <ion-img class="img_btn_language" (click)="onLanguage('es')" src="./../../../assets/fotos/country_fotos/espana.png" alt="Logo de España"></ion-img>
+      <ion-img class="img_btn_language" (click)="onLanguage('en')" src="./../../../assets/fotos/country_fotos/reino-unido.png"  alt="Logo de reino-unido"></ion-img>
+      <ion-img class="img_btn_language" (click)="onLanguage('fr')" src="./../../../assets/fotos/country_fotos/francia.png" alt="Logo de francia"></ion-img>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="esMovil">
+  <ion-toolbar color="light">
+    <ion-icon id="back-icon"  name="arrow-back-circle-outline" slot="end" routerLink="/home"></ion-icon>
+  </ion-toolbar>
+  </ion-footer>
+
+
+

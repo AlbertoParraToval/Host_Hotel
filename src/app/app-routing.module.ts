@@ -37,6 +37,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule),
     canActivate:[AuthGuard]
   },
+  {
+    path: 'config-language',
+    loadChildren: () => import('./pages/config-language/config-language.module').then( m => m.ConfigLanguagePageModule)
+  },
+
 
 
 
