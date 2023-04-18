@@ -8,7 +8,9 @@
 }
 
 
-
+ion-title{
+  font-weight: bold;
+}
 
 
 // Estilos para dispositivos de escritorio
@@ -32,8 +34,10 @@
 
 
   ion-img{
-    width: 25%;
-    height: 25%;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    padding: 20px;
   }
 }
 

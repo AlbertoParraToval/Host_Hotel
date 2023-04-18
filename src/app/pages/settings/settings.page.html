@@ -1,11 +1,13 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title>{{"title.settings"|translate}}</ion-title>
+    <ion-icon *ngIf="esPc" id="back-icon" name="arrow-back-circle-outline" slot="end" routerLink="/home"></ion-icon>
     <ion-icon id="settings-icon" slot="start" name="settings-outline"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="light">
+<!-- Para dispositivos de escritorio-->
   <ion-grid *ngIf="esPc">
     <ion-row>
       <ion-col>
@@ -26,16 +28,26 @@
         </ion-grid>
       </ion-col>
   
+
+
       <ion-col>
-        <ion-button onclick="onLanguage()">
-  
-        </ion-button>    
+        <ion-grid *ngIf="esPc">
+          <ion-row id="subtitle_row">
+            <ion-text>{{ "settings.text_config"|translate}}</ion-text>
+          </ion-row>
+          <ion-row>
+            <ion-img class="img_btn_language" (click)="onLanguage('es')" src="./../../../assets/fotos/country_fotos/espana.png" alt="Logo de España"></ion-img>
+            <ion-img class="img_btn_language" (click)="onLanguage('en')" src="./../../../assets/fotos/country_fotos/reino-unido.png"  alt="Logo de reino-unido"></ion-img>
+            <ion-img class="img_btn_language" (click)="onLanguage('fr')" src="./../../../assets/fotos/country_fotos/francia.png" alt="Logo de francia"></ion-img>
+          </ion-row>
+        </ion-grid> 
       </ion-col>
     </ion-row>
   </ion-grid>
   
 
 
+<!-- Para dispositivos moviles-->
   <ion-grid *ngIf="esMovil">
     <ion-card>
       <ion-img  alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
@@ -47,24 +59,21 @@
       </ion-item>
 
       <ion-button id="edit_btn" shape="round" color="tertiary">{{ "settings.btn_edit"|translate}}</ion-button>
-
     </ion-card>
-    
     <ion-row id="subtitle_row">
       <ion-text>{{ "settings.text_config"|translate}}</ion-text>
     </ion-row>
-    <ion-row>
+    <ion-row id="first_row">
       <ion-img class="img_btn_language" (click)="onLanguage('es')" src="./../../../assets/fotos/country_fotos/espana.png" alt="Logo de España"></ion-img>
       <ion-img class="img_btn_language" (click)="onLanguage('en')" src="./../../../assets/fotos/country_fotos/reino-unido.png"  alt="Logo de reino-unido"></ion-img>
       <ion-img class="img_btn_language" (click)="onLanguage('fr')" src="./../../../assets/fotos/country_fotos/francia.png" alt="Logo de francia"></ion-img>
     </ion-row>
-    <ion-row>
-      <ion-item>
-        <ion-button (click)="OnToggleDarkMode()" style="margin:10px;width:50px;height:50px;--border-radius:50%" color="success"><ion-icon slot="start" name="moon" color="light"></ion-icon></ion-button>
-        <ion-button (click)="OnToggleLightMode()" style="margin:10px;width:50px;height:50px;--border-radius:50%" color="success"><ion-icon slot="start" name="sunny-sharp" color="light"></ion-icon></ion-button>              
-      </ion-item>
-    </ion-row>
 
+
+    <ion-row >
+      <ion-button (click)="OnToggleDarkMode()"  color="secondary"><ion-icon slot="start" name="moon" color="light"></ion-icon></ion-button>
+      <ion-button (click)="OnToggleLightMode()" color="secondary"><ion-icon slot="start" name="sunny-sharp" color="light"></ion-icon></ion-button>              
+  </ion-row>
   </ion-grid>
 </ion-content>
 

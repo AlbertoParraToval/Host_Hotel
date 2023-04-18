@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './core';
 import { FirebaseService } from './core/services/firebase/firebase-service';
 import { LocaleService } from './core/services/locale.service';
-import { Console } from 'console';
+
 
 @Component({
   selector: 'app-root',
