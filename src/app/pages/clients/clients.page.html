@@ -2,6 +2,7 @@
   <ion-toolbar color="secondary">
     <ion-title>Clients</ion-title>
     <ion-icon *ngIf="esPc" id="back-icon" name="arrow-back-circle-outline" slot="end" routerLink="/home"></ion-icon>
+    <ion-icon *ngIf="esMovil" name="add-outline" slot="end" id="add_btn" ></ion-icon>
     <ion-icon id="clientes-icon" name="person-circle-outline" slot="start"></ion-icon>
   </ion-toolbar>
 </ion-header>
@@ -14,8 +15,8 @@
 <!--Para dispositivos moviles-->
 <ion-footer *ngIf="esMovil">
   <ion-toolbar color="light">
-    <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="primary" routerLink="/home"></ion-icon>
-    <ion-icon  id="out-icon" name="log-out-outline" slot="secondary"  (click)="signOut()" ></ion-icon>
-    <ion-icon id="settings-icon" slot="secondary" name="settings-outline" routerLink="/settings"></ion-icon>
+    
+    <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="end" routerLink="/home"></ion-icon>
+    <ion-icon  id="out-icon" name="log-out-outline" slot="start"  (click)="signOut()" ></ion-icon>
   </ion-toolbar>
   </ion-footer>

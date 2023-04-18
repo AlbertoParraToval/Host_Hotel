@@ -25,6 +25,7 @@ export class SettingsPage implements OnInit {
     private router:Router,) { }
 
   ngOnInit() {
+    this.onResize();
   }
   
 

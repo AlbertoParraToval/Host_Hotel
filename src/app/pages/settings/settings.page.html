@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title>{{"title.settings"|translate}}</ion-title>
-    <ion-icon  name="settings-icon" slot="start" ></ion-icon>
+    <ion-icon name="settings-icon" slot="start" ></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -34,7 +34,9 @@
     </ion-row>
   </ion-grid>
   
-  <ion-grid>
+
+
+  <ion-grid *ngIf="esMovil">
     <ion-card>
       <ion-img  alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
       <ion-item>
@@ -43,17 +45,16 @@
       <ion-item>
         <ion-label>{{(user.user$ | async).last_name}}</ion-label>
       </ion-item>
+
+      <ion-button id="edit_btn" shape="round" color="tertiary"  >Edit</ion-button>
     </ion-card>
   </ion-grid>
-
-  
 </ion-content>
 
-
-<ion-footer >
-  <ion-toolbar color="secondary">
-    <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="primary" routerLink="/home"></ion-icon>
-    <ion-icon  id="out-icon" name="log-out-outline" slot="secondary"  (click)="signOut()" ></ion-icon>
+<ion-footer *ngIf="esMovil">
+  <ion-toolbar color="light">
+    <ion-icon  id="out-icon" name="log-out-outline" slot="start"  (click)="signOut()" ></ion-icon>
+    <ion-icon id="back-icon"  name="arrow-back-circle-outline" slot="end" routerLink="/home"></ion-icon>
   </ion-toolbar>
   </ion-footer>
 
