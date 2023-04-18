@@ -34,6 +34,10 @@ Modificaciones de la base de datos, asi como del figma debido a unas correccione
 ### Semana 3 (10 Abril - 16 Abril)
 Realización de las siguientes páginas (home, configuración), además de la conexión con las demás páginas que más adelante será utilizadas e implementadas con los modelos también creados ya. Añadidos las features de traducción con posibilidad de ampliarlo a otro tipo de idioma como por ejemplo el Francés más maquetación del botón de cambiar idioma en modo footer. Añadido también estilos de fuente para toda la aplicación.
 
+### Semana 4 (17 Abril - 23 Abril)
+Adaptación de la app a móvil mediante las queries en el SCSS, donde a su vez se ha maquetado el core de la aplicación tanto en web como en móvil. Servicio de traducción actualizado y con nuevo diseño de elección de idioma. 
+
+
 ## Video Presentación
 - [Link Youtube](https://www.youtube.com/)
 
