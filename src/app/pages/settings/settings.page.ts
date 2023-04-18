@@ -42,26 +42,11 @@ export class SettingsPage implements OnInit {
   
   }
 
-  onLanguage(){
-    this.language = (this.language+1)%3;
-    switch(this.language){
-      case 0:
-        this.translate.setDefaultLang('es');
-        this.locale.registerCulture('es');
-        
-        break;
-      case 1:
-        this.translate.setDefaultLang('en');
-        this.locale.registerCulture('en');
-        break;
-
-      default:
-        this.translate.setDefaultLang('fr');
-        this.locale.registerCulture('fr');
-        break;
-    }
+  onLanguage(languageCode: string) {
+    this.translate.setDefaultLang(languageCode);
+    this.locale.registerCulture(languageCode);
   }
-
+  
 
   // Esta función se ejecuta cada vez que se redimensiona la pantalla
   @HostListener('window:resize', ['$event'])

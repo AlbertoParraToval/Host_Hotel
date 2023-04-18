@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title>{{"title.settings"|translate}}</ion-title>
-    <ion-icon name="settings-icon" slot="start" ></ion-icon>
+    <ion-icon id="settings-icon" slot="start" name="settings-outline"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -47,7 +47,18 @@
       </ion-item>
 
       <ion-button id="edit_btn" shape="round" color="tertiary"  >Edit</ion-button>
+
     </ion-card>
+    
+    <ion-row id="subtitle_row">
+      <ion-text>Language Configuration</ion-text>
+    </ion-row>
+    <ion-row>
+      <ion-img class="img_btn_language" (click)="onLanguage('es')" src="./../../../assets/fotos/country_fotos/espana.png" alt="Logo de España"></ion-img>
+      <ion-img class="img_btn_language" (click)="onLanguage('en')" src="./../../../assets/fotos/country_fotos/reino-unido.png"  alt="Logo de reino-unido"></ion-img>
+      <ion-img class="img_btn_language" (click)="onLanguage('fr')" src="./../../../assets/fotos/country_fotos/francia.png" alt="Logo de francia"></ion-img>
+    </ion-row>
+  
   </ion-grid>
 </ion-content>
 

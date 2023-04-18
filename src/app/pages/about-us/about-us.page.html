@@ -21,25 +21,20 @@
     <h3>Desarrollador</h3>
     Alberto Parra Toval 
     <ion-row>
-      <a href="https://twitter.com/Parra_038"><ion-icon id="logo-twitter" name="logo-twitter"></ion-icon></a>
-      <a href="https://www.instagram.com/parra_038/"><ion-icon id="logo-instagram" name="logo-instagram"></ion-icon></a> 
-      <a href="https://github.com/AlbertoParraToval"><ion-icon id="logo-github" name="logo-github"></ion-icon></a>
-      <a href="https://es-la.facebook.com/"><ion-icon id="logo-facebook" name="logo-facebook"></ion-icon></a>
-      
+      <a href="https://twitter.com/Parra_038"><ion-img class="logos_size" src="./../../../assets/fotos/social_networks/gorjeo.png" alt="Logo de twitter"></ion-img></a>
+      <a href="https://www.instagram.com/parra_038/"><ion-img class="logos_size" src="./../../../assets/fotos/social_networks/instagram.png" alt="Logo de instagram"></ion-img></a> 
+      <a href="https://github.com/AlbertoParraToval"><ion-img class="logos_size" src="./../../../assets/fotos/social_networks/signo-de-github.png" alt="Logo de github"></ion-img></a>
+      <a href="https://es-la.facebook.com/"><ion-img class="logos_size" src="./../../../assets/fotos/social_networks/facebook (1).png" alt="Logo de facebook"></ion-img></a>
     </ion-row>
   </ion-grid>
-
-
-
-
   <!-- Configuración dispositivo Escritorio-->
 </ion-content>
 
 <!--Para dispositivos moviles-->
+<!--Para dispositivos moviles-->
 <ion-footer *ngIf="esMovil">
   <ion-toolbar color="light">
-    <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="primary" routerLink="/home"></ion-icon>
-    <ion-icon  id="out-icon" name="log-out-outline" slot="secondary"  (click)="signOut()" ></ion-icon>
-    <ion-icon id="settings-icon" slot="secondary" name="settings-outline" routerLink="/settings"></ion-icon>
+    <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="end" routerLink="/home"></ion-icon>
+    <ion-icon  id="out-icon" name="log-out-outline" slot="start"  (click)="signOut()" ></ion-icon>
   </ion-toolbar>
   </ion-footer>
