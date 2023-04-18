@@ -41,11 +41,6 @@ const routes: Routes = [
     path: 'config-language',
     loadChildren: () => import('./pages/config-language/config-language.module').then( m => m.ConfigLanguagePageModule)
   },
-
-
-
-
-  
 ];
 
 @NgModule({

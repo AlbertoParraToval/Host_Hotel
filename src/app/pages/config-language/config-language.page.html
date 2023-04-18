@@ -16,6 +16,17 @@
       <ion-img class="img_btn_language" (click)="onLanguage('fr')" src="./../../../assets/fotos/country_fotos/francia.png" alt="Logo de francia"></ion-img>
     </ion-row>
   </ion-grid>
+
+  <ion-grid *ngIf="esPc">
+    <ion-row id="subtitle_row">
+      <ion-text>{{ "settings.text_config"|translate}}</ion-text>
+    </ion-row>
+    <ion-row>
+      <ion-img class="img_btn_language" (click)="onLanguage('es')" src="./../../../assets/fotos/country_fotos/espana.png" alt="Logo de España"></ion-img>
+      <ion-img class="img_btn_language" (click)="onLanguage('en')" src="./../../../assets/fotos/country_fotos/reino-unido.png"  alt="Logo de reino-unido"></ion-img>
+      <ion-img class="img_btn_language" (click)="onLanguage('fr')" src="./../../../assets/fotos/country_fotos/francia.png" alt="Logo de francia"></ion-img>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 <ion-footer *ngIf="esMovil">

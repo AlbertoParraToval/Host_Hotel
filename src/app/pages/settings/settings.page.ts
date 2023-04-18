@@ -14,7 +14,6 @@ import { LocaleService } from 'src/app/core/services/locale.service';
 export class SettingsPage implements OnInit {
   language = 1; // 0 español, 1 inglés
   currentLanguage
-
   esMovil: boolean;
   esPc: boolean;
   
@@ -22,7 +21,8 @@ export class SettingsPage implements OnInit {
     private translate: TranslateService,
     private locale:LocaleService,
     public user:UserService,
-    private router:Router,) { }
+    private router:Router,) {
+      }
 
   ngOnInit() {
     this.onResize();
@@ -40,6 +40,17 @@ export class SettingsPage implements OnInit {
   }
   ngAfterViewInit(): void {
   
+  }
+
+  // Modo claro / oscuro
+  OnToggleDarkMode() {
+    document.body.setAttribute('color-theme', 'dark');
+    console.log("Funciona")
+  }
+
+  OnToggleLightMode() {
+    document.body.setAttribute('color-theme', 'light');
+    console.log("Funciona")
   }
 
   onLanguage(languageCode: string) {
