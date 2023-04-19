@@ -50,7 +50,8 @@
 
     "settings":{
         "btn_edit":"Éditer",
-        "text_config":"Paramètres linguistiques"
+        "text_config":"Paramètres linguistiques",
+        "text_config2" : "Configuration du thème"
     },
 
     "aboutUs":{

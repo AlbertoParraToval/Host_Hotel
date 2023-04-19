@@ -35,11 +35,20 @@
           <ion-row id="subtitle_row">
             <ion-text>{{ "settings.text_config"|translate}}</ion-text>
           </ion-row>
+
           <ion-row>
             <ion-img class="img_btn_language" (click)="onLanguage('es')" src="./../../../assets/fotos/country_fotos/espana.png" alt="Logo de España"></ion-img>
             <ion-img class="img_btn_language" (click)="onLanguage('en')" src="./../../../assets/fotos/country_fotos/reino-unido.png"  alt="Logo de reino-unido"></ion-img>
-            <ion-img class="img_btn_language" (click)="onLanguage('fr')" src="./../../../assets/fotos/country_fotos/francia.png" alt="Logo de francia"></ion-img>
+            <ion-img id="french" class="img_btn_language" (click)="onLanguage('fr')" src="./../../../assets/fotos/country_fotos/francia.png" alt="Logo de francia"></ion-img>
           </ion-row>
+
+          <ion-row id="subtitle_row2">
+            <ion-text>{{ "settings.text_config2"|translate}}</ion-text>
+          </ion-row>
+          <ion-row id="theme">
+            <ion-button class="theme_buttons" (click)="OnToggleDarkMode()"  color="dark"><ion-icon  slot="start" name="moon" color="light"></ion-icon></ion-button>
+            <ion-button class="theme_buttons" (click)="OnToggleLightMode()" color="dark"><ion-icon slot="start" name="sunny" color="primary"></ion-icon></ion-button>              
+        </ion-row>
         </ion-grid> 
       </ion-col>
     </ion-row>

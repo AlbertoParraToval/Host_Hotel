@@ -48,7 +48,8 @@
 
     "settings":{
         "btn_edit":"Editar",
-        "text_config":"Configuracion de Idioma"
+        "text_config":"Configuracion de Idioma",
+        "text_config2":"Configuración de Tema"
     },
 
     "aboutUs":{

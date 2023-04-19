@@ -51,7 +51,8 @@
 
     "settings":{
         "btn_edit": "Edit",
-        "text_config": "Language Configuration"
+        "text_config": "Language Configuration",
+        "text_config2": "Theme Configuration"
     },
 
     "aboutUs":{
