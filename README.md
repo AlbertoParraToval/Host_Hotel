@@ -42,7 +42,7 @@ Adaptación de la app a móvil mediante las queries en el SCSS, donde a su vez s
 
 
 ## Mis Redes Sociales
-- [![instagram](https://user-images.githubusercontent.com/91873665/233009142-680372e5-3144-4806-bf2a-355c779ab54f.png)](https://www.instragram.com/parra_038)
+- [![instagram](https://user-images.githubusercontent.com/91873665/233009142-680372e5-3144-4806-bf2a-355c779ab54f.png| width=100)](https://www.instragram.com/parra_038)
 - [![gorjeo](https://user-images.githubusercontent.com/91873665/233009185-98f2b964-bf29-4272-ac3b-9b4a7c770b6f.png)
 ](https://www.twitter.com/Parra_038)
 
