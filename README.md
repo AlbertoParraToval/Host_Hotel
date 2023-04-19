@@ -12,7 +12,7 @@ Esta App tiene dos modos de verla, el primero modo administrador donde el admini
 Por otro lado el modo cliente donde, el usuario podrá buscar el hotel donde ha estado para dejar su reseña de manera gratuita y así ayudar a otros usuarios para encontrar el hotel ideal para sus vacaciones, los hoteles tendrán una valoración que será la media de las reseñas de los usuarios. Si un hotel no tiene todavía ninguna reseña se dejará sin valoración hasta que haya una como mínimo.
 
 ## Tecnologías utilizadas
-- Creación de la base de datos: MySQL WorkBench
+- Creación de la base de datos, diseño App: MySQL WorkBench, Figma...
 - Aplicación móvil: Android Studio, Kotlin, Material Design...
 - Aplicación híbrida: Visual Studio Code, Angular, Ionic, Bootstrap...
 - Tecnologías conjuntas: Firebase (Firestore & Authentication).
@@ -37,8 +37,11 @@ Realización de las siguientes páginas (home, configuración), además de la co
 ### Semana 4 (17 Abril - 23 Abril)
 Adaptación de la app a móvil mediante las queries en el SCSS, donde a su vez se ha maquetado el core de la aplicación tanto en web como en móvil. Servicio de traducción actualizado y con nuevo diseño de elección de idioma. 
 
-
 ## Video Presentación
 - [Link Youtube](https://www.youtube.com/)
 
 
+## Mis Redes Sociales
+- [Link Instagram](https://www.instragram.com/parra_038)
+- [Link Twitter](https://www.twitter.com/Parra_038)
+- [Link Youtube](https:www.youtube.com)
