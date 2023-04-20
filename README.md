@@ -35,14 +35,14 @@ Modificaciones de la base de datos, asi como del figma debido a unas correccione
 Realización de las siguientes páginas (home, configuración), además de la conexión con las demás páginas que más adelante será utilizadas e implementadas con los modelos también creados ya. Añadidos las features de traducción con posibilidad de ampliarlo a otro tipo de idioma como por ejemplo el Francés más maquetación del botón de cambiar idioma en modo footer. Añadido también estilos de fuente para toda la aplicación.
 
 ### Semana 4 (17 Abril - 23 Abril)
-Adaptación de la app a móvil mediante las queries en el SCSS, donde a su vez se ha maquetado el core de la aplicación tanto en web como en móvil. Servicio de traducción actualizado y con nuevo diseño de elección de idioma. 
+Adaptación de la app a móvil mediante las queries en el SCSS, donde a su vez se ha maquetado el core de la aplicación tanto en web como en móvil. Servicio de traducción actualizado y con nuevo diseño de elección de idioma. Actualización del Figma con una nueva versión de como es la maquetación de la App.
 
 ## Video Presentación
 - [Link Youtube](https://www.youtube.com/)
 
 ## Mis Redes Sociales
-- [![instagram (1)](https://user-images.githubusercontent.com/91873665/233010034-40b413d8-914f-46f6-b1d5-8c6e8b312e8c.png)
+[![instagram (1)](https://user-images.githubusercontent.com/91873665/233010034-40b413d8-914f-46f6-b1d5-8c6e8b312e8c.png)
 ](https://www.instragram.com/parra_038)
-- [![gorjeo (1)](https://user-images.githubusercontent.com/91873665/233010174-8fa910b2-de43-433f-9bd6-677e8ba7487c.png)](https://www.instragram.com/parra_038)
+[![gorjeo (1)](https://user-images.githubusercontent.com/91873665/233010174-8fa910b2-de43-433f-9bd6-677e8ba7487c.png)](https://www.instragram.com/parra_038)
 
 
