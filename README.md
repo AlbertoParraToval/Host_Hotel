@@ -37,6 +37,9 @@ Realización de las siguientes páginas (home, configuración), además de la co
 ### Semana 4 (17 Abril - 23 Abril)
 Adaptación de la app a móvil mediante las queries en el SCSS, donde a su vez se ha maquetado el core de la aplicación tanto en web como en móvil. Servicio de traducción actualizado y con nuevo diseño de elección de idioma. Actualización del Figma con una nueva versión de como es la maquetación de la App.
 
+### Semana 5 (24 Abril - 30 Abril)
+Terminar la interfaz base de la aplicación y dejar todo seteado para el comienzo de los CRUDS.
+
 ## Video Presentación
 - [Link Youtube](https://www.youtube.com/)
 
