@@ -41,7 +41,7 @@ Adaptación de la app a móvil mediante las queries en el SCSS, donde a su vez s
 Terminar la interfaz base de la aplicación y dejar todo seteado para el comienzo de los CRUDS.
 
 ## Video Presentación CheckPoint
-- [Link Youtube](https://www.youtube.com/)
+- [Link Youtube](https://youtu.be/Vv869Pm4sgc)
 
 ## Mis Redes Sociales
 [![instagram (1)](https://user-images.githubusercontent.com/91873665/233010034-40b413d8-914f-46f6-b1d5-8c6e8b312e8c.png)
