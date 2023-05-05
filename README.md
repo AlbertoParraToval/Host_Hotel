@@ -40,7 +40,7 @@ Adaptación de la app a móvil mediante las queries en el SCSS, donde a su vez s
 ### Semana 5 (24 Abril - 30 Abril)
 Terminar la interfaz base de la aplicación y dejar todo seteado para el comienzo de los CRUDS.
 
-## Video Presentación
+## Video Presentación CheckPoint
 - [Link Youtube](https://www.youtube.com/)
 
 ## Mis Redes Sociales
