@@ -47,6 +47,17 @@ export class ConfigLanguagePage implements OnInit {
   }
   
 
+   // Modo claro / oscuro
+   OnToggleDarkMode() {
+    document.body.setAttribute('color-theme', 'dark');
+    console.log("Funciona")
+  }
+
+  OnToggleLightMode() {
+    document.body.setAttribute('color-theme', 'light');
+    console.log("Funciona")
+  }
+
   // Esta función se ejecuta cada vez que se redimensiona la pantalla
   @HostListener('window:resize', ['$event'])
   onResize(event?) {

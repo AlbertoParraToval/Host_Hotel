@@ -66,6 +66,8 @@ export class SettingsPage implements OnInit {
     this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
   }
 
+  
+
 }
 
 
