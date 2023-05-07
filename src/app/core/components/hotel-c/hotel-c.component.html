@@ -1,0 +1,33 @@
+<ion-item-sliding #sliding>
+  <ion-item>
+    <ion-avatar *ngIf="_hotel.url_img" class="driver">
+      <img *ngIf="!_hotel.url_img" alt="Silhouette of a driver's head" src="https://ionicframework.com/docs/img/demos/avatar.svg">
+      <img *ngIf="_hotel.url_img" alt="driver picture" [src]="_hotel.url_img"> 
+    </ion-avatar>
+    <ion-label>{{_hotel.name_hotel}}, {{_hotel.localtion_hotel}}</ion-label>
+    
+    <ion-button class="item-expanded"  slot="end" fill="clear" (click)="onEditClick(sliding)">
+      <div class="vertical">
+        <ion-icon name="create" ></ion-icon>
+        {{'modal.edit' | translate | uppercase}}
+      </div>
+    </ion-button>
+    <ion-button class="item-expanded"  slot="end" fill="clear" color="danger" (click)="onDeleteClick(sliding)">
+      <div class="vertical">
+        <ion-icon name="trash" ></ion-icon>
+        {{'Borrar' | uppercase}}
+      </div>
+    </ion-button>
+  </ion-item>
+
+  <ion-item-options>
+    <ion-item-option color="success" (click)="onEditClick(sliding)">
+      <ion-icon color="light" slot="top" name="create" ></ion-icon>
+      {{'modal.edit' | translate | uppercase}}
+    </ion-item-option>
+    <ion-item-option  color="danger" (click)="onDeleteClick(sliding)">
+      <ion-icon color="light" slot="top" name="trash" ></ion-icon>
+      {{'modal.delete' | translate | uppercase}}
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>

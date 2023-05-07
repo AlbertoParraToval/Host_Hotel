@@ -1,16 +1,14 @@
 <ion-header>
   <ion-toolbar color="secondary">
-    <ion-title>{{"title.hoteles"|translate}}</ion-title>
+    <ion-title>{{"title.hoteles"|translate}}</ion-title>  
     <ion-icon *ngIf="esPc" name="arrow-back-circle-outline" id="back-icon" slot="end" routerLink="/home"></ion-icon>
-    <ion-icon *ngIf="esMovil" name="add-outline" slot="end" id="add_btn" ></ion-icon>
+    <ion-icon *ngIf="esMovil" name="add-outline" slot="end" id="add_btn" (click)="onAddHotel($event)" ></ion-icon>
     <ion-icon id="hotels-icon" name="bed-outline" slot="start" ></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="light">
-  <ion-grid>
-    
-  </ion-grid>
+  <app-hotel-c *ngFor="let hoteldata of (getHotels() | async)" [_hotel]="hoteldata" (onEdit)="onEditHotel($event)"></app-hotel-c>
 </ion-content>
 
 

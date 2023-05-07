@@ -10,6 +10,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { CoreModule } from 'src/app/core/core.module';
 import { createTranslateLoader } from 'src/app/core/utils/translate';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RpasswordComponent } from './components/rpassword/rpassword.component';
 
 
 
@@ -27,6 +28,6 @@ import { ReactiveFormsModule } from '@angular/forms';
       }),
     LoginPageRoutingModule
   ],
-  declarations: [LoginPage, SigninComponent, RegisterComponent, ]
+  declarations: [LoginPage, SigninComponent, RegisterComponent,RpasswordComponent ]
 })
 export class LoginPageModule {}

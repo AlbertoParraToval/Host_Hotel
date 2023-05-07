@@ -58,6 +58,18 @@ export class UserService {
     this.router.navigate(['login']);
   }
   
+
+
+  /**
+     * Recovers the password of a user.
+     * 
+     * @param email - The user's email
+     */
+  public async recoverPassword(email: string) {
+    console.log(email)
+    await this.firebase.resetPassword(email);
+  }
+
   register(data:UserRegister){
     return new Promise<string>(async (resolve, reject)=>{
       if(!this._isLogged.value){

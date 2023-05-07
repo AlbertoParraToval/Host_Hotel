@@ -181,21 +181,7 @@ export class FirebaseWebService extends FirebaseService implements OnDestroy {
     });
   }
 
-  public resetPassword(email:string): Promise<void>{
-    return new Promise<void>((resolve, reject) => {
-      const actionCodeSettings = {
-        url: window.location.href,
-        handleCodeInApp: true
-      };
-      sendPasswordResetEmail(this.auth, email, actionCodeSettings)
-        .then(() => {
-          resolve();
-        })
-        .catch((error) => {
-          reject(error);
-        });
-    });
-  }
+  
 
   public getDocuments(collectionName: string): Promise<FirebaseDocument[]> {
     return new Promise(async (resolve, reject) => {
@@ -344,6 +330,20 @@ export class FirebaseWebService extends FirebaseService implements OnDestroy {
         reject(error);
       }
     });
+  }
+
+  public resetPassword(email: string) {
+    const auth = getAuth(this.app);
+    // Send password reset email
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        // Password reset email sent successfully
+        console.log("Password reset email sent successfully");
+      })
+      .catch((error) => {
+        // An error occurred while sending password reset email
+        console.error("Error sending password reset email: ", error);
+      });
   }
 
   public async connectUserWithEmailAndPassword(

@@ -52,7 +52,7 @@ export abstract class FirebaseService{
   public abstract getDocumentsBy(collectionName:string, field:string, value:any):Promise<FirebaseDocument[]>;
   public abstract deleteDocument(collectionName:string, docId:string):Promise<void>;
   public abstract subscribeToCollection(collectionName, subject: BehaviorSubject<any[]>, mapFunction:(el:DocumentData)=>any):Unsubscribe
-  public abstract resetPassword(email:string): Promise<void>;
+  public abstract resetPassword(email:string);
   public abstract setUserAndEmail(uid:string, email:string);
   public abstract createUserWithEmailAndPassword(email:string, password:string):Promise<UserCredential>;
   public abstract connectUserWithEmailAndPassword(email:string, password:string):Promise<UserCredential>;

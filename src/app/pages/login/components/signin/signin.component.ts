@@ -7,6 +7,7 @@ import { RegisterComponent } from '../register/register.component';
 import { User } from 'src/app/core/models/user.model';
 import { lastValueFrom } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { RpasswordComponent } from '../rpassword/rpassword.component';
 
 @Component({
   selector: 'app-signin',
@@ -58,6 +59,9 @@ export class SigninComponent implements OnInit {
     });
 
 
+    
+
+
     //Si descartamos la opción de registro de usuario.
     modal.onDidDismiss().then(async (response) => {
       try {
@@ -100,5 +104,25 @@ export class SigninComponent implements OnInit {
   errorsToArray(errors) {
     if (errors && !('required' in errors)) return [Object.keys(errors)[0]];
     else return [];
+  }
+
+
+  async recoverPassword(){
+    const modal = await this.modalCtrl.create({
+      component:RpasswordComponent,
+      cssClass:"modal-full-right-side",
+      
+    });
+    modal.onDidDismiss().then(async (response) => {
+      try{
+        if(response.role = 'ok'){
+          console.log(response.data.email)
+          await this.user.recoverPassword(response.data.email);
+        }
+      }catch(error){
+        console.log(error);
+      }
+    });
+    modal.present();
   }
 }

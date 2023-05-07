@@ -10,12 +10,14 @@ import { HotelsPage } from './hotels.page';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { createTranslateLoader } from 'src/app/core/utils/translate';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    CoreModule,
     HotelsPageRoutingModule,
     TranslateModule.forChild({
       loader: {
