@@ -38,6 +38,8 @@ import {
   indexedDBLocalPersistence,
   UserCredential,
   sendPasswordResetEmail,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from 'firebase/auth';
 
 @Injectable({ providedIn: 'root' })
@@ -345,6 +347,19 @@ export class FirebaseWebService extends FirebaseService implements OnDestroy {
         console.error("Error sending password reset email: ", error);
       });
   }
+
+
+  public async signInWithGoogle(): Promise<UserCredential> {
+    const provider = new GoogleAuthProvider();
+
+    try {
+      return await signInWithPopup(this.auth, provider);
+    } catch (error) {
+      console.error('Error signing in with Google:', error);
+      throw error;
+    }
+  }
+
 
   public async connectUserWithEmailAndPassword(
     email: string,

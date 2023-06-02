@@ -8,7 +8,8 @@ export interface UserRegister{
     password:string,
     username:string,
     first_name:string,
-    last_name:string
+    last_name:string,
+    profilePick: string,
 }
 
 export interface User{
@@ -18,5 +19,6 @@ export interface User{
     provider:string;
     token:string,
     first_name:string,
-    last_name:string
+    last_name:string,
+    profilePick: string
 }
