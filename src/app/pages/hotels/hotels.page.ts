@@ -116,12 +116,8 @@ export class HotelsPage implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
-  /* async onDeleteDriver(driverData){
-      if((await this.review.getManagesByDriverId(driverData.id)).length==0)
-      this.onDeleteAlert(driverData);
-    else
-      this.onDriverExistsAlert(driverData);
+  async onDeleteHotel(hoteldata){
+      this.onDeleteAlert(hoteldata);
   }
-}*/
-
 }
+

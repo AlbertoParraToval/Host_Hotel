@@ -11,7 +11,7 @@
   <ion-button (click)="onAddHotel($event)">
     
   </ion-button>
-  <app-hotel-c *ngFor="let hoteldata of (getHotels() | async)" [_hotel]="hoteldata" (onEdit)="onEditHotel($event)"></app-hotel-c>
+  <app-hotel-c *ngFor="let hoteldata of (getHotels() | async)" [_hotel]="hoteldata" (onEdit)="onEditHotel($event)" (onDelete)="onDeleteHotel($event)"></app-hotel-c>
 </ion-content>
 
 

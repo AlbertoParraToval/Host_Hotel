@@ -20,10 +20,10 @@ export class FormHotelComponent implements OnInit {
     if (hotel) {
       this.form.controls.id.setValue(hotel.id);
       this.form.controls.docId.setValue(hotel.docId);
-      this.form.controls.first_name.setValue(hotel.name_hotel);
-      this.form.controls.last_name.setValue(hotel.localtion_hotel);
-      this.form.controls.nickname.setValue(hotel.info_hotel);
-      this.form.controls.picture.setValue(hotel.url_img);
+      this.form.controls.name_hotel.setValue(hotel.name_hotel);
+      this.form.controls.localtion_hotel.setValue(hotel.localtion_hotel);
+      this.form.controls.info_hotel.setValue(hotel.info_hotel);
+      this.form.controls.url_img.setValue(hotel.url_img);
       
       if (hotel.url_img) this.currentImage.next(hotel.url_img);
       this.form.controls.pictureFile.setValue(null);
