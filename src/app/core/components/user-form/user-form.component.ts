@@ -1,31 +1,31 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ModalController } from '@ionic/angular';
+import { IonItemSliding, ModalController } from '@ionic/angular';
+import { User } from './../../models/user.model';
 import { BehaviorSubject } from 'rxjs';
+import { hotels } from '../../models';
 import { PhotoService, PhotoItem } from '../../services/photo.service';
 import { PlatformService } from '../../services/platform.service';
-import { hotels } from '../../models';
 
 @Component({
-  selector: 'app-form-hotel',
-  templateUrl: './form-hotel.component.html',
-  styleUrls: ['./form-hotel.component.scss'],
+  selector: 'app-user-form',
+  templateUrl: './user-form.component.html',
+  styleUrls: ['./user-form.component.scss'],
 })
-export class FormHotelComponent implements OnInit {
+export class UserFormComponent implements OnInit {
   form: FormGroup;
   mode: 'New' | 'Edit' = 'New';
   currentImage = new BehaviorSubject<string>('');
   currentImage$ = this.currentImage.asObservable();
-  @Input('user') set hotel(hotel: hotels) {
-    if (hotel) {
-      this.form.controls.id.setValue(hotel.id);
-      this.form.controls.docId.setValue(hotel.docId);
-      this.form.controls.name_hotel.setValue(hotel.name_hotel);
-      this.form.controls.localtion_hotel.setValue(hotel.localtion_hotel);
-      this.form.controls.info_hotel.setValue(hotel.info_hotel);
-      this.form.controls.url_img.setValue(hotel.url_img);
+  @Input('user') set user(user: User) {
+    if (user) {
+      this.form.controls.uid.setValue(user.uid);
+      this.form.controls.first_name.setValue(user.first_name);
+      this.form.controls.last_name.setValue(user.last_name);
+      this.form.controls.username.setValue(user.username);
+      this.form.controls.profilePick.setValue(user.profilePick);
       
-      if (hotel.url_img) this.currentImage.next(hotel.url_img);
+      if (user.profilePick) this.currentImage.next(user.profilePick);
       this.form.controls.pictureFile.setValue(null);
       this.mode = 'Edit';
     }
@@ -39,12 +39,11 @@ export class FormHotelComponent implements OnInit {
     private cdr: ChangeDetectorRef
   ) {
     this.form = this.fb.group({
-      id: [null],
-      docId: [''],
-      name_hotel: ['', [Validators.required]],
-      localtion_hotel: ['', [Validators.required]],
-      info_hotel: ['', [Validators.required]],
-      url_img: [''],
+      uid: [null],
+      first_name: ['', [Validators.required]],
+      last_name: ['', [Validators.required]],
+      username: ['', [Validators.required]],
+      profilePick: [''],
       pictureFile: [null],
     });
   }
@@ -52,7 +51,7 @@ export class FormHotelComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    this.modal.dismiss({ hotel: this.form.value, mode: this.mode }, 'ok');
+    this.modal.dismiss({ user: this.form.value, mode: this.mode }, 'ok');
   }
 
   onDismiss(result) {

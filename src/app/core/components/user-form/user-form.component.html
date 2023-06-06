@@ -32,21 +32,21 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-item>
       <ion-label position="floating">
-        {{'name_hotel' | translate}}
+        {{'first_name' | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="{{'' | translate}}" formControlName="name_hotel"></ion-input>
+      <ion-input type="text" placeholder="{{'' | translate}}" formControlName="first_name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        {{'localtion_hotel' | translate}}
+        {{'last_name' | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="{{'' | translate}}" formControlName="localtion_hotel"></ion-input>
+      <ion-input type="text" placeholder="{{'' | translate}}" formControlName="last_name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        {{'info_hotel' | translate}}
+        {{'username' | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="{{'' | translate}}" formControlName="info_hotel"></ion-input>
+      <ion-input type="text" placeholder="{{'' | translate}}" formControlName="username"></ion-input>
     </ion-item>
   </form>
 </ion-content>

@@ -41,14 +41,6 @@
             <ion-img class="img_btn_language" (click)="onLanguage('en')" src="./../../../assets/fotos/country_fotos/reino-unido.png"  alt="Logo de reino-unido"></ion-img>
             <ion-img id="french" class="img_btn_language" (click)="onLanguage('fr')" src="./../../../assets/fotos/country_fotos/francia.png" alt="Logo de francia"></ion-img>
           </ion-row>
-
-          <ion-row id="subtitle_row2">
-            <ion-text>{{ "settings.text_config2"|translate}}</ion-text>
-          </ion-row>
-          <ion-row id="theme">
-            <ion-button class="theme_buttons" (click)="OnToggleDarkMode()"  color="dark"><ion-icon  slot="start" name="moon" color="light"></ion-icon></ion-button>
-            <ion-button class="theme_buttons" (click)="OnToggleLightMode()" color="dark"><ion-icon slot="start" name="sunny" color="primary"></ion-icon></ion-button>              
-        </ion-row>
         </ion-grid> 
       </ion-col>
     </ion-row>
@@ -67,7 +59,7 @@
         <ion-label>{{(user.user$ | async).last_name}}</ion-label>
       </ion-item>
 
-      <ion-button id="edit_btn" shape="round" color="tertiary">{{ "settings.btn_edit"|translate}}</ion-button>
+      <ion-button id="edit_btn" shape="round" color="tertiary" (click)="onEditUser(null)">{{ "settings.btn_edit"|translate}}</ion-button>
     </ion-card>
 
     <ion-row id="subtitle_row">
@@ -78,11 +70,6 @@
       <ion-img class="img_btn_language" (click)="onLanguage('es')" src="./../../../assets/fotos/country_fotos/espana.png" alt="Logo de España"></ion-img>
       <ion-img class="img_btn_language" (click)="onLanguage('en')" src="./../../../assets/fotos/country_fotos/reino-unido.png"  alt="Logo de reino-unido"></ion-img>
       <ion-img class="img_btn_language" (click)="onLanguage('fr')" src="./../../../assets/fotos/country_fotos/francia.png" alt="Logo de francia"></ion-img>
-    </ion-row>
-
-    <ion-row class="theme_buttons">
-      <ion-button id="moon_btn" (click)="OnToggleDarkMode()"  color="secondary"><ion-icon slot="start" name="moon" color="light"></ion-icon></ion-button>
-      <ion-button id="sunny_btn" (click)="OnToggleLightMode()" color="secondary"><ion-icon slot="start" name="sunny-sharp" color="light"></ion-icon></ion-button>  
     </ion-row>
                 
   </ion-grid>

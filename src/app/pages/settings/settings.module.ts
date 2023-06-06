@@ -10,22 +10,24 @@ import { SettingsPage } from './settings.page';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { createTranslateLoader } from 'src/app/core/utils/translate';
+import { CoreModule } from "../../core/core.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    IonicModule,
-    SettingsPageRoutingModule,
-    TranslateModule.forChild({
-      loader: {
-      provide: TranslateLoader,
-      useFactory: (createTranslateLoader),
-      deps: [HttpClient]
-      }
-      }),
-  ],
-  declarations: [SettingsPage]
+    declarations: [SettingsPage],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        IonicModule,
+        SettingsPageRoutingModule,
+        TranslateModule.forChild({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [HttpClient]
+            }
+        }),
+        CoreModule
+    ]
 })
 export class SettingsPageModule {}

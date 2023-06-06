@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { UserCredential } from 'firebase/auth';
 import { BehaviorSubject } from 'rxjs';
 import { User, UserLogin, UserRegister } from '../models';
-import { FirebaseService } from './firebase/firebase-service';
+import { FileUploaded, FirebaseService } from './firebase/firebase-service';
 import { LocalStorageService } from './local-storage.service';
 import { HttpClientProvider } from './http-client.provider';
 import { error } from 'console';
@@ -98,4 +98,38 @@ export class UserService {
       }
     });
   }
+
+
+  uploadImage(file):Promise<any>{  
+    return new Promise(async (resolve, reject)=>{
+      try {
+        const data = await this.firebase.imageUpload(file);  
+        resolve(data);
+      } catch (error) {
+        resolve(error);
+      }
+    });
+  }
+
+  async updatehotel(user:User){
+    var _user = {
+      docId:_user.id,
+      first_name:_user.first_name,
+      last_name:_user.last_name,
+      info_hotel:_user.info_hotel,
+    };
+    if(user['pictureFile']){
+      var response:FileUploaded = await this.uploadImage(user['pictureFile']);
+      user['p'] = response.file;
+    }
+    try {
+      await this.firebase.updateDocument('hotels', user.uid, _user);  
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+
+
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
-import { UserService } from 'src/app/core';
+import { User, UserService } from 'src/app/core';
+import { UserFormComponent } from 'src/app/core/components/user-form/user-form.component';
 import { FirebaseService } from 'src/app/core/services/firebase/firebase-service';
 import { LocaleService } from 'src/app/core/services/locale.service';
 
@@ -20,6 +22,8 @@ export class SettingsPage implements OnInit {
   constructor(private firebase:FirebaseService,
     private translate: TranslateService,
     private locale:LocaleService,
+    private userSvc: UserService,
+    private modal:ModalController,
     public user:UserService,
     private router:Router,) {
       }
@@ -28,6 +32,9 @@ export class SettingsPage implements OnInit {
     this.onResize();
   }
   
+  getUser(){
+    return this.userSvc.user$;
+  }
 
   signOut(){
     this.user.signOut();
@@ -41,16 +48,22 @@ export class SettingsPage implements OnInit {
   ngAfterViewInit(): void {
   
   }
-
-  // Modo claro / oscuro
-  OnToggleDarkMode() {
-    document.body.setAttribute('color-theme', 'dark');
-    console.log("Funciona")
+  
+  async presentFormUser(userdata:User){
+    const modal = await this.modal.create({
+      component: UserFormComponent,
+      componentProps:{
+        user:userdata
+      },
+    });
+    modal.present();
+    modal.onDidDismiss().then(result=>{
+        this.userSvc.updatehotel(result.data.hotel);
+    });
   }
 
-  OnToggleLightMode() {
-    document.body.setAttribute('color-theme', 'light');
-    console.log("Funciona")
+  onEditUser(user:User){
+    this.presentFormUser(user)
   }
 
   onLanguage(languageCode: string) {
