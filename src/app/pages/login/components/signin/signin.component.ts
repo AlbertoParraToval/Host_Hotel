@@ -59,9 +59,6 @@ export class SigninComponent implements OnInit {
     });
 
 
-    
-
-
     //Si descartamos la opción de registro de usuario.
     modal.onDidDismiss().then(async (response) => {
       try {

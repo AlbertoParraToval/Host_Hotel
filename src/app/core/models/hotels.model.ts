@@ -5,5 +5,4 @@ export interface hotels{
   localtion_hotel:string;
   url_img:string;
   info_hotel:string;
-  
 }

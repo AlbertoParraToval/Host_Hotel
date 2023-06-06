@@ -9,7 +9,7 @@ export interface UserRegister{
     username:string,
     first_name:string,
     last_name:string,
-    profilePick: string,
+    profilePick?: string,
 }
 
 export interface User{

@@ -6,6 +6,7 @@ import { User, UserLogin, UserRegister } from '../models';
 import { FirebaseService } from './firebase/firebase-service';
 import { LocalStorageService } from './local-storage.service';
 import { HttpClientProvider } from './http-client.provider';
+import { error } from 'console';
 
 
 
@@ -44,6 +45,7 @@ export class UserService {
           await this.firebase.connectUserWithEmailAndPassword(credentials.identifier, credentials.password);
         } catch (error) {
           reject(error);
+          
         }
       }
       else{
@@ -58,7 +60,6 @@ export class UserService {
     this.router.navigate(['login']);
   }
   
-
 
   /**
      * Recovers the password of a user.

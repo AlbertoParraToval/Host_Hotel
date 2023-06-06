@@ -8,6 +8,9 @@
 </ion-header>
 
 <ion-content color="light">
+  <ion-button (click)="onAddHotel($event)">
+    
+  </ion-button>
   <app-hotel-c *ngFor="let hoteldata of (getHotels() | async)" [_hotel]="hoteldata" (onEdit)="onEditHotel($event)"></app-hotel-c>
 </ion-content>
 
@@ -16,6 +19,6 @@
 <ion-footer *ngIf="esMovil">
   <ion-toolbar color="light">
     <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="end" routerLink="/home"></ion-icon>
-    <ion-icon  id="out-icon" name="log-out-outline" slot="start"  (click)="signOut()" ></ion-icon>
+    <ion-icon id="out-icon" name="log-out-outline" slot="start"  (click)="signOut()" ></ion-icon>
   </ion-toolbar>
   </ion-footer>

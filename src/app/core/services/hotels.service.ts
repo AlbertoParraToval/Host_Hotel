@@ -26,16 +26,15 @@ export class HotelsService {
     return {
       id:0,
       docId:doc.id,
-      first_name:doc.data().first_name,
-      last_name:doc.data().last_name,
-      nickname:doc.data().nickname,
-      picture:doc.data().picture,
+      name_hotel:doc.data().name_hotel,
+      localtion_hotel:doc.data().localtion_hotel,
+      url_img:doc.data().url_img,
+      info_hotel:doc.data().info_hotel,
     };
   }
 
   gethotels(){
     return this._hotelSubject.value;
-
   }
 
   gethotelById(id:string):Promise<hotels>{
@@ -69,11 +68,10 @@ export class HotelsService {
       docId:hotel.id,
       name_hotel:hotel.name_hotel,
       localtion_hotel:hotel.localtion_hotel,
-      url_img:hotel.url_img,
       info_hotel:hotel.info_hotel,
     };
-    if(hotel['url_img']){
-      var response = await this.uploadImage(hotel['url_img']);
+    if(hotel['pictureFile']){
+      var response = await this.uploadImage(hotel['pictureFile']);
       _hotel['url_img'] = response.image;
     }
     try {
@@ -99,11 +97,10 @@ export class HotelsService {
       docId:hotel.id,
       name_hotel:hotel.name_hotel,
       localtion_hotel:hotel.localtion_hotel,
-      url_img:hotel.url_img,
       info_hotel:hotel.info_hotel,
     };
-    if(hotel['url_img']){
-      var response:FileUploaded = await this.uploadImage(hotel['url_img']);
+    if(hotel['pictureFile']){
+      var response:FileUploaded = await this.uploadImage(hotel['pictureFile']);
       _hotel['url_img'] = response.file;
     }
     try {
