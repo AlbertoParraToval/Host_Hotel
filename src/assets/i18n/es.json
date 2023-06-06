@@ -57,8 +57,19 @@
         "text2":" Este proyecto se basa en un foro de hoteles en el que los usuarios pueden añadir hoteles en los que ha estado y puntuarlos con estrellas y comuna reseña. Los hoteles     pertenecen a la comunidad de Andalucía, España; y pueden ser filtrados por las ciudades que se encuentran dentro de la misma.",
         "heading1": "¿De que trata?",
         "heading2":"Desarrollador"
+    },
+
+    "hoteles":{
+        "title": "Formulario de hotel",
+        "name_hotel": "Nombre",
+        "localtion_hotel": "Localización",
+        "info_hotel": "Información",
+        "name_input":"Introduce el nombre del hotel",
+        "location_input":"Introduce la localización",
+        "info_input":"Añade informacion sobre el hotel"
+    },
+
+    "profile":{
+        "btn_borrar":"Eliminar cuenta"
     }
-
-
-
 }

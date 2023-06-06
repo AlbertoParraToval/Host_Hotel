@@ -22,13 +22,13 @@ export class HotelCComponent implements OnInit {
 
   }
 
-  onEditClick(slide:IonItemSliding){
-    slide.close();
+  onEditClick(){
+
     this.onEdit.emit(this._hotel);
   }
 
-  onDeleteClick(slide:IonItemSliding){
-    slide.close();
+  onDeleteClick(){
+
     this.onDelete.emit(this._hotel);
   }
 

@@ -1,17 +1,17 @@
 <ion-header>
   <ion-toolbar color="secondary">
-    <ion-title>{{"" | translate}}</ion-title>
+    <ion-title>{{"Edit Hotel" | translate}}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="onDismiss(null)">{{'modal.close' | translate}}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding">
+<ion-content color="light" class="ion-padding">
   <input id="fileLoader" type="file" #fileLoader name="files" title="Load Files" hidden>
   <ion-img  *ngIf="currentImage.value" [src]="currentImage$ | async"></ion-img>
   <ion-img *ngIf="!currentImage.value" src="https://ionicframework.com/docs/img/demos/thumbnail.svg"></ion-img>
   <ion-button   *ngIf="(platform.isNative$ | async)" expand="full" id="picture-button">{{'change-picture.title' | translate}}</ion-button>
-  <ion-button color="medium" *ngIf="!(platform.isNative$ | async)" expand="full" (click)="changePic(fileLoader, 'file')">{{'' | translate}}</ion-button>
+  <ion-button *ngIf="!(platform.isNative$ | async)" expand="full" (click)="changePic(fileLoader, 'file')">{{'' | translate}}</ion-button>
   <ion-popover *ngIf="platform.isNative$ | async" style="width:100%" trigger="picture-button" [dismissOnSelect]="true">
     <ng-template>
       <ion-content class="ion-padding">
@@ -32,30 +32,24 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-item>
       <ion-label position="floating">
-        {{'name_hotel' | translate}}
+        {{'hoteles.name_hotel' | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="{{'' | translate}}" formControlName="name_hotel"></ion-input>
+      <ion-input type="text" placeholder="{{'hoteles.name_input' | translate}}" formControlName="name_hotel"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        {{'localtion_hotel' | translate}}
+        {{'hoteles.localtion_hotel' | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="{{'' | translate}}" formControlName="localtion_hotel"></ion-input>
+      <ion-input type="text" placeholder="{{'hoteles.location_input' | translate}}" formControlName="localtion_hotel"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        {{'info_hotel' | translate}}
+        {{'hoteles.info_hotel' | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="{{'' | translate}}" formControlName="info_hotel"></ion-input>
+      <ion-input type="text" placeholder="{{'hoteles.info_input' | translate}}" formControlName="info_hotel"></ion-input>
     </ion-item>
   </form>
+
+  <ion-button color="secondary" [disabled]="!form.valid" (click)="onSubmit()">{{mode=="Edit"?('settigns.btn_edit' | translate):('settings.btn_edit' | translate)}}</ion-button>
 </ion-content>
-<ion-footer>
-  <ion-grid>
-    <ion-row>
-      <ion-col class="ion-text-center">
-        <ion-button color="medium" [disabled]="!form.valid" (click)="onSubmit()">{{mode=="Edit"?('' | translate):('' | translate)}}</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-footer>
+

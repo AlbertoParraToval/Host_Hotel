@@ -72,7 +72,7 @@ export class HotelsPage implements OnInit {
   async onDeleteAlert(hoteldata){
     const alert = await this.alert.create({
       header:'Atención',
-      message: '¿Está seguro de que desear borrar a la persona?',
+      message: '¿Estas seguro, no podrás volver atrás?',
       buttons: [
         {
           text: 'Cancelar',

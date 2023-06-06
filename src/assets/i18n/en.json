@@ -60,5 +60,19 @@
         "text2":" This project is based on a hotel forum where users can add hotels they have stayed in and rate them with stars and community reviews. The hotels belong to the community of Andalusia, Spain; and can be filtered by the cities within the community.",
         "heading1": "What is it about?",
         "heading2": "Developer"
+    },
+
+    "hoteles":{
+        "title":"Hotel Form",
+        "name_hotel":"Name",
+        "localtion_hotel":"Location",
+        "info_hotel":"Information",
+        "name_input": "Enter the name of the hotel",
+        "location_input": "Enter the location",
+        "info_input": "Add information about the hotel"
+    },
+
+    "profile":{
+        "btn_borrar":"Delete account"
     }
 }

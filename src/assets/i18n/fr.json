@@ -59,6 +59,19 @@
         "text2":" Ce projet est basé sur un forum hôtelier où les utilisateurs peuvent ajouter des hôtels dans lesquels ils ont séjourné et les évaluer à l'aide d'étoiles et de commentaires de la communauté. Les hôtels appartiennent à la communauté d'Andalousie, en Espagne, et peuvent être filtrés par les villes qui la composent.",
         "heading1": "De quoi s'agit-il?",
         "heading2":"Développeur"
+    },
+    "hoteles":{
+        "title" : "Formulaire d'hôtel",
+        "name_hotel" : "Nom",
+        "localtion_hotel" : "Emplacement",
+        "info_hotel" : "Information",
+        "name_input" : "Entrez le nom de l'hôtel",
+        "location_input" : "Entrez la localisation",
+        "info_input" : "Ajouter des informations sur l'hôtel"
+    },
+
+    "profile":{
+        "btn_borrar":"Supprimer le compte"
     }
 
 }
