@@ -18,9 +18,12 @@ export class RegisterComponent implements OnInit {
     this.form = this.formBuilder.group({
       first_name:["", Validators.required],
       last_name:["", Validators.required],
+      admin:[false],
       email:["", [Validators.required, Validators.email]],
       password:["", Validators.required],
-      confirmPassword:["", Validators.required]
+      username:["", Validators.required],
+      confirmPassword:["", Validators.required],
+      profilePick:['https://ionicframework.com/docs/img/demos/avatar.svg']
     },{validator:[PasswordValidation.passwordMatch, PasswordValidation.passwordProto]});
   }
 
@@ -32,7 +35,9 @@ export class RegisterComponent implements OnInit {
       username:this.form.value.email,
       password:this.form.value.password,
       first_name:this.form.value.first_name,
-      last_name:this.form.value.last_name
+      admin:this.form.value.admin,
+      last_name:this.form.value.last_name,
+      profilePick:this.form.value.profilePick
     }, 'ok');
   }
 
@@ -48,7 +53,7 @@ export class RegisterComponent implements OnInit {
       return [];
   } 
 
-  onCancelar() {
+  onDismiss() {
     this.modalCtrl.dismiss();
   }
 

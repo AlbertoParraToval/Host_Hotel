@@ -63,7 +63,25 @@
             *ngFor="let error of errorsToArray(form.controls.email.errors)"
             >{{ "validators." + error | translate }}</span
           >
+          
         </ion-item>
+        
+        
+        <ion-item  color="light" lines="none">
+          <ion-label position="stacked">
+            {{ "register.username" | translate
+            }}<span class="required" *ngIf="form.controls.password.errors"
+              >&nbsp;&#42;</span
+            >
+          </ion-label>
+          <ion-input type="text" formControlName="username"></ion-input>
+          <span class="validationError" *ngIf="hasFormError('passwordProto')">{{
+            "validators.passwordProto" | translate
+          }}</span>
+        </ion-item>
+
+
+
         <ion-item  color="light" lines="none">
           <ion-label position="stacked">
             {{ "register.password" | translate
@@ -97,6 +115,8 @@
             >{{ "validators.passwordMatch" | translate }}</span
           >
         </ion-item>
+
+        
       </ion-list>
       <ion-row>
         <ion-col>
@@ -107,7 +127,7 @@
         </ion-col>
       
         <ion-col>
-          <ion-button color="secondary" shape="round" (click)="onCancelar()">{{
+          <ion-button color="secondary" shape="round" (click)="onDismiss()">{{
             "modal.close" | translate
           }}</ion-button> 
         </ion-col>

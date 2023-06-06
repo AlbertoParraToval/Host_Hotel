@@ -1,0 +1,41 @@
+<ion-content color="light">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <ion-toolbar color="secondary">
+      <ion-title>{{mode=="Edit" ? ['user.updateInformation' | translate] : ['title.register' | translate]}}</ion-title>
+    </ion-toolbar>
+    <ion-item >
+      <ion-label color="light" position="floating">{{'user.userName' | translate}}<span class="required" *ngIf="form.controls['first_name'].errors">&nbsp;&#42;</span></ion-label>
+      <ion-input placeholder="{{'user.placeholderName' | translate}}"  formControlName="first_name" type="text"></ion-input>
+      <span
+      class="validationError"
+      *ngFor="let error of errorsToArray(form.controls['first_name'].errors)"
+      >{{'validators.' + error | translate}}</span>
+    </ion-item>
+    <ion-item >
+      <ion-label color="light" position="floating">{{'user.userSurname' | translate}}<span class="required" *ngIf="form.controls['last_name'].errors">&nbsp;&#42;</span></ion-label>
+      <ion-input placeholder="{{'user.placeHolderSurname' | translate}}"   formControlName="last_name" type="text"></ion-input>
+      <span
+      class="validationError"
+      *ngFor="let error of errorsToArray(form.controls['last_name'].errors)"
+      >{{'validators.' + error | translate}}</span>
+    </ion-item>
+    <ion-item >
+      <ion-label color="light" position="floating">{{'user.userUsername' | translate}}<span class="required" *ngIf="form.controls['username'].errors">&nbsp;&#42;</span></ion-label>
+      <ion-input placeholder="{{'login.user' | translate}}" formControlName="username" type="text"></ion-input>
+      <span
+      class="validationError"
+      *ngFor="let error of errorsToArray(form.controls['username'].errors)"
+      >{{'validators.' + error | translate}}</span>
+    </ion-item>
+
+
+    <ion-item >
+      <ion-label color="light" position="floating">{{'user.profilePick' | translate}}</ion-label>
+      <ion-input placeholder="{{'user.profilePick' | translate}}" color="dark" formControlName="profilePick" type="text"></ion-input>
+    </ion-item>
+    <div>
+      <ion-button [disabled]="!form.valid" type="submit">Send</ion-button>
+      <ion-button color="danger" (click)="onDismiss()" type="button">Cancel</ion-button>
+    </div>
+  </form>
+</ion-content>

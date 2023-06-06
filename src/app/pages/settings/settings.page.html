@@ -10,26 +10,7 @@
 <!-- Para dispositivos de escritorio-->
   <ion-grid *ngIf="esPc">
     <ion-row>
-      <ion-col>
-        <ion-grid>
-          <ion-card>
-            <ion-img  alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
-            <ion-item>
-              <ion-label>{{(user.user$ | async).first_name}}</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label>{{(user.user$ | async).last_name}}</ion-label>
-            </ion-item>
-            <ion-item (click)="signOut()">
-              <ion-icon slot="start" name="log-out-outline"></ion-icon>
-              <ion-label>{{"home.sign_out" | translate}}</ion-label>
-            </ion-item>
-          </ion-card>
-        </ion-grid>
-      </ion-col>
-  
-
-
+    <app-profile [user]="(user.user$ | async)" (onEdit)="onEditUser($event)" (onDelete)="onDeleteUser($event) "></app-profile>
       <ion-col>
         <ion-grid *ngIf="esPc">
           <ion-row id="subtitle_row">
@@ -50,18 +31,7 @@
 
 <!-- Para dispositivos moviles-->
   <ion-grid *ngIf="esMovil">
-    <ion-card>
-      <ion-img  alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
-      <ion-item>
-        <ion-label>{{(user.user$ | async).first_name}}</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>{{(user.user$ | async).last_name}}</ion-label>
-      </ion-item>
-
-      <ion-button id="edit_btn" shape="round" color="tertiary" (click)="onEditUser(null)">{{ "settings.btn_edit"|translate}}</ion-button>
-    </ion-card>
-
+    <app-profile [user]="(user.user$ | async)" (onEdit)="onEditUser($event)" (onDelete)="onDeleteUser($event) "></app-profile>
     <ion-row id="subtitle_row">
       <ion-text>{{ "settings.text_config"|translate}}</ion-text>
     </ion-row>

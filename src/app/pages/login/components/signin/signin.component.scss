@@ -40,11 +40,18 @@
     color: rgb(165, 124, 0);
   }
 
-  .optionals{
+  #recoverPassword{
+    margin-left: 7.5%;
+    text-align: center;
+    padding: 3px;
+  }
+
+  #register{
     margin-left: 42%;
     text-align: center;
     padding: 3px;
   }
+  
 
 }
 
@@ -81,12 +88,19 @@
       color: rgb(165, 124, 0);
     }
   
-    .optionals{
+    #recoverPassword{
+      margin-left: 10%;
       text-align: center;
       padding: 3px;
-      margin-left:10%;
     }
   
+    #register{
+      margin-left: 15%;
+      text-align: center;
+      padding: 3px;
+    }
+  
+    
   }
   
 

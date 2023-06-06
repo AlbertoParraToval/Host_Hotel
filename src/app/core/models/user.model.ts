@@ -13,12 +13,12 @@ export interface UserRegister{
 }
 
 export interface User{
-    uid:string;
-    username:string;
-    email:string;
-    provider:string;
-    token:string,
+    id:number,
+    docId?:string;
+    admin:boolean,
     first_name:string,
+    username:string,
+    email:string,
     last_name:string,
-    profilePick?: string
+    profilePick:string
 }

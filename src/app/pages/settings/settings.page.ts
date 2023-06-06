@@ -1,9 +1,9 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
-import { User, UserService } from 'src/app/core';
-import { UserFormComponent } from 'src/app/core/components/user-form/user-form.component';
+import { lastValueFrom } from 'rxjs';
+import { UpdateUserFormComponent, User, UserService } from 'src/app/core';
 import { FirebaseService } from 'src/app/core/services/firebase/firebase-service';
 import { LocaleService } from 'src/app/core/services/locale.service';
 
@@ -24,6 +24,7 @@ export class SettingsPage implements OnInit {
     private locale:LocaleService,
     private userSvc: UserService,
     private modal:ModalController,
+    private alert: AlertController,
     public user:UserService,
     private router:Router,) {
       }
@@ -32,8 +33,8 @@ export class SettingsPage implements OnInit {
     this.onResize();
   }
   
-  getUser(){
-    return this.userSvc.user$;
+  getUserActive():User {
+    return this.userSvc.currentUser;
   }
 
   signOut(){
@@ -51,14 +52,14 @@ export class SettingsPage implements OnInit {
   
   async presentFormUser(userdata:User){
     const modal = await this.modal.create({
-      component: UserFormComponent,
+      component: UpdateUserFormComponent,
       componentProps:{
         user:userdata
       },
     });
     modal.present();
     modal.onDidDismiss().then(result=>{
-        this.userSvc.updatehotel(result.data.hotel);
+        this.userSvc.updateUser(result.data.user);
     });
   }
 
@@ -80,7 +81,37 @@ export class SettingsPage implements OnInit {
   }
 
   
+  async onDeleteUserAlert(user: User){
+    const alert = await this.alert.create({
+      header: await lastValueFrom(this.translate.get('alerts.warning')),
+      message: await lastValueFrom(this.translate.get('alerts.deleteUser')),
+      buttons: [
+        {
+          text: await lastValueFrom(this.translate.get('home.cancel')),
+          role: 'cancel',
+          handler: () => {
+            console.log("Operacion cancelada");
+          },
+        },
+        {
+          text: await lastValueFrom(this.translate.get('home.delete')),
+          role: 'confirm',
+          handler: () => {
+            this.userSvc.deleteUser(user);
+            this.userSvc.signOut();
+          },
+        },
+      ],
+    });
 
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+  }
+
+  onDeleteUser(user: User){
+    this.onDeleteUserAlert(user);
+  } 
 }
 
 
