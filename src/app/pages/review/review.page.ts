@@ -1,27 +1,20 @@
-import { Component, OnInit,HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
-import { FormHotelComponent, HotelsService, ReviewsService, UserService, hotels, Reviews } from 'src/app/core';
-import { filter } from 'rxjs/operators';
+import { hotels, Reviews, UserService, HotelsService, ReviewsService, ReviewsFormComponent } from 'src/app/core';
 
 @Component({
-  selector: 'app-hotels',
-  templateUrl: './hotels.page.html',
-  styleUrls: ['./hotels.page.scss'],
+  selector: 'app-review',
+  templateUrl: './review.page.html',
+  styleUrls: ['./review.page.scss'],
 })
-export class HotelsPage implements OnInit {
+export class ReviewPage implements OnInit {
   esMovil: boolean;
-  filteredHotels:hotels[];
-  allHotels: hotels[];
   esPc: boolean;
-  provinciaSeleccionada: string;
-  provincias: string[] = ['Almería', 'Cádiz', 'Córdoba', 'Granada', 'Huelva', 'Jaén', 'Málaga', 'Sevilla'];
-  filtroLocalizacion: string;
   hotelReviews: Reviews[];
 
   constructor(
     public user:UserService,
-    public hotelsSvc: HotelsService,
     private router:Router,
     private modal:ModalController,
     private reviewSvc: ReviewsService,
@@ -34,13 +27,8 @@ export class HotelsPage implements OnInit {
   }
 
   ngOnInit() { 
-    this.getHotels().subscribe(allHotels => {
-      this.allHotels = allHotels;
-      this.filteredHotels = allHotels;
-    
     this.onResize();
   }
-  )}
 
   
 
@@ -50,39 +38,28 @@ export class HotelsPage implements OnInit {
     this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
     this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
   }
-  
 
 
-onProvinciaSelected() {
-  if (this.provinciaSeleccionada) {
-    this.filteredHotels = this.allHotels.filter(hotel =>
-      hotel.localtion_hotel.includes(this.provinciaSeleccionada)
-    );
-  } else {
-    this.filteredHotels = this.allHotels; // Mostrar todos los hoteles si no se ha seleccionado una provincia
-  }
-}
-
-  getHotels(){
-    return this.hotelsSvc.hotel$;
+  getReviews(){
+    return this.reviewSvc.reviews$;
   }
 
-  async presentHotelForm(hoteldata:hotels){
+  async presentReviewForm(reviewdata: Reviews) {
     const modal = await this.modal.create({
-      component:FormHotelComponent,
-      componentProps:{
-        hotel:hoteldata
+      component: ReviewsFormComponent,
+      componentProps: {
+        review: reviewdata
       },
     });
     modal.present();
-    modal.onDidDismiss().then(result=>{
-      if(result && result.data){
-        switch(result.data.mode){
+    modal.onDidDismiss().then(result => {
+      if (result && result.data) {
+        switch (result.data.mode) {
           case 'New':
-            this.hotelsSvc.addhotel(result.data.hotel);
+            this.reviewSvc.addReview(result.data.review);
             break;
           case 'Edit':
-            this.hotelsSvc.updatehotel(result.data.hotel);
+            this.reviewSvc.updateReview(result.data.review.id, result.data.review);
             break;
           default:
         }
@@ -90,15 +67,15 @@ onProvinciaSelected() {
     });
   }
 
-  onEditHotel(hoteldata){
-    this.presentHotelForm(hoteldata);
+  onEditReview(reviewdata){
+    this.presentReviewForm(reviewdata);
   }
 
-  onAddHotel(hoteldata){
-      this.presentHotelForm(null);
+  onAddReview(reviewdata){
+      this.presentReviewForm(null);
     }
 
-  async onDeleteAlert(hoteldata){
+  async onDeleteAlert(reviewdata){
     const alert = await this.alert.create({
       header:'Atención',
       message: '¿Estas seguro, no podrás volver atrás?',
@@ -114,7 +91,7 @@ onProvinciaSelected() {
           text: 'Borrar',
           role: 'confirm',
           handler: () => {
-            this.hotelsSvc.deletehotel(hoteldata);
+            this.reviewSvc.deleteReview(reviewdata);
           },
         },
       ],
@@ -125,7 +102,7 @@ onProvinciaSelected() {
     const { role } = await alert.onDidDismiss();
   }
 
-  async onHotelExistsAlert(hoteldata){
+  async onReviewExistsAlert(reviewdata){
     const alert = await this.alert.create({
       header: 'Error',
       message: 'No es posible borrar el hotel.',
@@ -145,8 +122,9 @@ onProvinciaSelected() {
     const { role } = await alert.onDidDismiss();
   }
 
-  async onDeleteHotel(hoteldata){
-      this.onDeleteAlert(hoteldata);
+  async onDeleteReview(reviewdata){
+      this.onDeleteAlert(reviewdata);
   }
 }
+
 

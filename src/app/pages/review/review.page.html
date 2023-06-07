@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>{{"title."|translate}}</ion-title>  
+    <ion-icon *ngIf="esPc" name="arrow-back-circle-outline" id="back-icon" slot="end" routerLink="/home"></ion-icon>
+    <ion-icon *ngIf="esMovil" name="add-outline" slot="end" id="add_btn" (click)="onAddReview($event)" ></ion-icon>
+    <ion-icon id="hotels-icon" name="heart-half-outline" slot="start" ></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let reviewdata of getReviews() | async" size="12" size-lg="3" size-sm="6">
+        <app-reviews-c [_review]="reviewdata" (onEdit)="onEditReview($event)" (onDelete)="onDeleteReview($event)"></app-reviews-c>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!--Para dispositivos moviles-->
+<ion-footer *ngIf="esMovil">
+  <ion-toolbar color="light">
+    <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="end" routerLink="/hotels"></ion-icon>
+    <ion-icon id="out-icon" name="log-out-outline" slot="start"  (click)="signOut()" ></ion-icon>
+  </ion-toolbar>
+  </ion-footer>

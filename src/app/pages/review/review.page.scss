@@ -1,0 +1,80 @@
+//Importacion de mi fuente personalizada
+@font-face {
+  font-family: "Mantinia Regular";
+  src: url("/src/assets/fonts/mantinia_regular/mantinia_regular.otf")
+      format("otf");
+  }
+  * {
+  font-family: "Mantinia Regular";
+}
+ion-title{
+  font-weight: bold;
+}
+// Estilos para dispositivos de escritorio
+@media only screen and (min-width: 768px) {
+  .container {
+      max-width: 960px;
+      margin: 0 auto;
+  }
+
+  #add_btn{
+    margin-left: 15px;
+    width: 25px;
+    height: 25px;
+  }
+
+  ion-img{
+    width: fit-content;
+    height: auto;
+  }
+
+  #hotels-icon{
+    margin-left: 15px;
+    width: 25px;
+    height: 25px;
+  }
+
+  #back-icon{
+    padding: 20px;
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+  }
+}
+
+// Estilos para dispositivos de escritorio
+@media only screen and (max-width: 768px) {
+  .container {
+      max-width: 400px;
+      margin: 0 auto;
+  }
+
+  #hotels-icon{
+    margin-left: 15px;
+    width: 25px;
+    height: 25px;
+  }
+  #back-icon{
+    padding: 20px;
+    width: 25px;
+    height: 25px;
+    margin-right: 30px;
+  }
+
+  #out-icon{
+    padding: 20px;
+    width: 25px;
+    height: 25px;
+    margin-left: 30px;
+    
+  }
+
+  #add_btn{
+    margin-right: 15px;
+    width: 25px;
+    height: 25px;
+  }
+  
+}
+
+

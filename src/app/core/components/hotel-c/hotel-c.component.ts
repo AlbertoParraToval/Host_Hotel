@@ -2,6 +2,7 @@ import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@a
 
 import { IonItemSliding } from '@ionic/angular';
 import { hotels } from '../../models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hotel-c',
@@ -20,7 +21,12 @@ export class HotelCComponent implements OnInit {
 
 
   constructor(
+    public router:Router,
   ){}
+
+  searchReviews() {
+    this.router.navigate(['/review']);
+  }
 
   ngOnInit() {  this.onResize();}
  // Esta función se ejecuta cada vez que se redimensiona la pantalla

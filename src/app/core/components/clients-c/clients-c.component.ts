@@ -1,7 +1,8 @@
 import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { UserService } from '../../services';
-import { User } from '../../models';
+import { Reviews, User } from '../../models';
 import { LocaleService } from '../../services/locale.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clients-c',
@@ -16,9 +17,11 @@ export class ClientsCComponent implements OnInit {
   esMovil: boolean;
   esPc: boolean;
   accordionExpanded = false;
-
+  hotelReviews: Reviews[];
+  
   constructor(
-    public locale:LocaleService
+    public locale:LocaleService,
+    public router:Router,
   ) { }
 
   
@@ -29,6 +32,8 @@ export class ClientsCComponent implements OnInit {
     this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
     this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
   }
+
+  
 
   onEditClick(){
     this.onEdit.emit(this._user);

@@ -72,5 +72,8 @@
 
     "profile":{
         "btn_borrar":"Eliminar cuenta"
+    },
+    "review":{
+        "title":"Reseñas"
     }
 }
