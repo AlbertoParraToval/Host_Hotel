@@ -8,14 +8,13 @@
 </ion-header>
 
 <ion-content color="light">
-
+<app-clients-c *ngFor="let user of getAllUsers() | async" [_user]="user" (onEdit)="onEditUser($event)" (onDelete)="onDeleteUser($event)"></app-clients-c>
 </ion-content>
 
 
 <!--Para dispositivos moviles-->
 <ion-footer *ngIf="esMovil">
   <ion-toolbar color="light">
-    
     <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="end" routerLink="/home"></ion-icon>
     <ion-icon  id="out-icon" name="log-out-outline" slot="start"  (click)="signOut()" ></ion-icon>
   </ion-toolbar>
