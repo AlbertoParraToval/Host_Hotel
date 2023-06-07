@@ -8,12 +8,19 @@
 </ion-header>
 
 <ion-content color="light">
-  <ion-button  *ngIf="esPc" (click)="onAddHotel($event)">
-    
-  </ion-button>
-  <app-hotel-c *ngFor="let hoteldata of (getHotels() | async)" [_hotel]="hoteldata" (onEdit)="onEditHotel($event)" (onDelete)="onDeleteHotel($event)"></app-hotel-c>
+  <ion-fab  vertical="bottom" horizontal="end" edge="false" slot="fixed" *ngIf="esPc">
+    <ion-fab-button (click)="onAddHotel($event)">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-grid>
+    <ion-row>
+      <ion-col  *ngFor="let hoteldata of (getHotels() | async)" size="12" size-lg="3" size-sm="6">
+        <app-hotel-c   [_hotel]="hoteldata" (onEdit)="onEditHotel($event)" (onDelete)="onDeleteHotel($event)"></app-hotel-c>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
-
 
 <!--Para dispositivos moviles-->
 <ion-footer *ngIf="esMovil">

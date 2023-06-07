@@ -1,7 +1,8 @@
   <ion-card>
     <ion-card-header>
-        <img *ngIf="!_hotel.url_img" alt="Silhouette of a driver's head" src="https://ionicframework.com/docs/img/demos/avatar.svg">
-        <img *ngIf="_hotel.url_img" alt="driver picture" [src]="_hotel.url_img"> 
+        <ion-img *ngIf="!_hotel.url_img" alt="Silhouette of a driver's head" src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
+        
+        <ion-img *ngIf="_hotel.url_img" alt="driver picture" [src]="_hotel.url_img"></ion-img>
       <ion-card-title>{{_hotel.name_hotel}}, {{_hotel.localtion_hotel}}</ion-card-title>
       <ion-card-subtitle>{{_hotel.info_hotel}}</ion-card-subtitle>
     </ion-card-header>
@@ -18,5 +19,6 @@
           <ion-icon name="trash" ></ion-icon>
           {{'Borrar' | uppercase}}
         </div>
-      </ion-button>    </ion-card-content>
+      </ion-button>
+    </ion-card-content>
   </ion-card>
