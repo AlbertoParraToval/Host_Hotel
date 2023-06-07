@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FileUploaded, FirebaseService } from './firebase/firebase-service';
 import { DocumentData } from 'firebase/firestore';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { hotels } from '../models';
 
 @Injectable({
@@ -12,11 +12,14 @@ export class HotelsService {
   public hotel$ = this._hotelSubject.asObservable();
   
   unsubscr;
-  constructor(
-    private firebase:FirebaseService
-  ) {
-    this.unsubscr = this.firebase.subscribeToCollection('hotels',this._hotelSubject, this.maphotel);
+  constructor(private firebase: FirebaseService) {
+    this.unsubscr = this.firebase.subscribeToCollection(
+      'hotels',
+      this._hotelSubject,
+      this.maphotel.bind(this) // Enlace del método maphotel a la instancia actual
+    );
   }
+  
 
   ngOnDestroy(): void {
     this.unsubscr();
@@ -31,6 +34,12 @@ export class HotelsService {
       url_img:doc.data().url_img,
       info_hotel:doc.data().info_hotel,
     };
+  }
+
+  filterHotelsByLocation(location: string): Observable<hotels[]> {
+    return this.hotel$.pipe(
+      map(hotels => hotels.filter(hotel => hotel.localtion_hotel.includes(location)))
+    );
   }
 
   gethotels(){

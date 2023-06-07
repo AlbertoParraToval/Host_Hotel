@@ -40,6 +40,7 @@
         "register": "Quiero registrarme, ",
         "first_name": "Nombre",
         "last_name": "Apellidos",
+        "username":"Nombre usuario",
         "email": "Email",
         "password": "Contraseña",
         "confirm_password": "Repita la contraseña",

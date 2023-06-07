@@ -13,9 +13,13 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <ion-select [(ngModel)]="provinciaSeleccionada" placeholder="Selecciona una provincia" (ionChange)="onProvinciaSelected()">
+    <ion-select-option *ngFor="let provincia of provincias" [value]="provincia">{{ provincia }}</ion-select-option>
+  </ion-select>
+  
   <ion-grid>
     <ion-row>
-      <ion-col  *ngFor="let hoteldata of (getHotels() | async)" size="12" size-lg="3" size-sm="6">
+      <ion-col *ngFor="let hoteldata of filteredHotels" size="12" size-lg="3" size-sm="6">
         <app-hotel-c   [_hotel]="hoteldata" (onEdit)="onEditHotel($event)" (onDelete)="onDeleteHotel($event)"></app-hotel-c>
     </ion-col>
     </ion-row>

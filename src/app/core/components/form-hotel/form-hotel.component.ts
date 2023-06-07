@@ -1,10 +1,12 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
 import { PhotoService, PhotoItem } from '../../services/photo.service';
 import { PlatformService } from '../../services/platform.service';
 import { hotels } from '../../models';
+import { UserService } from '../../services';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-form-hotel',
@@ -12,6 +14,10 @@ import { hotels } from '../../models';
   styleUrls: ['./form-hotel.component.scss'],
 })
 export class FormHotelComponent implements OnInit {
+esMovil:boolean;
+esPc:boolean;
+
+
   form: FormGroup;
   mode: 'New' | 'Edit' = 'New';
   currentImage = new BehaviorSubject<string>('');
@@ -36,7 +42,9 @@ export class FormHotelComponent implements OnInit {
     private photoSvc: PhotoService,
     private fb: FormBuilder,
     private modal: ModalController,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private user:UserService,
+    private router:Router
   ) {
     this.form = this.fb.group({
       id: [null],
@@ -49,7 +57,13 @@ export class FormHotelComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {  this.onResize();}
+  // Esta función se ejecuta cada vez que se redimensiona la pantalla
+    @HostListener('window:resize', ['$event'])
+    onResize(event?) {
+      this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
+      this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
+    }
 
   onSubmit() {
     this.modal.dismiss({ hotel: this.form.value, mode: this.mode }, 'ok');
@@ -57,6 +71,11 @@ export class FormHotelComponent implements OnInit {
 
   onDismiss(result) {
     this.modal.dismiss(null, 'cancel');
+  }
+
+  signOut(){
+    this.user.signOut();
+    this.router.navigate(['login']);
   }
 
   async changePic(

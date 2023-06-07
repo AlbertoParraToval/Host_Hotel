@@ -2,6 +2,7 @@ import { Component, OnInit,HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 import { FormHotelComponent, HotelsService, ReviewsService, UserService, hotels, reviews } from 'src/app/core';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hotels',
@@ -10,7 +11,14 @@ import { FormHotelComponent, HotelsService, ReviewsService, UserService, hotels,
 })
 export class HotelsPage implements OnInit {
   esMovil: boolean;
+  filteredHotels:hotels[];
+  allHotels: hotels[];
   esPc: boolean;
+  provinciaSeleccionada: string;
+  provincias: string[] = ['Almería', 'Cádiz', 'Córdoba', 'Granada', 'Huelva', 'Jaén', 'Málaga', 'Sevilla'];
+  filtroLocalizacion: string;
+
+
   constructor(
     public user:UserService,
     public hotelsSvc: HotelsService,
@@ -25,13 +33,34 @@ export class HotelsPage implements OnInit {
     this.router.navigate(['login']);
   }
 
-  ngOnInit() {  this.onResize();}
+  ngOnInit() { 
+    this.getHotels().subscribe(allHotels => {
+      this.allHotels = allHotels;
+      this.filteredHotels = allHotels;
+    
+    this.onResize();
+  }
+  )}
+
  // Esta función se ejecuta cada vez que se redimensiona la pantalla
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
     this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
     this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
   }
+  
+
+
+onProvinciaSelected() {
+  if (this.provinciaSeleccionada) {
+    this.filteredHotels = this.allHotels.filter(hotel =>
+      hotel.localtion_hotel.includes(this.provinciaSeleccionada)
+    );
+  } else {
+    this.filteredHotels = this.allHotels; // Mostrar todos los hoteles si no se ha seleccionado una provincia
+  }
+}
+
 
 
   getHotels(){

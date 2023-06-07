@@ -43,6 +43,7 @@
         "first_name" : "Prénom",
         "last_name" : "Last_name",
         "email" : "Email",
+        "username":"Nom d'utilisateur",
         "password" : "Mot de passe",
         "confirm_password" : "Répéter le mot de passe",
         "send" : "Envoyer"
