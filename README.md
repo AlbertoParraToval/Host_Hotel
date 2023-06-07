@@ -40,6 +40,11 @@ Adaptación de la app a móvil mediante las queries en el SCSS, donde a su vez s
 ### Semana 5 (24 Abril - 30 Abril)
 Terminar la interfaz base de la aplicación y dejar todo seteado para el comienzo de los CRUDS.
 
+### Break debido a la cantidad de trabajo en el Erasmus (Mayo)
+
+### Semana 6 (29 Mayo - 4 Junio)
+Realización de la funcionalidad de eliminar la cuenta ya registrada previamente en la base de datos, ya que era uno de los puntos a realizar en el proyecto. Añadido la traducción correspondiente a cada nueva implementación. Nuevos componentes y actualizaciones en los servicios de user y hotels para donde he corregido diversos errores. Identificación de ciertos bugs o fallos por así decirlo a corregir a futuro.
+
 ## Video Presentación CheckPoint
 - [Link Youtube](https://youtu.be/Vv869Pm4sgc)
 
