@@ -1,12 +1,25 @@
-<ion-grid>
-  <ion-list>
+<ion-list>
+  <ion-item (click)="toggleAccordion()">
+    <ion-avatar>
+      <ion-img alt="{{_user.first_name}} {{_user.last_name}}" src="{{_user.profilePick}}"></ion-img>
+    </ion-avatar>
+    {{ _user.username }}
+  </ion-item>
+  <ion-item-sliding *ngIf="accordionExpanded">
     <ion-item>
-      <ion-avatar>
-        <ion-img alt="{{_user.first_name}} {{_user.last_name}}" src="{{_user.profilePick}}"></ion-img>
-      </ion-avatar>
-      <ion-text>{{_user.last_name}}, {{_user.first_name}}</ion-text>
-        <!-- <ion-button (click)="onEditClick()"><ion-icon name="create-outline" ></ion-icon></ion-button>-->
-        <ion-button slot="end" id="btn_borrar" color="danger" (click)="onDeleteClick()">{{"profile.btn_borrar" |translate}}</ion-button>
+      {{ _user.first_name}}
     </ion-item>
-  </ion-list>
-  </ion-grid>
+    <ion-item>
+      {{ _user.last_name}}
+    </ion-item>
+    <ion-item>
+      {{ _user.email }}
+    </ion-item>
+    <!--<ion-item-options side="end">
+      <ion-button color="danger" (click)="onDeleteClick()">{{ "profile.btn_borrar" | translate }}</ion-button>
+    </ion-item-options>-->
+  </ion-item-sliding>
+</ion-list>
+
+
+

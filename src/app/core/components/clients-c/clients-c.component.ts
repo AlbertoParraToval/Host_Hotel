@@ -15,6 +15,7 @@ export class ClientsCComponent implements OnInit {
   @Input() _user:User;
   esMovil: boolean;
   esPc: boolean;
+  accordionExpanded = false;
 
   constructor(
     public locale:LocaleService
@@ -36,6 +37,9 @@ export class ClientsCComponent implements OnInit {
   onDeleteClick(){
 
     this.onDelete.emit(this._user);
+  }
+  toggleAccordion() {
+    this.accordionExpanded = !this.accordionExpanded;
   }
 
 }

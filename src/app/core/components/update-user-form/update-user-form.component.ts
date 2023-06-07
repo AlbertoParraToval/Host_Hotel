@@ -3,7 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalController, ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { lastValueFrom } from 'rxjs';
-import { User } from '../../models/user.model';
+import { User } from '../../models';
+
 
 @Component({
   selector: 'app-update-user-form',

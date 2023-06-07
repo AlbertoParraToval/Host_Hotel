@@ -11,7 +11,6 @@
 <app-clients-c *ngFor="let user of getAllUsers() | async" [_user]="user" (onEdit)="onEditUser($event)" (onDelete)="onDeleteUser($event)"></app-clients-c>
 </ion-content>
 
-
 <!--Para dispositivos moviles-->
 <ion-footer *ngIf="esMovil">
   <ion-toolbar color="light">

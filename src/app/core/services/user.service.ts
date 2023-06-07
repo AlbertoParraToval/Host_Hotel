@@ -49,7 +49,7 @@ export class UserService {
       docId:doc['id'],
       admin: doc['data']().admin,
       first_name: doc['data']().first_name,
-      last_name: doc['data']().first_name,
+      last_name: doc['data']().last_name,
       email: doc['data']().email,
       username: doc['data']().username,
       profilePick: doc['data']().profilePick
@@ -206,6 +206,7 @@ export class UserService {
       console.log(error);
     }
   }
+  
 
   async writeToFile(){
     var dataToText = JSON.stringify(this._userSubject.value);
