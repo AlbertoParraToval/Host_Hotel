@@ -8,12 +8,18 @@
 </ion-header>
 
 <ion-content color="light">
+  <ion-fab  vertical="bottom" horizontal="end" edge="false" slot="fixed" *ngIf="esPc">
+    <ion-fab-button (click)="onAddReview($event)">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-grid>
     <ion-img src="./../../../assets/icon/icono-removebg-preview (1).png"></ion-img>
     <!-- <ion-text>Bienvenido a HostHotel, {{(user.user$ | async).first_name}} {{(user.user$ | async).last_name}}</ion-text>-->
     <ion-button routerLink="/hotels" shape="round">{{"home.list_hoteles" | translate}}</ion-button>
     <ion-button routerLink="/clients" shape="round">{{"home.list_clientes" | translate}}</ion-button>
     <ion-button *ngIf="esPc" routerLink="/about-us" shape="round">{{"home.about" | translate}}</ion-button>
+
   </ion-grid>
 </ion-content>
 
