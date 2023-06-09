@@ -46,6 +46,10 @@ Terminar la interfaz base de la aplicación y dejar todo seteado para el comienz
 Realización de la funcionalidad de eliminar la cuenta ya registrada previamente en la base de datos, ya que era uno de los puntos a realizar en el proyecto. Añadido la traducción correspondiente a cada nueva implementación. Nuevos componentes y actualizaciones en los servicios de user y hotels para donde he corregido diversos errores. Identificación de ciertos bugs o fallos por así decirlo a corregir a futuro.
 
 Filtrado de hoteles donde se podrá elegir entre las 8 provincias andaluzas, para ver los distintos hoteles que dispone la aplicación hasta la fecha, y actualización de la el servicio de traducción para las nuevas features.
+Listado de Clientes en una pági ()na que estará solo disponible en el modo admin donde se recogeran todos los usuarios registrados en la app (de momento solo esta la funcionalidad de leer)
+
+## Implementaciones siguientes
+- Borrado de Users en modo admin
 
 ## Video Presentación CheckPoint
 - [Link Youtube](https://youtu.be/Vv869Pm4sgc)
