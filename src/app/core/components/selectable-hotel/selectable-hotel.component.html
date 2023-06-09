@@ -1,0 +1,25 @@
+<ion-accordion-group [multiple]="true" #accordion>
+  <ion-accordion value="first">
+    <ion-item slot="header">
+      <ng-container *ngIf="selectedHotel!=null">
+        <ion-avatar class="selectedDriver">
+          <img *ngIf="!selectedHotel?.url_img" alt="Silhouette of a selectedDriver's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          <img *ngIf="selectedHotel?.url_img" alt="selectedDriver url_img" [src]="selectedHotel?.url_img" />
+        </ion-avatar>
+        <ion-label>{{selectedHotel?.name_hotel}}, {{selectedHotel?.localtion_hotel}}</ion-label>
+      </ng-container>
+      <ion-label *ngIf="!selectedHotel">Selecciona un hotel</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-list>
+        <ion-item *ngFor="let selectedDriver of getHotelList()" button detail  (click)="onHotelClicke(selectedDriver, accordion)">
+          <ion-avatar class="selectedDriver">
+            <img *ngIf="!selectedDriver.url_img" alt="Silhouette of a selectedDriver's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img *ngIf="selectedDriver.url_img" alt="selectedDriver url_img" [src]="selectedDriver.url_img" />
+          </ion-avatar>
+          <ion-label>{{selectedDriver.name_hotel}}, {{selectedDriver.localtion_hotel}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>

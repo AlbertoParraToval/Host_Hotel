@@ -14,7 +14,6 @@ export class ReviewsService {
 
   private reviews: Reviews[] = [];
 
-
   unsubscr;
   constructor(private firebase: FirebaseService) {
     this.unsubscr = this.firebase.subscribeToCollection(
@@ -36,46 +35,43 @@ export class ReviewsService {
       id_hoteles: doc.data().id_hoteles,
       fecha: doc.data().fecha.toDate(),
       rating: doc.data().rating,
-        text_review: doc.data().  text_review,
+      text_review: doc.data().text_review,
     };
   }
 
-  public getReviewsByHotel(hotelId: number): Observable<Reviews[]> {
+  public getReviewsByHotel(hotelId: string): Observable<Reviews[]> {
     return this.reviews$.pipe(
       map((reviews) => reviews.filter((review) => review.id_hoteles === hotelId))
     );
   }
-  
 
-  public async deleteReview(reviewId: number): Promise<void> {
-    const review = this.reviews.find((review) => review.id === reviewId);
+  public async deleteReview(reviewId: string): Promise<void> {
+    const review = this.reviews.find((review) => review.docId === reviewId);
     if (review) {
       try {
         await this.firebase.deleteDocument('reviews', review.docId);
+        this.reviews = this.reviews.filter((review) => review.docId !== reviewId);
+        this._reviewsSubject.next(this.reviews);
       } catch (error) {
         console.log(error);
       }
     }
   }
 
-  public async updateReview(reviewId: number, updatedReview: Reviews): Promise<void> {
-    const review = this.reviews.find((review) => review.id === reviewId);
+  public async updateReview(reviewId: string, updatedReview: Reviews): Promise<void> {
+    const review = this.reviews.find((review) => review.docId === reviewId);
     if (review) {
       const updatedReviewData = {
         id_user: updatedReview.id_user,
         id_hoteles: updatedReview.id_hoteles,
         fecha: updatedReview.fecha,
         rating: updatedReview.rating,
-          text_review: updatedReview.  text_review,
+        text_review: updatedReview.text_review,
       };
-  
+
       try {
         await this.firebase.updateDocument('reviews', review.docId, updatedReviewData);
-        review.id_user = updatedReview.id_user;
-        review.id_hoteles = updatedReview.id_hoteles;
-        review.fecha = updatedReview.fecha;
-        review.rating = updatedReview.rating;
-        review.  text_review = updatedReview.  text_review;
+        Object.assign(review, updatedReview);
       } catch (error) {
         console.log(error);
       }
@@ -88,7 +84,7 @@ export class ReviewsService {
       id_hoteles: review.id_hoteles,
       fecha: review.fecha,
       rating: review.rating,
-        text_review: review.  text_review,
+      text_review: review.text_review,
     };
 
     try {
@@ -96,8 +92,5 @@ export class ReviewsService {
     } catch (error) {
       console.log(error);
     }
-
-    this.reviews.push(review);
-    this._reviewsSubject.next(this.reviews);
   }
 }

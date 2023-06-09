@@ -13,7 +13,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import { Drivers } from '@ionic/storage';
 import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 import { File } from '@awesome-cordova-plugins/file/ngx';
-import { ClientsCComponent, FormHotelComponent, HotelCComponent, ProfileComponent, ReviewsCComponent, ReviewsFormComponent, UpdateUserFormComponent } from './components';
+import { ClientsCComponent, FormHotelComponent, HotelCComponent, ProfileComponent, ReviewsCComponent, ReviewsFormComponent, SelectableHotelComponent, UpdateUserFormComponent } from './components';
 
 
 registerLocaleData(en);
@@ -27,7 +27,8 @@ registerLocaleData(es);
     UpdateUserFormComponent,
     ClientsCComponent,
     ReviewsCComponent,
-    ReviewsFormComponent
+    ReviewsFormComponent,
+    SelectableHotelComponent
     
 
 
@@ -61,7 +62,8 @@ registerLocaleData(es);
     UpdateUserFormComponent,
     ClientsCComponent,
     ReviewsCComponent,
-    ReviewsFormComponent
+    ReviewsFormComponent,
+    SelectableHotelComponent
   ],
   providers:[
     {

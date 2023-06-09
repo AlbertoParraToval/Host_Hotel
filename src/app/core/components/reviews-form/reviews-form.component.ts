@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, Input, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { BehaviorSubject } from 'rxjs';
+import { Reviews, hotels } from '../../models';
+import { UserService } from '../../services';
+import { PhotoService, PhotoItem } from '../../services/photo.service';
+import { PlatformService } from '../../services/platform.service';
 
 @Component({
   selector: 'app-reviews-form',
@@ -6,9 +14,71 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reviews-form.component.scss'],
 })
 export class ReviewsFormComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {}
-
-}
+  esMovil:boolean;
+  esPc:boolean;
+  
+    form: FormGroup;
+    mode: 'New' | 'Edit' = 'New';
+    currentImage = new BehaviorSubject<string>('');
+    currentImage$ = this.currentImage.asObservable();
+    @Input('review') set review(review: Reviews) {
+      if (review) {
+        this.form.controls.id.setValue(review.id);
+        this.form.controls.docId.setValue(review.docId);
+        this.form.controls.id_user.setValue(review.id_user);
+        this.form.controls.id_hoteles.setValue(review.id_hoteles);
+        this.form.controls.text_review.setValue(review.text_review);
+        this.form.controls.rating.setValue(review.rating);
+      }
+    }
+  
+    constructor(
+      public platform: PlatformService,
+      private photoSvc: PhotoService,
+      private fb: FormBuilder,
+      private modal: ModalController,
+      private cdr: ChangeDetectorRef,
+      private user:UserService,
+      private router:Router
+    ) {
+      this.form = this.fb.group({
+        id: [null],
+        docId: [''],
+        id_user: ['', [Validators.required]],
+        id_hoteles: ['', [Validators.required]],
+        text_review: ['', [Validators.required]],
+        rating: ['',[Validators.required]],
+      });
+    }
+  
+    ngOnInit() {  this.onResize();}
+    // Esta función se ejecuta cada vez que se redimensiona la pantalla
+      @HostListener('window:resize', ['$event'])
+      onResize(event?) {
+        this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
+        this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
+      }
+  
+    onSubmit() {
+      this.modal.dismiss({ hotel: this.form.value, mode: this.mode }, 'ok');
+    }
+  
+    onDismiss(result) {
+      this.modal.dismiss(null, 'cancel');
+    }
+  
+    signOut(){
+      this.user.signOut();
+      this.router.navigate(['login']);
+    }
+  
+    async changePic(
+      fileLoader: HTMLInputElement,
+      mode: 'library' | 'camera' | 'file'
+    ) {
+      var item: PhotoItem = await this.photoSvc.getPicture(mode, fileLoader);
+      this.currentImage.next(item.base64);
+      this.cdr.detectChanges();
+      this.form.controls.pictureFile.setValue(item.blob);
+    }
+  }
