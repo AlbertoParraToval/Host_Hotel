@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HotelsService, ReviewsService, UserService } from '../../services';
-import { Reviews, hotels } from '../../models';
+import { Reviews, User, hotels } from '../../models';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { LocaleService } from '../../services/locale.service';
 
 @Component({
   selector: 'app-reviews-c',
@@ -10,15 +12,43 @@ import { Reviews, hotels } from '../../models';
 export class ReviewsCComponent implements OnInit {
   @Output() onEdit = new EventEmitter;
   @Output() onDelete = new EventEmitter;
-  @Input() _review:Reviews;
-  @Input() _hotel:hotels;
+  @Input('review') set review(review:Reviews){
+    this._review = review;
+    this.loadUserHotel(review);
+  
+  }
+
+  public _hotel:BehaviorSubject<hotels> = new BehaviorSubject<hotels>(null);
+  public _users:BehaviorSubject<User> = new BehaviorSubject<User>(null);
+  hotel$:Observable<hotels> = this._hotel.asObservable();
+  user$:Observable<User> = this._users.asObservable();
+
+
+  private async loadUserHotel(review:Reviews){
+    this._hotel.next(await this.hotelSvc.gethotelById(review.id_hoteles));
+    this._users.next(await this.userSvc.getUserById(review.id_user));
+  }
+
+
+  getManage():Reviews{
+    return this._review;
+  }
+
+  public _review:Reviews;
+
+
   constructor(
     private userSvc:UserService,
-    private reviewSvc:ReviewsService,
-    private hotelSvc:HotelsService
-  ) { }
+    private hotelSvc:HotelsService,
+    public locale:LocaleService
+  ){
+    
+  }
 
-  ngOnInit() {}
+  ngOnInit(
+  ) {
+
+  }
 
   onEditClick(){
     this.onEdit.emit(this._review);

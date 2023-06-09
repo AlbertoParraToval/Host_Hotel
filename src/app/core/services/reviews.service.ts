@@ -64,7 +64,7 @@ export class ReviewsService {
       const updatedReviewData = {
         id_user: updatedReview.id_user,
         id_hoteles: updatedReview.id_hoteles,
-        fecha: updatedReview.fecha,
+        fecha: new Date(),
         rating: updatedReview.rating,
         text_review: updatedReview.text_review,
       };
@@ -82,7 +82,7 @@ export class ReviewsService {
     const newReviewData = {
       id_user: review.id_user,
       id_hoteles: review.id_hoteles,
-      fecha: review.fecha,
+      fecha: new Date(),
       rating: review.rating,
       text_review: review.text_review,
     };

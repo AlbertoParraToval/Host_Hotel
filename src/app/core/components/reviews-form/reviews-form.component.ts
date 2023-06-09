@@ -29,6 +29,7 @@ export class ReviewsFormComponent implements OnInit {
         this.form.controls.id_hoteles.setValue(review.id_hoteles);
         this.form.controls.text_review.setValue(review.text_review);
         this.form.controls.rating.setValue(review.rating);
+        this.form.controls.fecha.setValue(review.fecha);
       }
     }
   
@@ -44,10 +45,11 @@ export class ReviewsFormComponent implements OnInit {
       this.form = this.fb.group({
         id: [null],
         docId: [''],
-        id_user: ['', [Validators.required]],
-        id_hoteles: ['', [Validators.required]],
+        id_user: [''],
+        id_hoteles: [''],
         text_review: ['', [Validators.required]],
         rating: ['',[Validators.required]],
+        fecha:[new Date().toISOString()] 
       });
     }
   
@@ -60,7 +62,7 @@ export class ReviewsFormComponent implements OnInit {
       }
   
     onSubmit() {
-      this.modal.dismiss({ hotel: this.form.value, mode: this.mode }, 'ok');
+      this.modal.dismiss({ review: this.form.value, mode: this.mode }, 'ok');
     }
   
     onDismiss(result) {

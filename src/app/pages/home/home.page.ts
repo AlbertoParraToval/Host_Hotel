@@ -42,14 +42,17 @@ export class HomePage {
     });
   
     modal.onDidDismiss().then(result => {
-      if (result.role === 'success') {
+      if (result.role === 'ok') {
         const addReview = result.data.review;
         this.reviewSvc.addReview(addReview);
+      } else {
+        console.log("No se ha podido añadir");
       }
     });
   
     await modal.present();
   }
+  
 
 
   onAddReview(reviewdata){

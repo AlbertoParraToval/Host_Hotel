@@ -13,13 +13,21 @@
       <ion-label position="floating">
         {{'hoteles.localtion_hotel' | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="{{'hoteles.location_input' | translate}}" formControlName="localtion_hotel"></ion-input>
+      <ion-input type="date"  placeholder="{{'hoteles.location_input' | translate}}" formControlName="fecha"></ion-input>
     </ion-item>
+    
     <ion-item>
       <ion-label position="floating">
-        {{'hoteles.info_hotel' | translate}}
+        {{'hoteles.localtion_hotel' | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="{{'hoteles.info_input' | translate}}" formControlName="info_hotel"></ion-input>
+      <ion-input type="text" placeholder="{{'hoteles.location_input' | translate}}" formControlName="text_review"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        {{'hoteles.localtion_hotel' | translate}}
+      </ion-label>
+      <ion-input type="number" placeholder="{{'hoteles.location_input' | translate}}" formControlName="rating"></ion-input>
     </ion-item>
   </form>
 

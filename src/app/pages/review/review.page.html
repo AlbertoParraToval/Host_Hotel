@@ -16,7 +16,7 @@
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let reviewdata of getReviews() | async" size="12" size-lg="3" size-sm="6">
-        <app-reviews-c [_review]="reviewdata" (onEdit)="onEditReview($event)" (onDelete)="onDeleteReview($event)"></app-reviews-c>
+        
     </ion-col>
     </ion-row>
   </ion-grid>
