@@ -15,8 +15,6 @@ import { DocumentData } from 'firebase/firestore';
   providedIn: 'root'
 })
 export class UserService {
-
-
   private _userLogged:BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public userLogged$ = this._userLogged.asObservable();
 
@@ -175,7 +173,6 @@ export class UserService {
       }
     });
   }
-
 
   async updateUser(user:User){
     var _user = {

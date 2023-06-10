@@ -19,7 +19,7 @@ export class ReviewsService {
     this.unsubscr = this.firebase.subscribeToCollection(
       'reviews',
       this._reviewsSubject,
-      this.mapReview.bind(this) 
+      this.mapReview
     );
   }
 
@@ -42,6 +42,13 @@ export class ReviewsService {
   public getReviewsByHotel(hotelId: string): Observable<Reviews[]> {
     return this.reviews$.pipe(
       map((reviews) => reviews.filter((review) => review.id_hoteles === hotelId))
+    );
+  }
+
+
+  public getReviewsByUser(userId: string): Observable<Reviews[]> {
+    return this.reviews$.pipe(
+      map((reviews) => reviews.filter((review) => review.id_user === userId))
     );
   }
 
@@ -79,7 +86,8 @@ export class ReviewsService {
   }
 
   public async addReview(review: Reviews): Promise<void> {
-    const newReviewData = {
+    const data = {
+      docId:review.id,
       id_user: review.id_user,
       id_hoteles: review.id_hoteles,
       fecha: new Date(),
@@ -88,7 +96,7 @@ export class ReviewsService {
     };
 
     try {
-      await this.firebase.createDocument('reviews', newReviewData);
+      await this.firebase.createDocument('reviews', data);
     } catch (error) {
       console.log(error);
     }

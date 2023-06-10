@@ -8,7 +8,7 @@
 </ion-header>
 <ion-content color="light" class="ion-padding">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
-      <app-selectable-hotel></app-selectable-hotel>
+    <app-selectable-hotel [hotels]="hotel" (hotelChange)="onHotelSelected($event)" ></app-selectable-hotel>
     <ion-item>
       <ion-label position="floating">
         {{'hoteles.localtion_hotel' | translate}}

@@ -169,7 +169,10 @@ export class FirebaseWebService extends FirebaseService implements OnDestroy {
         .catch((err) => reject(err));
     });
   }
-
+  
+  public getUserReviews(userId: string): Promise<FirebaseDocument[]> {
+    return this.getDocumentsBy('reviews', 'userId', userId);
+  }
   public updateDocument(
     collectionName: string,
     document: string,

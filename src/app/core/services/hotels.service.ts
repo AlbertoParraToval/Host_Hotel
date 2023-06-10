@@ -16,7 +16,7 @@ export class HotelsService {
     this.unsubscr = this.firebase.subscribeToCollection(
       'hotels',
       this._hotelSubject,
-      this.maphotel.bind(this) // Enlace del método maphotel a la instancia actual
+      this.maphotel // Enlace del método maphotel a la instancia actual
     );
   }
   
@@ -79,6 +79,7 @@ export class HotelsService {
       localtion_hotel:hotel.localtion_hotel,
       info_hotel:hotel.info_hotel,
     };
+    console.log(hotel.docId)
     if(hotel['pictureFile']){
       var response = await this.uploadImage(hotel['pictureFile']);
       _hotel['url_img'] = response.image;

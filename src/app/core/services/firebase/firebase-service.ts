@@ -53,7 +53,7 @@ export abstract class FirebaseService{
   public abstract deleteDocument(collectionName:string, docId:string):Promise<void>;
   public abstract subscribeToCollection(collectionName, subject: BehaviorSubject<any[]>, mapFunction:(el:DocumentData)=>any):Unsubscribe
   public abstract signInWithGoogle(): Promise<UserCredential>;
-
+  public abstract getUserReviews(userId: string): Promise <FirebaseDocument[]>
   public abstract resetPassword(email:string);
   public abstract setUserAndEmail(uid:string, email:string);
   public abstract createUserWithEmailAndPassword(email:string, password:string):Promise<UserCredential>;

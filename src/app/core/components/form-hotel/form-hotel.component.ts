@@ -26,6 +26,7 @@ esPc:boolean;
     if (hotel) {
       this.form.controls.id.setValue(hotel.id);
       this.form.controls.docId.setValue(hotel.docId);
+      console.log("Valor de docId:", hotel.docId);
       this.form.controls.name_hotel.setValue(hotel.name_hotel);
       this.form.controls.localtion_hotel.setValue(hotel.localtion_hotel);
       this.form.controls.info_hotel.setValue(hotel.info_hotel);
@@ -48,13 +49,15 @@ esPc:boolean;
   ) {
     this.form = this.fb.group({
       id: [null],
+      
       docId: [''],
       name_hotel: ['', [Validators.required]],
       localtion_hotel: ['', [Validators.required]],
       info_hotel: ['', [Validators.required]],
       url_img: [''],
       pictureFile: [null],
-    });
+    })
+
   }
 
   ngOnInit() {  this.onResize();}

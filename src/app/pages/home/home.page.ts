@@ -1,7 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
-import { Reviews, ReviewsFormComponent, ReviewsService, User, UserService } from 'src/app/core';
+import { Reviews, ReviewsFormComponent, ReviewsService, User, UserService, hotels } from 'src/app/core';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +11,11 @@ import { Reviews, ReviewsFormComponent, ReviewsService, User, UserService } from
 export class HomePage {
   esMovil: boolean;
   esPc: boolean;
+
+  currentUser: User; // Variable para el usuario actual
+  selectedHotel: hotels; // Variable para el hotel seleccionado
+
+
   constructor(
     public user:UserService,
     private router:Router,
@@ -24,7 +29,8 @@ export class HomePage {
     this.router.navigate(['login']);
   }
 
-  ngOnInit() {  this.onResize();}
+  ngOnInit() {  this.onResize();
+}
  // Esta función se ejecuta cada vez que se redimensiona la pantalla
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
@@ -37,7 +43,9 @@ export class HomePage {
     const modal = await this.modal.create({
       component: ReviewsFormComponent,
       componentProps: {
-        review: reviewdata
+        review: reviewdata,
+        user_: this.currentUser, 
+        hotel: this.selectedHotel
       },
     });
   

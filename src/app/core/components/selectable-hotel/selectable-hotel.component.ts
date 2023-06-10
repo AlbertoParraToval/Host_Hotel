@@ -1,4 +1,4 @@
-import { Component, OnInit, forwardRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Reviews, hotels } from '../../models';
 import { HotelsService } from '../../services';
@@ -16,6 +16,9 @@ export const REVIEWS_VALUE_ACCESSOR: any = {
   styleUrls: ['./selectable-hotel.component.scss'],
 })
 export class SelectableHotelComponent implements OnInit {
+  @Input() hotels: hotels;
+  @Output() hotelChange: EventEmitter<hotels> = new EventEmitter<hotels>();
+
   selectedHotel:hotels=null;
   propagateChange = (_: any) => { }
   isDisabled:boolean = false;
@@ -23,7 +26,8 @@ export class SelectableHotelComponent implements OnInit {
 
   async writeValue(obj: any) {
     try {
-      this.selectedHotel = await this.hoteSvc.gethotelById(obj);  
+      this.selectedHotel = await this.hoteSvc.gethotelById(obj); 
+      console.log(obj) 
     } catch (error) {
       console.log("No se ha podido recupera los datos: "+ error);
     }
@@ -49,6 +53,7 @@ export class SelectableHotelComponent implements OnInit {
     this.selectedHotel = hoteldata;
     accordion.value='';
     this.propagateChange(this.selectedHotel.docId);
+    console.log(hoteldata)
   }
 
 }
