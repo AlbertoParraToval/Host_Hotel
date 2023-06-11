@@ -61,7 +61,10 @@ ion-title{
     height: 25px;
   }
 
-
+  ion-select{
+    background-color: rgba(0, 0, 0, 0.177);
+    
+  }
   ion-img{
     width: 50%;
     height: 50%;
@@ -75,6 +78,11 @@ ion-title{
   .container {
       max-width: 400px;
       margin: 0 auto;
+  }
+
+  ion-select{
+    background-color: rgba(0, 0, 0, 0.177);
+    
   }
 
   #settings-icon{

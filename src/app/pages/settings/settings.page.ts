@@ -11,6 +11,7 @@ import { lastValueFrom } from 'rxjs';
 import { UpdateUserFormComponent, User, UserService } from 'src/app/core';
 import { FirebaseService } from 'src/app/core/services/firebase/firebase-service';
 import { LocaleService } from 'src/app/core/services/locale.service';
+import { Url } from 'url';
 
 /**
  * @class SettingsPage
@@ -28,6 +29,8 @@ export class SettingsPage implements OnInit {
   currentLanguage;
   esMovil: boolean;
   esPc: boolean;
+  selectedLanguage: string;
+  languageOptions: { code: string; name: string; }[];
   
   constructor(
     private firebase: FirebaseService,
@@ -45,6 +48,22 @@ export class SettingsPage implements OnInit {
    */
   ngOnInit() {
     this.onResize();
+    this.languageOptions = [
+      {
+        code: 'es',
+        name: 'Español',
+      },
+      {
+        code: 'en',
+        name: 'English',
+      },
+      {
+        code: 'fr',
+        name: 'Français',
+      },
+    ],
+    // Establecer el idioma seleccionado inicialmente
+    this.selectedLanguage = this.translate.getDefaultLang();
   }
   
   /**
@@ -61,6 +80,12 @@ export class SettingsPage implements OnInit {
   signOut() {
     this.user.signOut();
     this.router.navigate(['login']);
+  }
+
+  onLanguageChange() {
+    // Lógica para cambiar el idioma
+    this.translate.setDefaultLang(this.selectedLanguage);
+    // Otras acciones que puedas necesitar realizar al cambiar el idioma
   }
 
   /**
