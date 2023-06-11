@@ -93,7 +93,7 @@ export class ReviewPage implements OnInit {
           text: 'Borrar',
           role: 'confirm',
           handler: () => {
-            this.reviewSvc.deleteReviewbyId(review.docId);
+            this.reviewSvc.deleteReviewbyId(review);
           },
         },
       ],
