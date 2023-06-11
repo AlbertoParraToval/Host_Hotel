@@ -14,6 +14,7 @@ import { Drivers } from '@ionic/storage';
 import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 import { File } from '@awesome-cordova-plugins/file/ngx';
 import { ClientsCComponent, FormHotelComponent, HotelCComponent, ProfileComponent, ReviewsCComponent, ReviewsFormComponent, SelectableHotelComponent, UpdateUserFormComponent, UserReviewsCComponent } from './components';
+import { IsAdminPipe } from './pipes/is-admin.pipe';
 
 
 registerLocaleData(en);
@@ -29,7 +30,8 @@ registerLocaleData(es);
     ReviewsCComponent,
     ReviewsFormComponent,
     SelectableHotelComponent,
-    UserReviewsCComponent
+    UserReviewsCComponent,
+    IsAdminPipe
     
 
 
@@ -65,7 +67,8 @@ registerLocaleData(es);
     ReviewsCComponent,
     ReviewsFormComponent,
     SelectableHotelComponent,
-    UserReviewsCComponent
+    UserReviewsCComponent,
+    IsAdminPipe
   ],
   providers:[
     {

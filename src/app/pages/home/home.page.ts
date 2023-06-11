@@ -1,17 +1,17 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
-import { Reviews, ReviewsFormComponent, ReviewsService, User, UserService, hotels } from 'src/app/core';
+import { IsAdminPipe, Reviews, ReviewsFormComponent, ReviewsService, User, UserService, hotels } from 'src/app/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
+  providers:[IsAdminPipe]
 })
 export class HomePage {
   esMovil: boolean;
   esPc: boolean;
-
   currentUser: User; // Variable para el usuario actual
   selectedHotel: hotels; // Variable para el hotel seleccionado
 
