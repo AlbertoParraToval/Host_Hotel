@@ -7,38 +7,21 @@
 </ion-header>
 
 <ion-content color="light">
+  <ion-fab  vertical="bottom" horizontal="start" edge="false" slot="fixed" *ngIf="esPc">
+    <ion-fab-button (click)="signOut()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 <!-- Para dispositivos de escritorio-->
   <ion-grid *ngIf="esPc">
-    <ion-row>
     <app-profile [user]="(user.user$ | async)" (onEdit)="onEditUser($event)" (onDelete)="onDeleteUser($event) "></app-profile>
-      <ion-col>
-
-        <ion-grid >
-          <ion-text>
-            Bienvenido a la página de configuración y edición de la aplicación de hosthotel, aquí encontrarás diversas opciones a la hora de editar tu perfil asi el cambio de idioma. 
-          </ion-text>
-
-
-
-                <h3>{{ "settings.text_config" | translate }}</h3>
-                <ion-select [(ngModel)]="selectedLanguage" (ionChange)="onLanguageChange()">
-                  <ion-select-option *ngFor="let language of languageOptions" [value]="language.code">
-                    <ion-label>{{ language.name }}</ion-label>
-                  </ion-select-option>
-                </ion-select>
-        </ion-grid>
-      </ion-col>
-    </ion-row>
   </ion-grid>
   
-
-
 <!-- Para dispositivos moviles-->
   <ion-grid *ngIf="esMovil">
     <app-profile [user]="(user.user$ | async)" (onEdit)="onEditUser($event)" (onDelete)="onDeleteUser($event) "></app-profile>
     <ion-row id="subtitle_row">
     </ion-row>
-    
     <ion-select [(ngModel)]="selectedLanguage" (ionChange)="onLanguageChange()">
       <ion-select-option *ngFor="let language of languageOptions" [value]="language.code">
         <ion-label>{{ language.name }}</ion-label>

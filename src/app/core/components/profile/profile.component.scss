@@ -18,13 +18,26 @@ ion-title{
   }
 
   ion-avatar{
-    width: 50%;
-    height: 50%;
-    margin-left: 25%;
+    width: 250px;
+    height: 250px;
+    margin-left: 30%;
   }
   
+  ion-grid{
+    width: 700px;
+    height: 500px;
+  }
 
+  ion-label{
+    padding: 5px;
+    width: 700px;
+  }
 
+  ion-select{
+    background-color: rgba(0, 0, 0, 0.177);
+    width: 700px;
+    
+  }
 }
 
 // Estilos para dispositivos de escritorio
@@ -45,6 +58,10 @@ ion-title{
     height: 100%;
   }
   
+  ion-select{
+    background-color: rgba(0, 0, 0, 0.177);
+    
+  }
 }
 
 
