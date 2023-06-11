@@ -184,7 +184,7 @@ export class UserService {
       username: user['username']
     };
     if(user['pictureFile']){
-      var response:FileUploaded = await this.uploadImage(user['profilePick']);
+      var response:FileUploaded = await this.uploadImage(user['pictureFile']);
       _user['profilePick'] = response.file;
     }
     try {

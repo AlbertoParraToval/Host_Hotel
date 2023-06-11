@@ -79,6 +79,14 @@
         "fecha":"Date",
         "text_r":"Texte du commentaire",
         "rating":"Note"
-    }
+    },
 
+    
+"form_user_update":{
+        "title" : "Mise à jour de l'utilisateur",
+        "first_name" : "FirstName",
+        "last_name" : "Last_name",
+        "username" : "Nom d'utilisateur",
+        "img" : "Image"
+    }
 }

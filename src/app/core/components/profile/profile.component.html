@@ -2,13 +2,15 @@
 <ion-card color="light" *ngIf="user">
   <ion-card-header>
           <ion-avatar>
-            <ion-img alt="{{user.first_name}} {{user.last_name}}" src="{{user.profilePick}}"></ion-img>
+            <ion-img *ngIf="!user.profilePick" alt="Silhouette of a driver's head" src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
+        
+            <ion-img  *ngIf="user.profilePick" alt="driver picture" [src]="user.profilePick"></ion-img>
           </ion-avatar>
           <ion-card-title>{{user.last_name}}, {{user.first_name}}</ion-card-title>
           <ion-card-subtitle>{{user.email}}</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
-        <!-- <ion-button (click)="onEditClick()"><ion-icon name="create-outline" ></ion-icon></ion-button>-->
+        <ion-button (click)="onEditClick()"><ion-icon name="create-outline" ></ion-icon></ion-button>
         <ion-button id="btn_borrar" color="danger" (click)="onDeleteClick()">{{"profile.btn_borrar" |translate}}</ion-button>
         <ion-button *ngIf="esPc" id="btn_borrar" color="success" (click)="signOut()">{{"profile.SignOut" |translate}}</ion-button>
         </ion-card-content>

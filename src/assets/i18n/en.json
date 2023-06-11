@@ -80,5 +80,13 @@
         "fecha":"Date",
         "text_r":"Review's Text",
         "rating":"Rating"
+    },
+
+    "form_user_update":{
+        "title": "User update",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "username":"Username",
+        "img": "Image"
     }
 }

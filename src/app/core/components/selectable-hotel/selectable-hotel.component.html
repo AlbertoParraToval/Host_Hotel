@@ -12,7 +12,7 @@
     </ion-item>
     <div class="ion-padding" slot="content">
       <ion-list>
-        <ion-item *ngFor="let selectedHotel of getHotelList()" button detail  (click)="onHotelClicke(selectedHotel, accordion)">
+        <ion-item *ngFor="let selectedHotel of getHotelList()" button detail  (click)="onHotelClick(selectedHotel, accordion)">
           <ion-avatar class="selectedDriver">
             <img *ngIf="!selectedHotel.url_img" alt="Silhouette of a selectedDriver's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
             <img *ngIf="selectedHotel.url_img" alt="selectedDriver url_img" [src]="selectedHotel.url_img" />

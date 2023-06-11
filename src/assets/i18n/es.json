@@ -82,5 +82,13 @@
         "fecha":"Fecha",
         "text_r":"Comentario",
         "rating":"Nota"
+    },
+
+    "form_user_update":{
+        "title":"Actualización usuario",
+        "first_name":"Nombre",
+        "last_name":"Apellidos",
+        "username": "Nombre de usuario",
+        "img":"Imagen"
     }
 }

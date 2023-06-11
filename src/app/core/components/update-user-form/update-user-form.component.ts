@@ -3,12 +3,16 @@
  * @brief This file contains the UpdateUserFormComponent.
  */
 
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalController, ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
-import { lastValueFrom } from 'rxjs';
+import { BehaviorSubject, lastValueFrom } from 'rxjs';
 import { User } from '../../models';
+import { UserService } from '../../services';
+import { Router } from '@angular/router';
+import { PhotoItem, PhotoService } from '../../services/photo.service';
+import { PlatformService } from '../../services/platform.service';
 
 /**
  * @class UpdateUserFormComponent
@@ -24,6 +28,12 @@ import { User } from '../../models';
 export class UpdateUserFormComponent implements OnInit {
   form: FormGroup; // The form group for the user update form
   mode: "New" | "Edit" = "New"; // The mode of the form, either "New" or "Edit"
+  esMovil: boolean;
+  esPc: boolean;
+  currentImage = new BehaviorSubject<string>(''); // The current image for the hotel
+  currentImage$ = this.currentImage.asObservable(); // Observable for the current image
+
+
   @Input('user') set user(user: User) {
     if (user) {
       this.form.controls['id'].setValue(user.id);
@@ -34,7 +44,10 @@ export class UpdateUserFormComponent implements OnInit {
       this.form.controls['email'].setValue(user.email)
       this.form.controls['username'].setValue(user.username);
       this.form.controls['profilePick'].setValue(user.profilePick);
-      this.mode = "Edit";
+      
+      if (user.profilePick) this.currentImage.next(user.profilePick);
+      this.form.controls.pictureFile.setValue(null);
+      this.mode = 'Edit';
     }
   }
 
@@ -46,24 +59,48 @@ export class UpdateUserFormComponent implements OnInit {
     private fb: FormBuilder,
     private modal: ModalController,
     private toastController: ToastController,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private userSvc:UserService,
+    private router:Router,
+    private photoSvc:PhotoService,
+    private cdr:ChangeDetectorRef,
+    public platform: PlatformService,
   ) {
     this.form = this.fb.group({
       id: [null],
-      docId: [""],
+      docId: [''],
       admin: [false],
-      first_name: ["", [Validators.required]],
-      last_name: ["", [Validators.required]],
-      email: [""],
-      username: ["", [Validators.required]],
-      profilePick: [""]
+      first_name: ['', [Validators.required]],
+      last_name: ['', [Validators.required]],
+      email: [''],
+      username: ['', [Validators.required]],
+      profilePick: [''],
+      pictureFile:[null]
     });
   }
 
+  signOut() {
+    this.userSvc.signOut();
+    this.router.navigate(['login']);
+  }
+
   ngOnInit() {
-    if (this.user) {
-      this.form.controls['profilePick'].setValue(this.user.profilePick);
-    }
+    this.onResize();
+  }
+
+  /**
+   * @brief Changes the picture for the hotel.
+   * @param fileLoader The HTML input element for file loading.
+   * @param mode The mode for getting the picture (library, camera, or file).
+   */
+  async changePic(
+    fileLoader: HTMLInputElement,
+    mode: 'library' | 'camera' | 'file'
+  ) {
+    var item: PhotoItem = await this.photoSvc.getPicture(mode, fileLoader);
+    this.currentImage.next(item.base64);
+    this.cdr.detectChanges();
+    this.form.controls.pictureFile.setValue(item.blob);
   }
 
   /**
@@ -71,6 +108,7 @@ export class UpdateUserFormComponent implements OnInit {
    */
   onSubmit() {
     this.modal.dismiss({ user: this.form.value, mode: this.mode }, 'ok');
+    console.log(this.form.value.profilePick);
   }
 
   /**
@@ -115,20 +153,10 @@ export class UpdateUserFormComponent implements OnInit {
     await toast.present();
   }
 
-  /**
-   * @brief Toggles the password input field mode between text and password.
-   */
-  togglePasswordMode() {
-    this.passwordTypeInput = this.passwordTypeInput === 'text' ? 'password' : 'text';
-
-    const nativeEl = this.passwordEye.nativeElement.querySelector('input');
-
-    const inputSelection = nativeEl.selectionStart;
-
-    nativeEl.focus();
-
-    setTimeout(() => {
-      nativeEl.setSelectionRange(inputSelection, inputSelection);
-    }, 1);
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
+    this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
   }
+
 }
