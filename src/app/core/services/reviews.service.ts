@@ -55,7 +55,6 @@ export class ReviewsService {
   }
 }
 
-
   async getReviewsByHotel(hotelId: string): Promise<Reviews[]> {
     try {
       const reviews = await this.firebase.getDocumentsBy('reviews', 'id_hoteles', hotelId);

@@ -8,7 +8,7 @@
 </ion-header>
 <ion-content color="light" class="ion-padding">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
-    <app-selectable-hotel [hotels]="hotel" (hotelChange)="onHotelSelected($event)" ></app-selectable-hotel>
+    <app-selectable-hotel  formControlName="id_hoteles"></app-selectable-hotel>
     <ion-item>
       <ion-label position="floating">
         {{'form_review.fecha' | translate}}

@@ -50,7 +50,7 @@ export class HotelsService {
           id: 0,
           docId: hotel.id,
           name_hotel: hotel.data.name_hotel,
-          localtion_hotel: hotel.data.last_name,
+          localtion_hotel: hotel.data.location_hotel,
           url_img: hotel.data.url_img,
           info_hotel: hotel.data.info_hotel,
         });

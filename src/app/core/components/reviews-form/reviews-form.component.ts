@@ -76,9 +76,6 @@ export class ReviewsFormComponent implements OnInit {
     this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
   }
 
-  onHotelSelected(hotel: hotels) {
-    this.hotel = hotel;
-  }
 
   onSubmit() {
     this.modal.dismiss({ review: this.form.value, mode: this.mode }, 'ok');
@@ -104,7 +101,7 @@ export class ReviewsFormComponent implements OnInit {
     if (this.review) {
       // ...
       if (!this.review.id_hoteles && this.hotel) {
-        this.form.controls.id_hoteles.setValue(this.hotel.name_hotel); 
+        this.form.controls.id_hoteles.setValue(this.hotel.docId); 
       }
     }
   }

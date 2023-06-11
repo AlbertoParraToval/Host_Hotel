@@ -4,7 +4,7 @@
  */
 
 import { Component, EventEmitter, Input, OnInit, Output, forwardRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Reviews, hotels } from '../../models';
 import { HotelsService } from '../../services';
 import { IonAccordionGroup } from '@ionic/angular';
@@ -33,7 +33,7 @@ export const REVIEWS_VALUE_ACCESSOR: any = {
   styleUrls: ['./selectable-hotel.component.scss'],
   providers: [REVIEWS_VALUE_ACCESSOR]
 })
-export class SelectableHotelComponent implements OnInit {
+export class SelectableHotelComponent implements OnInit, ControlValueAccessor {
   @Input() hotels: hotels; // The list of hotels to display
   @Output() hotelChange: EventEmitter<hotels> = new EventEmitter<hotels>(); // Event emitted when the selected hotel changes
 
