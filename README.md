@@ -9,7 +9,7 @@
 HotelHost es una app de valoración de hoteles de una misma cadena en España, para ello haremos que la lista de hoteles disponible se filtre por comunidades autónomas.
 Esta App tiene dos modos de verla, el primero modo administrador donde el administrador podrá editar, modificar y añadir los hoteles de su cadena de hoteles de manera personalizada. Además el administrador podrá ver todas las reseñas y poder borrar, editarlas por si hay alguna falta de respeto hacia el hotel correspondiente. Es decir se aceptan críticas pero con cabeza y educación.
 
-Por otro lado el modo cliente donde, el usuario podrá buscar el hotel donde ha estado para dejar su reseña de manera gratuita y así ayudar a otros usuarios para encontrar el hotel ideal para sus vacaciones, los hoteles tendrán una valoración que será la media de las reseñas de los usuarios. Si un hotel no tiene todavía ninguna reseña se dejará sin valoración hasta que haya una como mínimo.
+Por otro lado el modo cliente donde, el usuario podrá buscar el hotel donde ha estado para dejar su reseña de manera gratuita y así ayudar a otros usuarios para encontrar el hotel ideal para sus vacaciones.
 
 ## Tecnologías utilizadas
 - Creación de la base de datos, diseño App: MySQL WorkBench, Figma...
@@ -51,9 +51,9 @@ Listado de Clientes en una pági ()na que estará solo disponible en el modo adm
 ### Semana 6 (5 Mayo - 11 Junio)
 Implementacion de una pipe que diferencia a los usuarios por el atributo admin, donde se ha diferenciado que puede hacer el usuario normal y que puede hacer el usuario que es ADMIN. Actualización de el servicio de traducción, y documentación de todo el código hasta la fecha. 
 
-
 ## Implementaciones siguientes
 - Borrado de Users en modo admin
+- Implementación de las reviews (en proceso)
 
 ## Video Presentación CheckPoint
 - [Link Youtube](https://youtu.be/Vv869Pm4sgc)
