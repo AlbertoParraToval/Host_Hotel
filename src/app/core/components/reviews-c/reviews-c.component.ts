@@ -15,7 +15,6 @@ export class ReviewsCComponent implements OnInit {
   @Input('review') set review(review:Reviews){
     this._review = review;
     this.loadUserHotel(review);
-  
   }
 
   public _hotel:BehaviorSubject<hotels> = new BehaviorSubject<hotels>(null);
@@ -26,7 +25,9 @@ export class ReviewsCComponent implements OnInit {
 
   private async loadUserHotel(review:Reviews){
     this._hotel.next(await this.hotelSvc.gethotelById(review.id_hoteles));
+    console.log(review.id_hoteles)
     this._users.next(await this.userSvc.getUserById(review.id_user));
+    console.log(review.id_user)
   }
 
 

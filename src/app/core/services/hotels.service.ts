@@ -13,11 +13,7 @@ export class HotelsService {
   
   unsubscr;
   constructor(private firebase: FirebaseService) {
-    this.unsubscr = this.firebase.subscribeToCollection(
-      'hotels',
-      this._hotelSubject,
-      this.maphotel // Enlace del método maphotel a la instancia actual
-    );
+    this.unsubscr = this.firebase.subscribeToCollection('hotels', this._hotelSubject, this.maphotel);
   }
   
 
@@ -46,18 +42,18 @@ export class HotelsService {
     return this._hotelSubject.value;
   }
 
-  gethotelById(id:string):Promise<hotels>{
-    return new Promise<hotels>(async (resolve, reject)=>{
+  gethotelById(id: string): Promise<hotels> {
+    return new Promise<hotels>(async (resolve, reject) => {
       try {
         var hotel = (await this.firebase.getDocument('hotels', id));
         resolve({
-          id:0,
-          docId:hotel.id,
-          name_hotel:hotel.data.name_hotel,
-          localtion_hotel:hotel.data.last_name,
-          url_img:hotel.data.url_img,
-          info_hotel:hotel.data.info_hotel,
-        });  
+          id: 0,
+          docId: hotel.id,
+          name_hotel: hotel.data.name_hotel,
+          localtion_hotel: hotel.data.last_name,
+          url_img: hotel.data.url_img,
+          info_hotel: hotel.data.info_hotel,
+        });
       } catch (error) {
         reject(error);
       }
@@ -74,6 +70,7 @@ export class HotelsService {
 
   async addhotel(hotel:hotels){
     var _hotel = {
+      id:0,
       docId:hotel.id,
       name_hotel:hotel.name_hotel,
       localtion_hotel:hotel.localtion_hotel,
@@ -104,6 +101,7 @@ export class HotelsService {
 
   async updatehotel(hotel:hotels){
     var _hotel = {
+      id:0,
       docId:hotel.id,
       name_hotel:hotel.name_hotel,
       localtion_hotel:hotel.localtion_hotel,
@@ -118,5 +116,11 @@ export class HotelsService {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  async writeToFile(){
+    var dataToText = JSON.stringify(this._hotelSubject.value);
+    var data = new Blob([dataToText], {type: 'text/plain'});
+    this.firebase.fileUpload(data, 'text/plain', 'hotels', '.txt');
   }
 }

@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
+import { of, switchMap } from 'rxjs';
 import { hotels, Reviews, UserService, HotelsService, ReviewsService, ReviewsFormComponent } from 'src/app/core';
 
 @Component({
@@ -19,6 +20,7 @@ export class ReviewPage implements OnInit {
     private modal:ModalController,
     private reviewSvc: ReviewsService,
     private alert:AlertController,
+    private hotelSvc:HotelsService
   ) { }
 
   signOut(){
@@ -44,22 +46,27 @@ export class ReviewPage implements OnInit {
     return this.reviewSvc.reviews$;
   }
 
-  async presentReviewForm(reviewdata: Reviews) {
+  onAddReview(review){
+    this.presentReviewsForm(null);
+  }
+
+  async presentReviewsForm(review:Reviews){
     const modal = await this.modal.create({
-      component: ReviewsFormComponent,
-      componentProps: {
-        review: reviewdata
+      component:ReviewsFormComponent,
+      componentProps:{
+        assignment:review
       },
+      cssClass:"modal-full-right-side"
     });
     modal.present();
-    modal.onDidDismiss().then(result => {
-      if (result && result.data) {
-        switch (result.data.mode) {
+    modal.onDidDismiss().then(result=>{
+      if(result && result.data){
+        switch(result.data.mode){
           case 'New':
             this.reviewSvc.addReview(result.data.review);
             break;
           case 'Edit':
-            this.reviewSvc.updateReview(result.data.review.id, result.data.review);
+            this.reviewSvc.updateReview(result.data.review);
             break;
           default:
         }
@@ -67,18 +74,13 @@ export class ReviewPage implements OnInit {
     });
   }
 
-  onEditReview(reviewdata){
-    this.presentReviewForm(reviewdata);
+  onEditReview(review){
+    this.presentReviewsForm(review);
   }
 
-  onAddReview(reviewdata){
-      this.presentReviewForm(null);
-    }
-
-  async onDeleteAlert(reviewdata){
+  async onDeleteAlert(review){
     const alert = await this.alert.create({
-      header:'Atención',
-      message: '¿Estas seguro, no podrás volver atrás?',
+      header: '¿Está seguro de que desear borrar la asignación de tarea?',
       buttons: [
         {
           text: 'Cancelar',
@@ -91,7 +93,7 @@ export class ReviewPage implements OnInit {
           text: 'Borrar',
           role: 'confirm',
           handler: () => {
-            this.reviewSvc.deleteReview(reviewdata);
+            this.reviewSvc.deleteReviewbyId(review.docId);
           },
         },
       ],
@@ -102,29 +104,10 @@ export class ReviewPage implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
-  async onReviewExistsAlert(reviewdata){
-    const alert = await this.alert.create({
-      header: 'Error',
-      message: 'No es posible borrar el hotel.',
-      buttons: [
-        {
-          text: 'Cerrar',
-          role: 'close',
-          handler: () => {
-          
-          },
-        },
-      ],
-    });
-
-    await alert.present();
-
-    const { role } = await alert.onDidDismiss();
+  onDeleteReview(review){
+    this.onDeleteAlert(review);
   }
 
-  async onDeleteReview(reviewdata){
-      this.onDeleteAlert(reviewdata);
-  }
 }
 
 

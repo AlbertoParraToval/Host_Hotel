@@ -1,5 +1,5 @@
 <ion-card>
-    <ion-card-header (click)="searchReviews()">
+    <ion-card-header>
         <ion-img *ngIf="!_hotel.url_img" alt="Silhouette of a driver's head" src="https://ionicframework.com/docs/img/demos/avatar.svg"></ion-img>
         
         <ion-img  *ngIf="_hotel.url_img" alt="driver picture" [src]="_hotel.url_img"></ion-img>

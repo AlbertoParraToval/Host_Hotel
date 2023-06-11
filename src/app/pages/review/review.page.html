@@ -14,11 +14,9 @@
     </ion-fab-button>
   </ion-fab> 
   <ion-grid>
-    <ion-row>
-      <ion-col *ngFor="let reviewdata of getReviews() | async" size="12" size-lg="3" size-sm="6">
-        <app-user-reviews-c [_review]="reviewdata" ></app-user-reviews-c>
-    </ion-col>
-    </ion-row>
+    <ion-list>
+      <app-reviews-c  *ngFor="let review of getReviews() | async"  (onEdit)="onEditReview($event)" (onDelete)="onDeleteReview($event)"  size="12" size-lg="3" size-sm="6" [review]="review" ></app-reviews-c>
+    </ion-list>
   </ion-grid>
 </ion-content>
 

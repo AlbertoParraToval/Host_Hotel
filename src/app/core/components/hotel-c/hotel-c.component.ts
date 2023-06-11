@@ -24,10 +24,6 @@ export class HotelCComponent implements OnInit {
     public router:Router,
   ){}
 
-  searchReviews() {
-    this.router.navigate(['/review']);
-  }
-
   ngOnInit() {  this.onResize();}
  // Esta función se ejecuta cada vez que se redimensiona la pantalla
   @HostListener('window:resize', ['$event'])
