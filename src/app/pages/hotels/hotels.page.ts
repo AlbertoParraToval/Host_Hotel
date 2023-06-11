@@ -1,9 +1,20 @@
-import { Component, OnInit,HostListener } from '@angular/core';
+/**
+ * @file hotels.page.ts
+ * @brief This file contains the HotelsPage.
+ */
+
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 import { FormHotelComponent, HotelsService, ReviewsService, UserService, hotels, Reviews } from 'src/app/core';
 import { filter } from 'rxjs/operators';
 
+/**
+ * @class HotelsPage
+ * @brief Represents the HotelsPage.
+ * 
+ * This page is responsible for displaying hotels and managing hotel-related operations.
+ */
 @Component({
   selector: 'app-hotels',
   templateUrl: './hotels.page.html',
@@ -11,7 +22,7 @@ import { filter } from 'rxjs/operators';
 })
 export class HotelsPage implements OnInit {
   esMovil: boolean;
-  filteredHotels:hotels[];
+  filteredHotels: hotels[];
   allHotels: hotels[];
   esPc: boolean;
   provinciaSeleccionada: string;
@@ -20,64 +31,80 @@ export class HotelsPage implements OnInit {
   hotelReviews: Reviews[];
 
   constructor(
-    public user:UserService,
+    public user: UserService,
     public hotelsSvc: HotelsService,
-    private router:Router,
-    private modal:ModalController,
+    private router: Router,
+    private modal: ModalController,
     private reviewSvc: ReviewsService,
-    private alert:AlertController,
+    private alert: AlertController,
   ) { }
 
-  signOut(){
+  /**
+   * @brief Signs out the user and navigates to the login page.
+   */
+  signOut() {
     this.user.signOut();
     this.router.navigate(['login']);
   }
 
-  ngOnInit() { 
+  /**
+   * @brief Initializes the component.
+   */
+  ngOnInit() {
     this.getHotels().subscribe(allHotels => {
       this.allHotels = allHotels;
       this.filteredHotels = allHotels;
-    
+    });
+
     this.onResize();
   }
-  )}
 
-  
-
- // Esta función se ejecuta cada vez que se redimensiona la pantalla
+  /**
+   * @brief Handles the window resize event.
+   * @param event The resize event.
+   */
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
-    this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
-    this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
+    this.esMovil = window.innerWidth < 768; // If the window width is less than 768, it is considered to be a mobile screen
+    this.esPc = window.innerWidth > 768; // If the window width is greater than 768, it is considered to be a desktop screen
   }
-  
 
-
-onProvinciaSelected() {
-  if (this.provinciaSeleccionada) {
-    this.filteredHotels = this.allHotels.filter(hotel =>
-      hotel.localtion_hotel.includes(this.provinciaSeleccionada)
-    );
-  } else {
-    this.filteredHotels = this.allHotels; // Mostrar todos los hoteles si no se ha seleccionado una provincia
+  /**
+   * @brief Filters hotels based on the selected province.
+   */
+  onProvinciaSelected() {
+    if (this.provinciaSeleccionada) {
+      this.filteredHotels = this.allHotels.filter(hotel =>
+        hotel.localtion_hotel.includes(this.provinciaSeleccionada)
+      );
+    } else {
+      this.filteredHotels = this.allHotels; // Show all hotels if no province is selected
+    }
   }
-}
 
-  getHotels(){
+  /**
+   * @brief Retrieves the hotels from the HotelsService.
+   * @returns An observable that emits the list of hotels.
+   */
+  getHotels() {
     return this.hotelsSvc.hotel$;
   }
 
-  async presentHotelForm(hoteldata:hotels){
+  /**
+   * @brief Presents the hotel form modal for creating or editing a hotel.
+   * @param hoteldata The data of the hotel to be edited (optional).
+   */
+  async presentHotelForm(hoteldata: hotels) {
     const modal = await this.modal.create({
-      component:FormHotelComponent,
-      componentProps:{
-        hotel:hoteldata
+      component: FormHotelComponent,
+      componentProps: {
+        hotel: hoteldata
       },
     });
     modal.present();
-    modal.onDidDismiss().then(result=>{
-      if(result && result.data){
-        switch(result.data.mode){
+    modal.onDidDismiss().then(result => {
+      if (result && result.data) {
+        switch (result.data.mode) {
           case 'New':
             this.hotelsSvc.addhotel(result.data.hotel);
             break;
@@ -85,29 +112,42 @@ onProvinciaSelected() {
             this.hotelsSvc.updatehotel(result.data.hotel);
             break;
           default:
+            // Handle other cases if necessary
         }
       }
     });
   }
 
-  onEditHotel(hoteldata){
+  /**
+   * @brief Handles the edit hotel action.
+   * @param hoteldata The data of the hotel to be edited.
+   */
+  onEditHotel(hoteldata) {
     this.presentHotelForm(hoteldata);
   }
 
-  onAddHotel(hoteldata){
-      this.presentHotelForm(null);
-    }
+  /**
+   * @brief Handles the add hotel action.
+   * @param hoteldata The data of the hotel to be added.
+   */
+  onAddHotel(hoteldata) {
+    this.presentHotelForm(null);
+  }
 
-  async onDeleteAlert(hoteldata){
+  /**
+   * @brief Displays the delete hotel confirmation alert.
+   * @param hoteldata The data of the hotel to be deleted.
+   */
+  async onDeleteAlert(hoteldata) {
     const alert = await this.alert.create({
-      header:'Atención',
-      message: '¿Estas seguro, no podrás volver atrás?',
+      header: 'Atención',
+      message: '¿Estás seguro? Esta acción no se puede deshacer.',
       buttons: [
         {
           text: 'Cancelar',
           role: 'cancel',
           handler: () => {
-            console.log("Operacion cancelada");
+            console.log("Operación cancelada");
           },
         },
         {
@@ -125,7 +165,11 @@ onProvinciaSelected() {
     const { role } = await alert.onDidDismiss();
   }
 
-  async onHotelExistsAlert(hoteldata){
+  /**
+   * @brief Displays the hotel exists alert.
+   * @param hoteldata The data of the hotel for which the deletion is not possible.
+   */
+  async onHotelExistsAlert(hoteldata) {
     const alert = await this.alert.create({
       header: 'Error',
       message: 'No es posible borrar el hotel.',
@@ -134,7 +178,7 @@ onProvinciaSelected() {
           text: 'Cerrar',
           role: 'close',
           handler: () => {
-          
+            // Handle the close button action if necessary
           },
         },
       ],
@@ -145,8 +189,11 @@ onProvinciaSelected() {
     const { role } = await alert.onDidDismiss();
   }
 
-  async onDeleteHotel(hoteldata){
-      this.onDeleteAlert(hoteldata);
+  /**
+   * @brief Handles the delete hotel action.
+   * @param hoteldata The data of the hotel to be deleted.
+   */
+  async onDeleteHotel(hoteldata) {
+    this.onDeleteAlert(hoteldata);
   }
 }
-

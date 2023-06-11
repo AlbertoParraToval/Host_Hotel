@@ -1,50 +1,72 @@
+/**
+ * @file clients-c.component.ts
+ * @brief This file contains the ClientsCComponent.
+ */
+
 import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { UserService } from '../../services';
 import { Reviews, User } from '../../models';
 import { LocaleService } from '../../services/locale.service';
 import { Router } from '@angular/router';
 
+/**
+ * @class ClientsCComponent
+ * @brief Represents the ClientsCComponent.
+ * 
+ * This component is responsible for displaying the details of a client.
+ */
 @Component({
   selector: 'app-clients-c',
   templateUrl: './clients-c.component.html',
   styleUrls: ['./clients-c.component.scss'],
 })
 export class ClientsCComponent implements OnInit {
+  @Output() onEdit = new EventEmitter; // Event emitter for the edit event
+  @Output() onDelete = new EventEmitter; // Event emitter for the delete event
+  @Input() _user: User; // Input property for the client details
 
-  @Output() onEdit = new EventEmitter;
-  @Output() onDelete = new EventEmitter;
-  @Input() _user:User;
-  esMovil: boolean;
-  esPc: boolean;
-  accordionExpanded = false;
-  hotelReviews: Reviews[];
-  
+  esMovil: boolean; // Flag indicating whether the device is a mobile
+  esPc: boolean; // Flag indicating whether the device is a desktop
+  accordionExpanded = false; // Flag indicating whether the accordion is expanded
+  hotelReviews: Reviews[]; // Reviews for the client's hotel
+
   constructor(
-    public locale:LocaleService,
-    public router:Router,
-  ) { }
+    public locale: LocaleService,
+    public router: Router,
+  ) {}
 
-  
-  ngOnInit() {  this.onResize();}
- // Esta función se ejecuta cada vez que se redimensiona la pantalla
-  @HostListener('window:resize', ['$event'])
-  onResize(event?) {
-    this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
-    this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
+  ngOnInit() {
+    this.onResize();
   }
 
-  
+  /**
+   * @brief Handles the resize event of the window.
+   * @param event The resize event object.
+   */
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    this.esMovil = window.innerWidth < 768; // If the screen width is less than 768, it's considered a mobile device
+    this.esPc = window.innerWidth > 768; // If the screen width is greater than 768, it's considered a desktop device
+  }
 
-  onEditClick(){
+  /**
+   * @brief Handles the edit click event.
+   */
+  onEditClick() {
     this.onEdit.emit(this._user);
   }
 
-  onDeleteClick(){
-
+  /**
+   * @brief Handles the delete click event.
+   */
+  onDeleteClick() {
     this.onDelete.emit(this._user);
   }
+
+  /**
+   * @brief Toggles the accordion state.
+   */
   toggleAccordion() {
     this.accordionExpanded = !this.accordionExpanded;
   }
-
 }

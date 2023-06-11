@@ -1,3 +1,8 @@
+/**
+ * @file form-hotel.component.ts
+ * @brief This file contains the FormHotelComponent.
+ */
+
 import { ChangeDetectorRef, Component, HostListener, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
@@ -8,21 +13,28 @@ import { hotels } from '../../models';
 import { UserService } from '../../services';
 import { Router, RouterLink } from '@angular/router';
 
+/**
+ * @class FormHotelComponent
+ * @brief Represents the FormHotelComponent.
+ * 
+ * This component is responsible for displaying and handling the form for adding or editing a hotel.
+ */
 @Component({
   selector: 'app-form-hotel',
   templateUrl: './form-hotel.component.html',
   styleUrls: ['./form-hotel.component.scss'],
 })
 export class FormHotelComponent implements OnInit {
-esMovil:boolean;
-esPc:boolean;
+  esMovil: boolean; // Flag indicating whether the device is a mobile
+  esPc: boolean; // Flag indicating whether the device is a desktop
 
+  form: FormGroup; // The form group for the hotel form
+  mode: 'New' | 'Edit' = 'New'; // The mode of the form (New or Edit)
+  currentImage = new BehaviorSubject<string>(''); // The current image for the hotel
+  currentImage$ = this.currentImage.asObservable(); // Observable for the current image
 
-  form: FormGroup;
-  mode: 'New' | 'Edit' = 'New';
-  currentImage = new BehaviorSubject<string>('');
-  currentImage$ = this.currentImage.asObservable();
   @Input('user') set hotel(hotel: hotels) {
+    // Setter for the hotel input property
     if (hotel) {
       this.form.controls.id.setValue(hotel.id);
       this.form.controls.docId.setValue(hotel.docId);
@@ -44,12 +56,12 @@ esPc:boolean;
     private fb: FormBuilder,
     private modal: ModalController,
     private cdr: ChangeDetectorRef,
-    private user:UserService,
-    private router:Router
+    private user: UserService,
+    private router: Router
   ) {
+    // Initialize the form group
     this.form = this.fb.group({
       id: [null],
-      
       docId: [''],
       name_hotel: ['', [Validators.required]],
       localtion_hotel: ['', [Validators.required]],
@@ -57,30 +69,49 @@ esPc:boolean;
       url_img: [''],
       pictureFile: [null],
     })
-
   }
 
-  ngOnInit() {  this.onResize();}
-  // Esta función se ejecuta cada vez que se redimensiona la pantalla
-    @HostListener('window:resize', ['$event'])
-    onResize(event?) {
-      this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
-      this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
-    }
+  ngOnInit() {
+    this.onResize();
+  }
 
+  /**
+   * @brief Handles the resize event of the window.
+   * @param event The resize event object.
+   */
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    this.esMovil = window.innerWidth < 768; // If the screen width is less than 768, it's considered a mobile device
+    this.esPc = window.innerWidth > 768; // If the screen width is greater than 768, it's considered a desktop device
+  }
+
+  /**
+   * @brief Handles the form submission.
+   */
   onSubmit() {
     this.modal.dismiss({ hotel: this.form.value, mode: this.mode }, 'ok');
   }
 
+  /**
+   * @brief Closes the modal without saving changes.
+   */
   onDismiss(result) {
     this.modal.dismiss(null, 'cancel');
   }
 
-  signOut(){
+  /**
+   * @brief Signs out the user and navigates to the login page.
+   */
+  signOut() {
     this.user.signOut();
     this.router.navigate(['login']);
   }
 
+  /**
+   * @brief Changes the picture for the hotel.
+   * @param fileLoader The HTML input element for file loading.
+   * @param mode The mode for getting the picture (library, camera, or file).
+   */
   async changePic(
     fileLoader: HTMLInputElement,
     mode: 'library' | 'camera' | 'file'

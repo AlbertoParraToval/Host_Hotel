@@ -1,3 +1,8 @@
+/**
+ * @file clients.page.ts
+ * @brief This file contains the ClientsPage.
+ */
+
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController, AlertController } from '@ionic/angular';
@@ -7,6 +12,12 @@ import { UpdateUserFormComponent, User, UserService } from 'src/app/core';
 import { FirebaseService } from 'src/app/core/services/firebase/firebase-service';
 import { LocaleService } from 'src/app/core/services/locale.service';
 
+/**
+ * @class ClientsPage
+ * @brief Represents the ClientsPage.
+ * 
+ * This page is responsible for managing clients, including displaying client information, updating client details, and deleting clients.
+ */
 @Component({
   selector: 'app-clients',
   templateUrl: './clients.page.html',
@@ -14,78 +25,110 @@ import { LocaleService } from 'src/app/core/services/locale.service';
 })
 export class ClientsPage implements OnInit {
 
-  language = 1; // 0 español, 1 inglés
-  currentLanguage
+  language = 1; // 0 for Spanish, 1 for English
+  currentLanguage;
   esMovil: boolean;
   esPc: boolean;
-  
-  constructor(private firebase:FirebaseService,
-    private translate: TranslateService,
-    private locale:LocaleService,
-    private userSvc: UserService,
-    private modal:ModalController,
-    private alert: AlertController,
-    public user:UserService,
-    private router:Router,) {
-      }
 
+  constructor(
+    private firebase: FirebaseService,
+    private translate: TranslateService,
+    private locale: LocaleService,
+    private userSvc: UserService,
+    private modal: ModalController,
+    private alert: AlertController,
+    public user: UserService,
+    private router: Router
+  ) {}
+
+  /**
+   * @brief Initializes the component.
+   */
   ngOnInit() {
     this.onResize();
-    this.user.getUserList()
+    this.user.getUserList();
   }
   
-  getUserActive():User {
+  /**
+   * @brief Retrieves the active user.
+   * @returns The active user.
+   */
+  getUserActive(): User {
     return this.userSvc.currentUser;
   }
 
-  signOut(){
+  /**
+   * @brief Signs out the user and navigates to the login page.
+   */
+  signOut() {
     this.user.signOut();
     this.router.navigate(['login']);
   }
 
+  /**
+   * @brief Retrieves all users.
+   * @returns An observable of all users.
+   */
   getAllUsers() {
     return this.user._user$;
   }
 
-  private async init(){
-    this.translate. setDefaultLang('en');
+  /**
+   * @brief Initializes the language settings.
+   */
+  private async init() {
+    this.translate.setDefaultLang('en');
   }
-  ngAfterViewInit(): void {
-  
+
+  /**
+   * @brief Handles the window resize event.
+   * @param event The resize event.
+   */
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    this.esMovil = window.innerWidth < 768; // If the window width is less than 768, it is considered to be a mobile screen
+    this.esPc = window.innerWidth > 768; // If the window width is greater than 768, it is considered to be a desktop screen
   }
-  
-  async presentFormUser(userdata:User){
+
+  /**
+   * @brief Presents the user form modal for updating user details.
+   * @param userdata The user data.
+   */
+  async presentFormUser(userdata: User) {
     const modal = await this.modal.create({
       component: UpdateUserFormComponent,
-      componentProps:{
-        user:userdata
+      componentProps: {
+        user: userdata
       },
     });
     modal.present();
-    modal.onDidDismiss().then(result=>{
-        this.userSvc.updateUser(result.data.user);
+    modal.onDidDismiss().then(result => {
+      this.userSvc.updateUser(result.data.user);
     });
   }
 
-  onEditUser(user:User){
-    this.presentFormUser(user)
+  /**
+   * @brief Handles the edit user action.
+   * @param user The user to edit.
+   */
+  onEditUser(user: User) {
+    this.presentFormUser(user);
   }
 
+  /**
+   * @brief Handles the language selection.
+   * @param languageCode The code of the selected language.
+   */
   onLanguage(languageCode: string) {
     this.translate.setDefaultLang(languageCode);
     this.locale.registerCulture(languageCode);
   }
-  
 
-  // Esta función se ejecuta cada vez que se redimensiona la pantalla
-  @HostListener('window:resize', ['$event'])
-  onResize(event?) {
-    this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
-    this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
-  }
-
-  
-  async onDeleteUserAlert(user: User){
+  /**
+   * @brief Handles the delete user action.
+   * @param user The user to delete.
+   */
+  async onDeleteUserAlert(user: User) {
     const alert = await this.alert.create({
       header: await lastValueFrom(this.translate.get('alerts.warning')),
       message: await lastValueFrom(this.translate.get('alerts.deleteUser')),
@@ -113,7 +156,11 @@ export class ClientsPage implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
-  onDeleteUser(user: User){
+  /**
+   * @brief Handles the delete user action.
+   * @param user The user to delete.
+   */
+  onDeleteUser(user: User) {
     this.onDeleteUserAlert(user);
-  } 
+  }
 }

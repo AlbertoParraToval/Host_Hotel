@@ -1,3 +1,8 @@
+/**
+ * @file signin.component.ts
+ * @brief This file contains the SigninComponent.
+ */
+
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -9,6 +14,12 @@ import { lastValueFrom } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { RpasswordComponent } from '../rpassword/rpassword.component';
 
+/**
+ * @class SigninComponent
+ * @brief Represents the SigninComponent.
+ * 
+ * This component is responsible for handling user sign-in.
+ */
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -33,15 +44,18 @@ export class SigninComponent implements OnInit {
     });
   }
 
+  /**
+   * @brief Initializes the component.
+   */
   ngOnInit() {}
 
-
-
-  //Función que llama al modal de register donde tendrá una pantalla de carga de 1000s
+  /**
+   * @brief Opens the registration modal and displays a loading indicator.
+   */
   async register() {
     const loading = await this.loadingController.create({
       message: 'Cargando...',
-      duration: 1000 // Opcional, tiempo que durará la carga (en milisegundos)
+      duration: 1000 // Optional, duration of the loading indicator (in milliseconds)
     });
     await loading.present();
 
@@ -49,17 +63,13 @@ export class SigninComponent implements OnInit {
       component: RegisterComponent,
       componentProps: {
         cssClass: 'my-custom-class',
-        // Opción para establecer el tamaño del modal
         backdropDismiss: true,
         mode: 'md',
-        // Opciones para establecer el tamaño del modal
         height: '90%',
         width: '90%',
       },
     });
 
-
-    //Si descartamos la opción de registro de usuario.
     modal.onDidDismiss().then(async (response) => {
       try {
         if (response.role == 'ok') {
@@ -73,9 +83,9 @@ export class SigninComponent implements OnInit {
     modal.present();
   }
 
-  
-  
-  //Función que sincroniza con la firebase para la comprobación de datos del usuario.
+  /**
+   * @brief Attempts to sign in the user and navigates to the home page.
+   */
   async onSignIn() {
     try {
       await this.user.login(this.form.value);
@@ -89,8 +99,12 @@ export class SigninComponent implements OnInit {
       console.log(error);
     }
   }
-  
 
+  /**
+   * @brief Checks if the form has a specific error.
+   * @param error The error to check.
+   * @return True if the form has the error, false otherwise.
+   */
   hasFormError(error) {
     return (
       this.form?.errors &&
@@ -98,18 +112,25 @@ export class SigninComponent implements OnInit {
     );
   }
 
+  /**
+   * @brief Converts the form errors to an array.
+   * @param errors The form errors.
+   * @return The array of errors.
+   */
   errorsToArray(errors) {
     if (errors && !('required' in errors)) return [Object.keys(errors)[0]];
     else return [];
   }
 
-
+  /**
+   * @brief Opens the password recovery modal.
+   */
   async recoverPassword(){
     const modal = await this.modalCtrl.create({
       component:RpasswordComponent,
       cssClass:"modal-full-right-side",
-      
     });
+
     modal.onDidDismiss().then(async (response) => {
       try{
         if(response.role = 'ok'){
