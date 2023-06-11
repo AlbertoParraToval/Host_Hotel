@@ -11,21 +11,21 @@
     <app-selectable-hotel [hotels]="hotel" (hotelChange)="onHotelSelected($event)" ></app-selectable-hotel>
     <ion-item>
       <ion-label position="floating">
-        {{'hoteles.localtion_hotel' | translate}}
+        {{'form_review.fecha' | translate}}
       </ion-label>
       <ion-input type="date"  placeholder="{{'hoteles.location_input' | translate}}" formControlName="fecha"></ion-input>
     </ion-item>
     
     <ion-item>
       <ion-label position="floating">
-        {{'hoteles.localtion_hotel' | translate}}
+        {{'form_review.text_r' | translate}}
       </ion-label>
       <ion-input type="text" placeholder="{{'hoteles.location_input' | translate}}" formControlName="text_review"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">
-        {{'hoteles.localtion_hotel' | translate}}
+        {{'form_review.rating' | translate}}
       </ion-label>
       <ion-input type="number" placeholder="{{'hoteles.location_input' | translate}}" formControlName="rating"></ion-input>
     </ion-item>

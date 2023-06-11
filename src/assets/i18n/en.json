@@ -20,11 +20,11 @@
         "delete": "Delete",
         "export": "Export"
     },
-    "home" : {
-        "list_hoteles" : "List of hotels",
-        "list_clientes" : "List of Clients",
+    "home": {
+        "list_hoteles": "Hotels",
+        "list_clientes": "Clients",
+        "list_reviews":"Reviews",
         "about":"About us"
-        
     },
     "validators": {
         "passwordMatch": "Passwords do not match",
@@ -75,5 +75,10 @@
 
     "profile":{
         "btn_borrar":"Delete account"
+    },
+    "form_review":{
+        "fecha":"Date",
+        "text_r":"Review's Text",
+        "rating":"Rating"
     }
 }

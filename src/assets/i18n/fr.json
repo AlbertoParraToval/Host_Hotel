@@ -22,8 +22,9 @@
         "export" : "Exporter"
     },
     "home" : {
-        "list_hoteles" : "Liste des hôtels",
-        "list_clientes" : "Liste des clients",
+        "list_hoteles" : "Hôtels",
+        "list_clientes" : "Clients",
+        "list_reviews":"Reviews",
         "about":"Sur nous"
     },
     "validators" : {
@@ -73,6 +74,11 @@
 
     "profile":{
         "btn_borrar":"Supprimer le compte"
+    },
+    "form_review":{
+        "fecha":"Date",
+        "text_r":"Texte du commentaire",
+        "rating":"Note"
     }
 
 }

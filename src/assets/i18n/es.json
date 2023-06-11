@@ -21,8 +21,10 @@
         "export": "Exportar"
     },
     "home": {
-        "list_hoteles": "Lista de Hoteles",
-        "list_clientes": "Lista de Clientes"
+        "list_hoteles": "Hoteles",
+        "list_clientes": "Clientes",
+        "list_reviews":"Reviews",
+        "about":"Sobre nosotros"
     },
     "validators": {
         "passwordMatch": "Las contraseñas no coinciden",
@@ -75,5 +77,10 @@
     },
     "review":{
         "title":"Reseñas"
+    },
+    "form_review":{
+        "fecha":"Fecha",
+        "text_r":"Comentario",
+        "rating":"Nota"
     }
 }
