@@ -9,7 +9,7 @@
 
 <ion-content color="light">
   <ion-fab  vertical="bottom" horizontal="end" edge="false" slot="fixed" *ngIf="esPc">
-    <ion-fab-button (click)="onAddHotel($event)">
+    <ion-fab-button *ngIf="(user.user$ | async) | isAdmin" (click)="onAddHotel($event)">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -20,7 +20,7 @@
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let hoteldata of filteredHotels" size="12" size-lg="3" size-sm="6">
-        <app-hotel-c   [_hotel]="hoteldata" (onEdit)="onEditHotel($event)" (onDelete)="onDeleteHotel($event)"></app-hotel-c>
+        <app-hotel-c [_hotel]="hoteldata" (onEdit)="onEditHotel($event)" (onDelete)="onDeleteHotel($event)"></app-hotel-c>
     </ion-col>
     </ion-row>
   </ion-grid>

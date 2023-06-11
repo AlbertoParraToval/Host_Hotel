@@ -8,13 +8,13 @@
     </ion-card-header>
   
     <ion-card-content>
-      <ion-button color="success" class="item-expanded"  slot="end" fill="clear" (click)="onEditClick()">
+      <ion-button *ngIf="(user.user$ | async) | isAdmin" color="success" class="item-expanded"  slot="end" fill="clear" (click)="onEditClick()">
         <div class="vertical">
           <ion-icon name="create" ></ion-icon>
           {{'modal.edit' | translate | uppercase}}
         </div>
       </ion-button>
-      <ion-button class="item-expanded"  slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
+      <ion-button *ngIf="(user.user$ | async) | isAdmin" class="item-expanded"  slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
         <div class="vertical">
           <ion-icon name="trash" ></ion-icon>
           {{'Borrar' | uppercase}}

@@ -8,6 +8,7 @@ import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@a
 import { IonItemSliding } from '@ionic/angular';
 import { hotels } from '../../models';
 import { Router } from '@angular/router';
+import { UserService } from '../../services';
 
 /**
  * @class HotelCComponent
@@ -30,7 +31,8 @@ export class HotelCComponent implements OnInit {
   esPc: boolean; // Flag indicating whether the device is a desktop
 
   constructor(
-    public router: Router
+    public router: Router,
+    public user: UserService
   ) { }
 
   ngOnInit() {
