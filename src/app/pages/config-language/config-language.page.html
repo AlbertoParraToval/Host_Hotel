@@ -7,6 +7,11 @@
 </ion-header>
 
 <ion-content color="light">
+  <ion-fab  vertical="bottom" horizontal="start" edge="false" slot="fixed" *ngIf="esPc">
+    <ion-fab-button (click)="signOut()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-grid *ngIf="esMovil">
     <ion-row id="subtitle_row">
       <ion-text>{{ "settings.text_config"|translate}}</ion-text>

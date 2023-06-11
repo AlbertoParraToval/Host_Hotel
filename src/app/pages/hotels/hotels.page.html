@@ -13,6 +13,12 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <ion-fab  vertical="bottom" horizontal="start" edge="false" slot="fixed" *ngIf="esPc">
+    <ion-fab-button (click)="signOut()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-select [(ngModel)]="provinciaSeleccionada" placeholder="Selecciona una provincia" (ionChange)="onProvinciaSelected()">
     <ion-select-option *ngFor="let provincia of provincias" [value]="provincia">{{ provincia }}</ion-select-option>
   </ion-select>

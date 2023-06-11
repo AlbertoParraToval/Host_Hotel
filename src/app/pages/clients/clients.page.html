@@ -8,6 +8,11 @@
 </ion-header>
 
 <ion-content color="light">
+  <ion-fab  vertical="bottom" horizontal="start" edge="false" slot="fixed" *ngIf="esPc">
+    <ion-fab-button (click)="signOut()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 <app-clients-c *ngFor="let user of getAllUsers() | async" [_user]="user" (onEdit)="onEditUser($event)" (onDelete)="onDeleteUser($event)"></app-clients-c>
 </ion-content>
 

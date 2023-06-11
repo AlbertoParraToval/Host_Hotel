@@ -13,8 +13,18 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab> 
+
+  <ion-fab  vertical="bottom" horizontal="start" edge="false" slot="fixed" *ngIf="esPc">
+    <ion-fab-button (click)="signOut()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-grid>
-      <app-reviews-c *ngFor="let review of getReviews() | async"  (onEdit)="onEditReview($event)" (onDelete)="onDeleteReview($event)"size="12" size-lg="3" size-sm="6" [review]="review" ></app-reviews-c>
+    <ion-row>
+      <ion-col  *ngFor="let review of getReviews() | async" size="12" size-lg="3" size-sm="6">
+        <app-reviews-c  (onEdit)="onEditReview($event)" (onDelete)="onDeleteReview($event)" [review]="review" ></app-reviews-c>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
 
