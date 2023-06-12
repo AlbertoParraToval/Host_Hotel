@@ -120,7 +120,7 @@
       </ion-list>
       <ion-row>
         <ion-col>
-          <ion-button shape="round" [disabled]="!form.valid" (click)="onRegister()">
+          <ion-button  (click)="showLoading()" shape="round" [disabled]="!form.valid" (click)="onRegister()">
             <ion-text color="dark">{{
               "register.send" | translate
             }}</ion-text></ion-button> 

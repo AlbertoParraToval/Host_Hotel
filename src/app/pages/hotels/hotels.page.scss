@@ -16,7 +16,12 @@ ion-title{
       max-width: 960px;
       margin: 0 auto;
   }
-
+  ion-select{
+    background-color: rgba(0, 0, 0, 0.177);
+    width: 700px;
+    margin-left: 27.5%;
+    
+  }
   #add_btn{
     margin-left: 15px;
     width: 25px;
@@ -66,6 +71,11 @@ ion-title{
     width: 25px;
     height: 25px;
     margin-left: 30px;
+    
+  }
+  ion-select{
+    background-color: rgba(0, 0, 0, 0.177);
+
     
   }
 

@@ -122,6 +122,16 @@ export class SigninComponent implements OnInit {
     else return [];
   }
 
+
+  async showLoading() {
+    const loading = await this.loadingController.create({
+      message: 'Wait...',
+      duration: 250,
+    });
+
+    loading.present();
+  }
+
   /**
    * @brief Opens the password recovery modal.
    */
@@ -130,6 +140,7 @@ export class SigninComponent implements OnInit {
       component:RpasswordComponent,
       cssClass:"modal-full-right-side",
     });
+
 
     modal.onDidDismiss().then(async (response) => {
       try{

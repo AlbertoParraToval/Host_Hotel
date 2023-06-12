@@ -38,10 +38,6 @@ const routes: Routes = [
     canActivate:[AuthGuard]
   },
   {
-    path: 'config-language',
-    loadChildren: () => import('./pages/config-language/config-language.module').then( m => m.ConfigLanguagePageModule)
-  },
-  {
     path: 'review',
     loadChildren: () => import('./pages/review/review.module').then( m => m.ReviewPageModule),
     canActivate:[AuthGuard]

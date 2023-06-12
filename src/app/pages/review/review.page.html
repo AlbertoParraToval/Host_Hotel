@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="secondary">
-    <ion-title>{{"title."|translate}}</ion-title>  
+    <ion-title>{{"title.review"|translate}}</ion-title>  
     <ion-icon *ngIf="esPc" name="arrow-back-circle-outline" id="back-icon" slot="end" routerLink="/home"></ion-icon>
     <ion-icon *ngIf="esMovil" name="add-outline" slot="end" id="add_btn" (click)="onAddReview($event)" ></ion-icon>
     <ion-icon id="hotels-icon" name="heart-half-outline" slot="start" ></ion-icon>
@@ -31,7 +31,7 @@
 <!--Para dispositivos moviles-->
 <ion-footer *ngIf="esMovil">
   <ion-toolbar color="light">
-    <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="end" routerLink="/hotels"></ion-icon>
+    <ion-icon id="back-icon" name="arrow-back-circle-outline" slot="end" routerLink="/home"></ion-icon>
     <ion-icon id="out-icon" name="log-out-outline" slot="start"  (click)="signOut()" ></ion-icon>
   </ion-toolbar>
   </ion-footer>

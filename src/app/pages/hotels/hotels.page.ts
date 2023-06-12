@@ -194,6 +194,37 @@ export class HotelsPage implements OnInit {
    * @param hoteldata The data of the hotel to be deleted.
    */
   async onDeleteHotel(hoteldata) {
-    this.onDeleteAlert(hoteldata);
+    const reviews = await this.reviewSvc.getReviewsByHotel(hoteldata.docId);
+    console.log(hoteldata.docId)
+    if (reviews.length > 0) {
+      this.presentDeleteConfirmationAlert(hoteldata);
+    } else {
+      this.onDeleteAlert(hoteldata);
+    }
+  }
+
+  async presentDeleteConfirmationAlert(hoteldata) {
+    const alert = await this.alert.create({
+      header: 'Atención',
+      message: '¿Estás seguro? Esta acción no se puede deshacer.',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log("Operación cancelada");
+          },
+        },
+        {
+          text: 'Borrar',
+          role: 'confirm',
+          handler: () => {
+            this.hotelsSvc.deletehotel(hoteldata);
+          },
+        },
+      ],
+    });
+  
+    await alert.present();
   }
 }

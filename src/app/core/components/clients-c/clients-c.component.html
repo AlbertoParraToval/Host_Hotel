@@ -3,21 +3,20 @@
     <ion-avatar>
       <ion-img alt="{{_user.first_name}} {{_user.last_name}}" src="{{_user.profilePick}}"></ion-img>
     </ion-avatar>
-    {{ _user.username }}
+    <ion-text>
+      {{ _user.username }}
+    </ion-text>
   </ion-item>
   <ion-item-sliding *ngIf="accordionExpanded">
     <ion-item>
-      {{ _user.first_name}}
+      Nombre: {{ _user.first_name}}
     </ion-item>
     <ion-item>
-      {{ _user.last_name}}
+      Apellidos: {{ _user.last_name}}
     </ion-item>
     <ion-item>
-      {{ _user.email }}
+      Email del Usuario: {{ _user.email }}
     </ion-item>
-    <!--<ion-item-options side="end">
-      <ion-button color="danger" (click)="onDeleteClick()">{{ "profile.btn_borrar" | translate }}</ion-button>
-    </ion-item-options>-->
   </ion-item-sliding>
 </ion-list>
 

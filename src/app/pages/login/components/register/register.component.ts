@@ -5,7 +5,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ModalController } from '@ionic/angular';
+import { LoadingController, ModalController } from '@ionic/angular';
 import { PasswordValidation } from 'src/app/core/utils/password-validator';
 
 /**
@@ -24,7 +24,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private loadingControler:LoadingController
   ) {
     this.form = this.formBuilder.group({
       first_name: ["", Validators.required],
@@ -51,7 +52,7 @@ export class RegisterComponent implements OnInit {
   onRegister() {
     this.modalCtrl.dismiss({
       email: this.form.value.email,
-      username: this.form.value.email,
+      username: this.form.value.username,
       password: this.form.value.password,
       first_name: this.form.value.first_name,
       admin: this.form.value.admin,
@@ -87,4 +88,15 @@ export class RegisterComponent implements OnInit {
   onDismiss() {
     this.modalCtrl.dismiss();
   }
+
+  async showLoading() {
+    const loading = await this.loadingControler.create({
+      message: 'Loading...',
+      duration: 500,
+    });
+
+    loading.present();
+  }
+
+
 }
