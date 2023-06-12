@@ -112,6 +112,7 @@ export class SettingsPage implements OnInit {
       componentProps: {
         user: userdata,
       },
+      cssClass:"modal-full-right-side"
     });
     modal.present();
     modal.onDidDismiss().then(result => {
