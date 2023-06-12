@@ -27,6 +27,7 @@ import { Router, RouterLink } from '@angular/router';
 export class FormHotelComponent implements OnInit {
   esMovil: boolean; // Flag indicating whether the device is a mobile
   esPc: boolean; // Flag indicating whether the device is a desktop
+  provincias: string[] = ['Almería', 'Cádiz', 'Córdoba', 'Granada', 'Huelva', 'Jaén', 'Málaga', 'Sevilla'];
 
   form: FormGroup; // The form group for the hotel form
   mode: 'New' | 'Edit' = 'New'; // The mode of the form (New or Edit)
@@ -44,7 +45,8 @@ export class FormHotelComponent implements OnInit {
       this.form.controls.info_hotel.setValue(hotel.info_hotel);
       this.form.controls.url_img.setValue(hotel.url_img);
       
-      if (hotel.url_img) this.currentImage.next(hotel.url_img);
+      if (hotel.url_img) 
+        this.currentImage.next(hotel.url_img);
       this.form.controls.pictureFile.setValue(null);
       this.mode = 'Edit';
     }

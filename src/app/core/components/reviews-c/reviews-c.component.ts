@@ -53,6 +53,7 @@ export class ReviewsCComponent implements OnInit {
 
   onEditClick(){
     this.onEdit.emit(this._review);
+    console.log(this._review)
   }
 
   onDeleteClick(){

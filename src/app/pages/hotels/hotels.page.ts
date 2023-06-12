@@ -100,6 +100,7 @@ export class HotelsPage implements OnInit {
       componentProps: {
         hotel: hoteldata
       },
+      cssClass:"modal-full-right-side"
     });
     modal.present();
     modal.onDidDismiss().then(result => {

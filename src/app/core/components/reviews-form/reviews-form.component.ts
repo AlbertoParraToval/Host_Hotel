@@ -2,12 +2,13 @@ import { ChangeDetectorRef, Component, HostListener, Input, OnInit } from '@angu
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, lastValueFrom } from 'rxjs';
 import { Reviews, hotels, User } from '../../models';
 import { HotelsService, UserService } from '../../services';
 import { PhotoService, PhotoItem } from '../../services/photo.service';
 import { PlatformService } from '../../services/platform.service';
 import { FirebaseDocument, FirebaseService } from '../../services/firebase/firebase-service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-reviews-form',
@@ -18,7 +19,7 @@ import { FirebaseDocument, FirebaseService } from '../../services/firebase/fireb
 export class ReviewsFormComponent implements OnInit {
   esMovil: boolean;
   esPc: boolean;
-
+  button_text = "";
   form: FormGroup;
   mode: 'New' | 'Edit' = 'New';
   currentImage = new BehaviorSubject<string>('');
@@ -32,6 +33,7 @@ export class ReviewsFormComponent implements OnInit {
       this.form.controls.text_review.setValue(review.text_review);
       this.form.controls.rating.setValue(review.rating);
       this.form.controls.fecha.setValue(review.fecha);
+      this.mode = "Edit"
     }
   }
   @Input() user_: User;
@@ -45,8 +47,7 @@ export class ReviewsFormComponent implements OnInit {
     private cdr: ChangeDetectorRef,
     private user: UserService,
     private router: Router,
-    private firebase:FirebaseService,
-    private hotelSvc:HotelsService
+    private translate:TranslateService
   ) {
     this.form = this.fb.group({
       id: [null],
@@ -59,7 +60,13 @@ export class ReviewsFormComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+
+    if(this.mode == "Edit"){
+    this.button_text = await lastValueFrom(this.translate.get('settings.btn_edit')); } 
+    else{
+    this.button_text = await this.translate.get('settings.btn_new').toPromise();}
+
     this.onResize();
     this.populateForm(); 
     const currentUser = this.user.currentUser;
@@ -75,7 +82,6 @@ export class ReviewsFormComponent implements OnInit {
     this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
     this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
   }
-
 
   onSubmit() {
     this.modal.dismiss({ review: this.form.value, mode: this.mode }, 'ok');

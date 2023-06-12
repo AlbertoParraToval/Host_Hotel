@@ -33,3 +33,20 @@
 *{
   font-family: 'Mantinia Regular';
 }
+
+.modal-full-right-side{
+  display:flex;
+  --height:100%;
+  justify-content: flex-end;
+  --max-width:350px;
+}
+
+.validationError{
+  color:var(--ion-color-danger);
+  font-size:0.8em;
+  display:flex;  
+  width:100%;  
+}
+.required{
+  color:var(--ion-color-danger);
+}

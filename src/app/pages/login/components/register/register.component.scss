@@ -9,10 +9,7 @@
 
 // Estilos para dispositivos de escritorio
 @media only screen and (min-width: 768px) {
-    .container {
-        max-width: 960px;
-        margin: 0 auto;
-    }
+    
 
     ion-img{
         width: 50%;
@@ -38,10 +35,7 @@
 
 
 @media only screen and (max-width: 768px) {
-    .container {
-        max-width: 400px;
-        margin: 0 auto;
-    }
+
 
     ion-img{
         width: 95%;

@@ -53,21 +53,9 @@ export class SigninComponent implements OnInit {
    * @brief Opens the registration modal and displays a loading indicator.
    */
   async register() {
-    const loading = await this.loadingController.create({
-      message: 'Cargando...',
-      duration: 1000 // Optional, duration of the loading indicator (in milliseconds)
-    });
-    await loading.present();
-
     const modal = await this.modalCtrl.create({
       component: RegisterComponent,
-      componentProps: {
-        cssClass: 'my-custom-class',
-        backdropDismiss: true,
-        mode: 'md',
-        height: '90%',
-        width: '90%',
-      },
+      cssClass:"modal-full-right-side"
     });
 
     modal.onDidDismiss().then(async (response) => {

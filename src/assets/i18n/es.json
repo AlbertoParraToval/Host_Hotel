@@ -52,6 +52,7 @@
 
     "settings":{
         "btn_edit":"Editar",
+        "btn_new":"Nuevo",
         "text_config":"Configuracion de Idioma",
         "text_config2":"Configuración de Tema"
     },

@@ -60,6 +60,7 @@ export class ReviewPage implements OnInit {
     });
     modal.present();
     modal.onDidDismiss().then(result=>{
+      console.log(result.data)
       if(result && result.data){
         switch(result.data.mode){
           case 'New':

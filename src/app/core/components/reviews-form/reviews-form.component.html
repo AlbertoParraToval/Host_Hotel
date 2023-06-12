@@ -31,7 +31,7 @@
     </ion-item>
   </form>
 
-  <ion-button color="secondary" [disabled]="!form.valid" (click)="onSubmit()">{{mode=="Edit"?('settings.btn_edit' | translate):('settings.btn_edit' | translate)}}</ion-button>
+  <ion-button color="secondary" [disabled]="!form.valid" (click)="onSubmit()">{{button_text}}</ion-button>
 </ion-content>
 
 <ion-footer *ngIf="esMovil">
