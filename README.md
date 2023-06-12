@@ -48,12 +48,15 @@ Realización de la funcionalidad de eliminar la cuenta ya registrada previamente
 Filtrado de hoteles donde se podrá elegir entre las 8 provincias andaluzas, para ver los distintos hoteles que dispone la aplicación hasta la fecha, y actualización de la el servicio de traducción para las nuevas features.
 Listado de Clientes en una pági ()na que estará solo disponible en el modo admin donde se recogeran todos los usuarios registrados en la app (de momento solo esta la funcionalidad de leer).
 
-### Semana 6 (5 Mayo - 11 Junio)
+### Semana 7 (5 Junio - 11 Junio)
 Implementacion de una pipe que diferencia a los usuarios por el atributo admin, donde se ha diferenciado que puede hacer el usuario normal y que puede hacer el usuario que es ADMIN. Actualización de el servicio de traducción, y documentación de todo el código hasta la fecha. 
+Actualizaciones de la interfaz donde se ha modificado bastante para hacerla mucho más userFriendly a la vez que se han corregido pequeños errores en los forms donde se iniciaba uno nuevo en vez de editar en si el hotel y la review seleccionada.
+
+### Semana 8 (12 Junio - 15 Junio)
 
 ## Implementaciones siguientes
-- Borrado de Users en modo admin
-- Implementación de las reviews (en proceso)
+- Borrado de Users en modo admin (A futuro)
+- Edición solo de las reviews de ese mismo usuario.
 
 ## Video Presentación CheckPoint
 - [Link Youtube](https://youtu.be/Vv869Pm4sgc)
