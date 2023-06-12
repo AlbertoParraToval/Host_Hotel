@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 import { FormHotelComponent, HotelsService, ReviewsService, UserService, hotels, Reviews } from 'src/app/core';
 import { filter } from 'rxjs/operators';
+import { DomSanitizer } from '@angular/platform-browser';
 
 /**
  * @class HotelsPage
@@ -37,6 +38,7 @@ export class HotelsPage implements OnInit {
     private modal: ModalController,
     private reviewSvc: ReviewsService,
     private alert: AlertController,
+    private sanitize:DomSanitizer
   ) { }
 
   /**
@@ -227,5 +229,25 @@ export class HotelsPage implements OnInit {
     });
   
     await alert.present();
+  }
+
+
+  downloadJson(){
+    console.log(this.allHotels)
+    this.hotelsSvc.saveJsonFile(this.allHotels);
+  }
+
+  getDownloadLink() {
+    const filePath = 'src\\app\\core\\python\\datos.json';
+    return this.sanitize.bypassSecurityTrustUrl(filePath);
+  }
+
+  downloadFile(): void {
+    const filePath = '../../python/graficos_reporte.zip'; // Reemplaza con la ruta correcta a tu archivo JSON
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = 'report.zip'; // Reemplaza con el nombre que deseas que tenga el archivo JSON descargado
+    link.target = '_blank'; // Para abrir el enlace en una nueva pestaña (opcional)
+    link.click();
   }
 }

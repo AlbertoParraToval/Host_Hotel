@@ -19,7 +19,7 @@
       <ion-icon name="log-out-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  
+
   <ion-select [(ngModel)]="provinciaSeleccionada" placeholder="Selecciona una provincia" (ionChange)="onProvinciaSelected()">
     <ion-select-option *ngFor="let provincia of provincias" [value]="provincia">{{ provincia }}</ion-select-option>
   </ion-select>
@@ -31,6 +31,9 @@
     </ion-col>
     </ion-row>
   </ion-grid>
+  <ion-button (click)="downloadJson()">
+    Export
+  </ion-button>
 </ion-content>
 
 <!--Para dispositivos moviles-->

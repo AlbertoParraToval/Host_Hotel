@@ -1,8 +1,10 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit, Sanitizer } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
+
 import { of, switchMap } from 'rxjs';
-import { hotels, Reviews, UserService, HotelsService, ReviewsService, ReviewsFormComponent } from 'src/app/core';
+import { hotels, Reviews, UserService, HotelsService, ReviewsService, ReviewsFormComponent, User } from 'src/app/core';
 
 @Component({
   selector: 'app-review',
@@ -13,6 +15,8 @@ export class ReviewPage implements OnInit {
   esMovil: boolean;
   esPc: boolean;
   hotelReviews: Reviews[];
+  currentUser: User;
+
 
   constructor(
     public user:UserService,
@@ -20,7 +24,9 @@ export class ReviewPage implements OnInit {
     private modal:ModalController,
     private reviewSvc: ReviewsService,
     private alert:AlertController,
-    private hotelSvc:HotelsService
+    private hotelSvc:HotelsService,
+    private userService:UserService,
+    private sanitize:DomSanitizer
   ) { }
 
   signOut(){
@@ -30,9 +36,9 @@ export class ReviewPage implements OnInit {
 
   ngOnInit() { 
     this.onResize();
+    this.currentUser = this.userService.currentUser;
   }
 
-  
 
  // Esta función se ejecuta cada vez que se redimensiona la pantalla
   @HostListener('window:resize', ['$event'])
@@ -105,9 +111,28 @@ export class ReviewPage implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
+
   onDeleteReview(review){
     this.onDeleteAlert(review);
   }
 
+  downloadJson(){
+    console.log(this.hotelReviews)
+    this.reviewSvc.saveJsonFile(this.hotelReviews);
+  }
+
+  getDownloadLink() {
+    const filePath = 'src\\app\\core\\python\\datos.json';
+    return this.sanitize.bypassSecurityTrustUrl(filePath);
+  }
+
+  downloadFile(): void {
+    const filePath = '../../python/graficos_reporte.zip'; // Reemplaza con la ruta correcta a tu archivo JSON
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = 'report.zip'; // Reemplaza con el nombre que deseas que tenga el archivo JSON descargado
+    link.target = '_blank'; // Para abrir el enlace en una nueva pestaña (opcional)
+    link.click();
+  }
 }
 

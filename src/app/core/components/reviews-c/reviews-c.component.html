@@ -3,9 +3,7 @@
       <ion-img  *ngIf="!(hotel$ | async)?.url_img" alt="Silhouette of a hotel's head" src="https://docs-demo.ionic.io/assets/madison.jpg"> </ion-img>
     <ion-img  *ngIf="(hotel$ | async)?.url_img" alt="hotel picture" [src]="(hotel$ | async)?.url_img" > </ion-img>
     <h3>{{(hotel$| async)?.name_hotel}}, {{_review.rating}}</h3>      
-    
     <ion-text>User: {{(user$ | async)?.username}}</ion-text>
-
   </ion-card-header>
 
   <ion-card-content>
@@ -15,13 +13,13 @@
       </ion-row>
     </ion-grid>
 
-    <ion-button class="item-expanded"slot="end" fill="clear" (click)="onEditClick()">
+    <ion-button *ngIf=" _review.id_user === currentUser.docId" class="item-expanded"slot="end" fill="clear" (click)="onEditClick()">
       <div class="vertical">
-        <ion-icon name="create" ></ion-icon>
+        <ion-icon name="create"></ion-icon>
         {{'modal.edit' | translate | uppercase}}
       </div>
     </ion-button>
-    <ion-button class="item-expanded"  slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
+    <ion-button *ngIf=" _review.id_user === currentUser.docId" class="item-expanded"  slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
       <div class="vertical">
         <ion-icon name="trash" ></ion-icon>
         {{'modal.delete' | translate | uppercase}}

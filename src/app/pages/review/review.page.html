@@ -22,10 +22,13 @@
   <ion-grid>
     <ion-row>
       <ion-col  *ngFor="let review of getReviews() | async" size="12" size-lg="3" size-sm="6">
-        <app-reviews-c  (onEdit)="onEditReview($event)" (onDelete)="onDeleteReview($event)" [review]="review" ></app-reviews-c>
+        <app-reviews-c  (onEdit)="onEditReview($event)" (onDelete)="onDeleteReview($event)" [review]="review" [currentUser]="currentUser" ></app-reviews-c>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ion-button (click)="downloadJson()">
+    Export
+  </ion-button>
 </ion-content>
 
 <!--Para dispositivos moviles-->

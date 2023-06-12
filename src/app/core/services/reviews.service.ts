@@ -124,4 +124,40 @@ export class ReviewsService {
       console.log(error);
     }
   }
+
+
+  /**
+   * Saves an object as a JSON file
+   * @param obj The object to be saved as JSON
+   */
+  saveJsonFile(obj: any) {
+  // Convert the object to JSON
+  const json = JSON.stringify(obj, null, 2);
+  
+  // Create a Blob object with the JSON content
+  const blob = new Blob([json], { type: 'application/json' });
+  
+  // Create a URL for the Blob
+  const url = URL.createObjectURL(blob);
+  
+  // Create a download link
+  const downloadLink = document.createElement('a');
+  downloadLink.href = url;
+  downloadLink.download = 'file.json';
+  downloadLink.style.display = 'none';
+  
+  // Add the link to the document
+  document.body.appendChild(downloadLink);
+  
+  // Click the link to download the file
+  downloadLink.click();
+  
+  // Remove the link from the document
+  document.body.removeChild(downloadLink);
+  
+  // Release the Blob URL after a certain time
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+  }, 1000);
+  }
 }

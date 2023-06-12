@@ -3,6 +3,7 @@ import { HotelsService, ReviewsService, UserService } from '../../services';
 import { Reviews, User, hotels } from '../../models';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LocaleService } from '../../services/locale.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-reviews-c',
@@ -16,6 +17,7 @@ export class ReviewsCComponent implements OnInit {
     this._review = review;
     this.loadUserHotel(review);
   }
+  @Input() currentUser: User;
 
 
 
@@ -36,6 +38,7 @@ export class ReviewsCComponent implements OnInit {
     console.log(review.text_review)
   }
 
+
   getManage():Reviews{
     return this._review;
   }
@@ -47,7 +50,8 @@ export class ReviewsCComponent implements OnInit {
     private userSvc:UserService,
     private hotelSvc:HotelsService,
     public locale:LocaleService,
-    private reviewSvc:ReviewsService
+    private reviewSvc:ReviewsService,
+
   ){
   }
 
