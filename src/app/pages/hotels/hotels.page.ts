@@ -7,7 +7,6 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 import { FormHotelComponent, HotelsService, ReviewsService, UserService, hotels, Reviews } from 'src/app/core';
-import { filter } from 'rxjs/operators';
 import { DomSanitizer } from '@angular/platform-browser';
 
 /**

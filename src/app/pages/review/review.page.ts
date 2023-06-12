@@ -2,9 +2,7 @@ import { Component, HostListener, Input, OnInit, Sanitizer } from '@angular/core
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
-
-import { of, switchMap } from 'rxjs';
-import { hotels, Reviews, UserService, HotelsService, ReviewsService, ReviewsFormComponent, User } from 'src/app/core';
+import { Reviews, UserService, HotelsService, ReviewsService, ReviewsFormComponent, User } from 'src/app/core';
 
 @Component({
   selector: 'app-review',
@@ -122,12 +120,12 @@ export class ReviewPage implements OnInit {
   }
 
   getDownloadLink() {
-    const filePath = 'src\\app\\core\\python\\datos.json';
+    const filePath = 'src\\app\\core\\python\\reviews.json';
     return this.sanitize.bypassSecurityTrustUrl(filePath);
   }
 
   downloadFile(): void {
-    const filePath = '../../python/graficos_reporte.zip'; // Reemplaza con la ruta correcta a tu archivo JSON
+    const filePath = '../../python/grafic_review.zip'; // Reemplaza con la ruta correcta a tu archivo JSON
     const link = document.createElement('a');
     link.href = filePath;
     link.download = 'report.zip'; // Reemplaza con el nombre que deseas que tenga el archivo JSON descargado
