@@ -2,15 +2,19 @@
   <ion-card-header>
       <ion-img  *ngIf="!(hotel$ | async)?.url_img" alt="Silhouette of a hotel's head" src="https://docs-demo.ionic.io/assets/madison.jpg"> </ion-img>
     <ion-img  *ngIf="(hotel$ | async)?.url_img" alt="hotel picture" [src]="(hotel$ | async)?.url_img" > </ion-img>
-    <h3>{{(hotel$| async)?.name_hotel}}</h3>
+    <h3>{{(hotel$| async)?.name_hotel}}, {{_review.rating}}</h3>      
+    
+    <ion-text>User: {{(user$ | async)?.username}}</ion-text>
+
   </ion-card-header>
 
   <ion-card-content>
-    <ion-row>
-      <ion-text>User: {{(user$ | async)?.username}}</ion-text>
-      <ion-text>{{review?.fecha | date:'short':undefined:locale.locale}}</ion-text>
-    </ion-row>
-    
+    <ion-grid>
+      <ion-row>
+        <ion-text>{{_review.text_review}}</ion-text>
+      </ion-row>
+    </ion-grid>
+
     <ion-button class="item-expanded"slot="end" fill="clear" (click)="onEditClick()">
       <div class="vertical">
         <ion-icon name="create" ></ion-icon>

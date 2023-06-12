@@ -39,7 +39,7 @@ export class ReviewsService {
 
   async getReviewById(id: string): Promise<Reviews> {
   try {
-    const response = await this.firebase.getDocument('reviews', id);
+    var response = await this.firebase.getDocument('reviews', id);
     return {
       id: 0,
       docId: response.id,
@@ -57,7 +57,7 @@ export class ReviewsService {
 
   async getReviewsByHotel(hotelId: string): Promise<Reviews[]> {
     try {
-      const reviews = await this.firebase.getDocumentsBy('reviews', 'id_hoteles', hotelId);
+      var reviews = await this.firebase.getDocumentsBy('reviews', 'id_hoteles', hotelId);
       return reviews.map((doc: DocumentData) => ({
         id: 0,
         docId: doc.id,
@@ -75,7 +75,7 @@ export class ReviewsService {
 
   async getReviewsByUser(userId: string): Promise<Reviews[]> {
     try {
-      const reviews = await this.firebase.getDocumentsBy('reviews', 'id_user', userId);
+      var reviews = await this.firebase.getDocumentsBy('reviews', 'id_user', userId);
       return reviews.map((doc: DocumentData) => ({
         id: 0,
         docId: doc.id,

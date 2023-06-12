@@ -6,8 +6,8 @@
           
               <ion-img  *ngIf="user.profilePick" alt="driver picture" [src]="user.profilePick"></ion-img>
             </ion-avatar>
-            <ion-card-title>{{user.last_name}}, {{user.first_name}}</ion-card-title>
-            <ion-card-subtitle>{{user.email}}</ion-card-subtitle>
+            <ion-card-title>{{user.first_name}}</ion-card-title>
+            <ion-card-subtitle>Email: {{user.email}}</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
           <ion-button id="btn_borrar" color="secondary" (click)="onEditClick()"><ion-icon name="create-outline" ></ion-icon></ion-button>
