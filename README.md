@@ -59,10 +59,9 @@ Actualizaciones de la interfaz donde se ha modificado bastante para hacerla much
 Realización de la parte de python y powerBi que son esenciales a la hora de documentar y finalizar el proyecto de final de grado, además se ha estado realizando una serie de modificaciones tanto en el FIGMA, como en la base de datos para que esté actualizada. Cambios en la interfaz para hacerla más facil y detallata.
 
 ## Implementaciones siguientes
-- Borrado de Users en modo admin (Sin empezar)
 - Edición solo de las reviews de ese mismo usuario. (Implementado)
 - Estrellas a modo de Rating. (Implementado)
-- Filtrado de Reviews a través de Estrellas. (En proceso)
+- Filtrado de Reviews a través de Estrellas. (Implementado)
 
 ## Aplicación subida a la Web
 
