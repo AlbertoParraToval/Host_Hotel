@@ -1,6 +1,15 @@
 [
   {
     "id": 0,
+    "docId": "0fZk7MW338vIcovQOFFZ",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "r4nAmbrBUKfR31uX29PI",
+    "fecha": "2023-05-24",
+    "rating": 3,
+    "text_review": "Buena relación calidad-precio."
+  },
+  {
+    "id": 0,
     "docId": "0iu72CouQSSEWyfYcVP6",
     "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
     "id_hoteles": "8U8rQri5xaa2Hi5qsKus",
@@ -10,9 +19,99 @@
   },
   {
     "id": 0,
-    "docId": "EyyTfdT8JvUKKw9PpCQQ",
+    "docId": "1keJbCkLtLHwZAHi882J",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "4mOXkPeYllfWTJjcrGF1",
+    "fecha": "2023-05-18",
+    "rating": 2,
+    "text_review": "No volvería, mala relación calidad-precio"
+  },
+  {
+    "id": 0,
+    "docId": "2JXwsktSlxMJlkRoZDM5",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "qQlIoOx99VhMVvxyv5Zg",
+    "fecha": "2023-06-14",
+    "rating": 2,
+    "text_review": "Atención al cliente deficiente, desinteresados."
+  },
+  {
+    "id": 0,
+    "docId": "5yqhY6mP4o7fnDkO0GZb",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "ki7gbpNEv7BvcslIkwVL",
+    "fecha": "2023-04-05",
+    "rating": 4,
+    "text_review": "Recomendado, personal amable"
+  },
+  {
+    "id": 0,
+    "docId": "75KenvDUiiK93GTbuEk1",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "r4nAmbrBUKfR31uX29PI",
+    "fecha": "2023-06-01",
+    "rating": 5,
+    "text_review": "Personal atento, desayuno delicioso"
+  },
+  {
+    "id": 0,
+    "docId": "7ajSPx30zaQ8GdHSle7M",
     "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
     "id_hoteles": "zAds1e1A7Zxy8JNliJus",
+    "fecha": "2023-04-03",
+    "rating": 2,
+    "text_review": "No me gustó, habitaciones sucias."
+  },
+  {
+    "id": 0,
+    "docId": "98S2ehR1bWW3HsWOXyZ9",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "geRSPnO2NDW9pF8qS4NI",
+    "fecha": "2023-05-30",
+    "rating": 1,
+    "text_review": "No cumplió mis expectativas, falta de comodidades."
+  },
+  {
+    "id": 0,
+    "docId": "9ETq0NHm2WdH6YhweO6K",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "BhVwTdpESNdLOWgJLwah",
+    "fecha": "2023-04-11",
+    "rating": 4,
+    "text_review": "Hotel moderno, decoración impresionante."
+  },
+  {
+    "id": 0,
+    "docId": "9vhpZaFTjjEmR5gIwgse",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "1Hzi8ztMo9twWHbeIVtu",
+    "fecha": "2023-02-27",
+    "rating": 2,
+    "text_review": "Personal poco amigable, falta de hospitalidad."
+  },
+  {
+    "id": 0,
+    "docId": "C8i1sH9wDStori1WfDFm",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "ITiI8JGwVn2T3jMYAiKK",
+    "fecha": "2023-05-18",
+    "rating": 4,
+    "text_review": "Limpieza impecable, personal amigable."
+  },
+  {
+    "id": 0,
+    "docId": "E2aiheZq2pQQUjn2sLwQ",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "7Fv94aF6DGyk1JsN93B9",
+    "fecha": "2023-04-22",
+    "rating": 4,
+    "text_review": "Comida deliciosa en el restaurante."
+  },
+  {
+    "id": 0,
+    "docId": "EyyTfdT8JvUKKw9PpCQQ",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "RFf3Awkz9HVeCzReXTYG",
     "fecha": "2023-05-02",
     "rating": 1,
     "text_review": "No tuve una buena experiencia, el servicio fue lento y el ambiente poco acogedor."
@@ -28,6 +127,69 @@
   },
   {
     "id": 0,
+    "docId": "HEu88FEFeBDeYyPTpsMs",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "8U8rQri5xaa2Hi5qsKus",
+    "fecha": "2023-05-17",
+    "rating": 4,
+    "text_review": "Bonitas instalaciones, habitaciones pequeñas"
+  },
+  {
+    "id": 0,
+    "docId": "NFJK5G0P81LaTArTneHJ",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "sH3yoANRew7lCTpA07jr",
+    "fecha": "2023-03-23",
+    "rating": 1,
+    "text_review": "Mala insonorización, se escucha todo."
+  },
+  {
+    "id": 0,
+    "docId": "OZBZ60WckK6GLq1MnksE",
+    "id_user": "ihhwW5WXtVgty7Yhf0UMkNS8w962",
+    "id_hoteles": "zAds1e1A7Zxy8JNliJus",
+    "fecha": "2023-06-08",
+    "rating": 4,
+    "text_review": "Muy bonito mi novia lo agradeció."
+  },
+  {
+    "id": 0,
+    "docId": "RviahxyLgFe9AJTJFimO",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "4enkcLMwjCrijt4GEEhQ",
+    "fecha": "2023-05-31",
+    "rating": 4,
+    "text_review": "Servicio de limpieza excelente."
+  },
+  {
+    "id": 0,
+    "docId": "U3sqVGyDQ0w1qg9owgkX",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "qQlIoOx99VhMVvxyv5Zg",
+    "fecha": "2023-02-08",
+    "rating": 2,
+    "text_review": "Ruido constante, difícil conciliar el sueño."
+  },
+  {
+    "id": 0,
+    "docId": "UkjxiwldkCkKI3iQZ3jd",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "4enkcLMwjCrijt4GEEhQ",
+    "fecha": "2023-01-04",
+    "rating": 3,
+    "text_review": "Excelente ubicación, cerca de todo"
+  },
+  {
+    "id": 0,
+    "docId": "UpuBTZipMiGOdChGWLjS",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "sH3yoANRew7lCTpA07jr",
+    "fecha": "2023-05-10",
+    "rating": 2,
+    "text_review": "No lo recomendaría, falta de mantenimiento."
+  },
+  {
+    "id": 0,
     "docId": "XcdASFMLyvU12k2Utw4S",
     "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
     "id_hoteles": "geRSPnO2NDW9pF8qS4NI",
@@ -37,11 +199,146 @@
   },
   {
     "id": 0,
+    "docId": "eDaGjrw7mc0zTZXK8iPu",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "T0pjSPftSyVX3Xsqrdeh",
+    "fecha": "2023-04-19",
+    "rating": 2,
+    "text_review": "Baño sucio, falta de higiene."
+  },
+  {
+    "id": 0,
+    "docId": "eOMzNxCFocYlewNebuHp",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "ki7gbpNEv7BvcslIkwVL",
+    "fecha": "2023-03-15",
+    "rating": 4,
+    "text_review": "Fantástica vista desde la habitación"
+  },
+  {
+    "id": 0,
+    "docId": "gycYdlc1t6WNW5Mn8Itr",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "1Hzi8ztMo9twWHbeIVtu",
+    "fecha": "2023-03-15",
+    "rating": 1,
+    "text_review": "Pésima limpieza, encontré insectos."
+  },
+  {
+    "id": 0,
     "docId": "hWAm52JCp7Xu2eu0tev6",
     "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
     "id_hoteles": "4enkcLMwjCrijt4GEEhQ",
     "fecha": "2023-05-31",
     "rating": 4,
     "text_review": "Increíble lugar para relajarse y desconectar del estrés diario. Lo recomiendo totalmente"
+  },
+  {
+    "id": 0,
+    "docId": "jw61VvcjYkO2op6Id5CB",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "ITiI8JGwVn2T3jMYAiKK",
+    "fecha": "2023-06-22",
+    "rating": 3,
+    "text_review": "Hermoso diseño, pero habitaciones pequeñas."
+  },
+  {
+    "id": 0,
+    "docId": "l6QvqlvYmUvcMFGu14El",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "T0pjSPftSyVX3Xsqrdeh",
+    "fecha": "2023-02-15",
+    "rating": 3,
+    "text_review": "Cama cómoda, descanso asegurado."
+  },
+  {
+    "id": 0,
+    "docId": "okQKzzsJYY4CuMJGJQWB",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "GmsI1yjfV8fejYpVNOnF",
+    "fecha": "2023-06-12",
+    "rating": 3,
+    "text_review": "Gran piscina, perfecta para relajarse."
+  },
+  {
+    "id": 0,
+    "docId": "pS7q5YiPpk1UbBHP0wyt",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "XM9CzyT9ZttI76Vd9d9N",
+    "fecha": "2023-06-13T17:36:04.432Z",
+    "rating": 4,
+    "text_review": "Excelente ubicación, cerca de atracciones turísticas."
+  },
+  {
+    "id": 0,
+    "docId": "rzbAfh37lEshKZ7c4iu8",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "8U8rQri5xaa2Hi5qsKus",
+    "fecha": "2023-03-02",
+    "rating": 1,
+    "text_review": "Mal experiencia, ruidoso y mal mantenimiento"
+  },
+  {
+    "id": 0,
+    "docId": "stR8tJTVaTlcfd0RFvqM",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "7iSwH26pGGYaZyUNzQFg",
+    "fecha": "2023-04-11",
+    "rating": 1,
+    "text_review": "Pesimo servicio al cliente."
+  },
+  {
+    "id": 0,
+    "docId": "sxJfyDxgsScQxWUbPp5T",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "GmsI1yjfV8fejYpVNOnF",
+    "fecha": "2023-04-12",
+    "rating": 3,
+    "text_review": "Todo perfecto, volveré pronto"
+  },
+  {
+    "id": 0,
+    "docId": "u7z71jxSuVQd8w8iOrNN",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "1Hzi8ztMo9twWHbeIVtu",
+    "fecha": "2023-05-30",
+    "rating": 1,
+    "text_review": "No volvería, mala calidad del desayuno."
+  },
+  {
+    "id": 0,
+    "docId": "ulz4yjgPGYmawHFej6BZ",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "4mOXkPeYllfWTJjcrGF1",
+    "fecha": "2023-03-14",
+    "rating": 2,
+    "text_review": "Mala señal de Wi-Fi, frustrante."
+  },
+  {
+    "id": 0,
+    "docId": "zJC0rbFfsrK6KHPMA8lG",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "8U8rQri5xaa2Hi5qsKus",
+    "fecha": "2023-05-04",
+    "rating": 2,
+    "text_review": "No recomendado, malas camas."
+  },
+  {
+    "id": 0,
+    "docId": "zTCyMQA36TruoiIkWSwq",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "BhVwTdpESNdLOWgJLwah",
+    "fecha": "2023-03-15",
+    "rating": 3,
+    "text_review": "Buen hotel, excelente servicio."
+  },
+  {
+    "id": 0,
+    "docId": "zZxWaf59S0L0GXyQLWbU",
+    "id_user": "RLfIC0TJWDfXkSTy5bIa45Uh2SP2",
+    "id_hoteles": "b5F0ORlebrpV3SoQcoHn",
+    "fecha": "2023-03-15",
+    "rating": 5,
+    "text_review": "Hotel tranquilo, ideal para descansar"
   }
 ]
