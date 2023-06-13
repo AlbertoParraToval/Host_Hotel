@@ -71,8 +71,9 @@ Finalización de la parte de python donde en las páginas de clientes, hoteles y
 ## Historial de Commits
 [Ver historial de commits](https://github.com/AlbertoParraToval/Host_Hotel/commits)
 
-## Video Presentación CheckPoint
-- [Link Youtube](https://youtu.be/Vv869Pm4sgc)
+## Videos Youtube
+- [Video de Checkpoint](https://youtu.be/Vv869Pm4sgc)
+- [Video Final]()
 
 ## Mis Redes Sociales
 [![instagram (1)](https://user-images.githubusercontent.com/91873665/233010034-40b413d8-914f-46f6-b1d5-8c6e8b312e8c.png)
