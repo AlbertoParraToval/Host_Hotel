@@ -14,11 +14,11 @@
         <ion-list>
           <ion-item lines="inset" (click)="changePic(fileLoader, 'library')" [button]="true" [detail]="false">
             <ion-icon slot="start" name="images-outline"></ion-icon>
-            <ion-label>{{'settings.btn_new' | translate}}</ion-label>
+            <ion-label color="dark">{{'settings.btn_new' | translate}}</ion-label>
           </ion-item>
           <ion-item lines="inset" (click)="changePic(fileLoader, 'camera')" [button]="true" [detail]="false">
             <ion-icon slot="start" name="camera-outline"></ion-icon>
-            <ion-label>{{'settings.btn_new' | translate}}</ion-label>
+            <ion-label  color="dark"> {{'settings.btn_new' | translate}}</ion-label>
           </ion-item>
         </ion-list>
       </ion-content>
@@ -26,7 +26,7 @@
   </ion-popover>
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-item >
-      <ion-label color="light" position="floating">{{'form_user_update.first_name' | translate}}<span class="required" *ngIf="form.controls['first_name'].errors">&nbsp;&#42;</span></ion-label>
+      <ion-label color="dark" position="floating">{{'form_user_update.first_name' | translate}}<span class="required" *ngIf="form.controls['first_name'].errors">&nbsp;&#42;</span></ion-label>
       <ion-input placeholder="{{'form_user_update.first_name' | translate}}"  formControlName="first_name" type="text"></ion-input>
       <span
       class="validationError"
@@ -34,7 +34,7 @@
       >{{'validators.' + error | translate}}</span>
     </ion-item>
     <ion-item >
-      <ion-label color="light" position="floating">{{'form_user_update.last_name' | translate}}<span class="required" *ngIf="form.controls['last_name'].errors">&nbsp;&#42;</span></ion-label>
+      <ion-label color="dark" position="floating">{{'form_user_update.last_name' | translate}}<span class="required" *ngIf="form.controls['last_name'].errors">&nbsp;&#42;</span></ion-label>
       <ion-input placeholder="{{'form_user_update.last_name' | translate}}"   formControlName="last_name" type="text"></ion-input>
       <span
       class="validationError"
@@ -42,7 +42,7 @@
       >{{'validators.' + error | translate}}</span>
     </ion-item>
     <ion-item >
-      <ion-label color="light" position="floating">{{'form_user_update.username' | translate}}<span class="required" *ngIf="form.controls['username'].errors">&nbsp;&#42;</span></ion-label>
+      <ion-label color="dark" position="floating">{{'form_user_update.username' | translate}}<span class="required" *ngIf="form.controls['username'].errors">&nbsp;&#42;</span></ion-label>
       <ion-input placeholder="{{'login.user' | translate}}" formControlName="username" type="text"></ion-input>
       <span
       class="validationError"
@@ -50,8 +50,8 @@
       >{{'validators.' + error | translate}}</span>
     </ion-item>
     <div>
-      <ion-button [disabled]="!form.valid" type="submit">Send</ion-button>
-      <ion-button color="danger" (click)="onDismiss()" type="button">Cancel</ion-button>
+      <ion-button color="primary" [disabled]="!form.valid" type="submit">Send</ion-button>
+      <ion-button color="secondary" (click)="onDismiss()" type="button">Cancel</ion-button>
     </div>
   </form>
 </ion-content>

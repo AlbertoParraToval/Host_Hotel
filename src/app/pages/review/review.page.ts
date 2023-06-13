@@ -109,7 +109,6 @@ export class ReviewPage implements OnInit {
     const { role } = await alert.onDidDismiss();
   }
 
-
   onDeleteReview(review){
     this.onDeleteAlert(review);
   }
