@@ -8,7 +8,14 @@
 </ion-header>
 
 <ion-content color="light">
-  
+  <ion-select [(ngModel)]="selectedRating">
+    <ion-select-option value="">Todos</ion-select-option>
+    <ion-select-option value="1">1 Estrella</ion-select-option>
+    <ion-select-option value="2">2 Estrellas</ion-select-option>
+    <ion-select-option value="3">3 Estrellas</ion-select-option>
+    <ion-select-option value="4">4 Estrellas</ion-select-option>
+    <ion-select-option value="5">5 Estrellas</ion-select-option>
+  </ion-select>
   <ion-fab  vertical="bottom" horizontal="end" edge="false" slot="fixed" *ngIf="esPc">
     <ion-fab-button (click)="onAddReview($event)">
       <ion-icon name="add"></ion-icon>

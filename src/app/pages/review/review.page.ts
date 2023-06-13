@@ -2,6 +2,7 @@ import { Component, HostListener, Input, OnInit, Sanitizer } from '@angular/core
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
+import { map } from 'rxjs';
 import { Reviews, UserService, HotelsService, ReviewsService, ReviewsFormComponent, User } from 'src/app/core';
 
 @Component({
@@ -12,8 +13,11 @@ import { Reviews, UserService, HotelsService, ReviewsService, ReviewsFormCompone
 export class ReviewPage implements OnInit {
   esMovil: boolean;
   esPc: boolean;
+  filteredReviews: Reviews[];
   hotelReviews: Reviews[];
   currentUser: User;
+  selectedRating: number;
+  
 
 
   constructor(
@@ -46,9 +50,21 @@ export class ReviewPage implements OnInit {
   }
 
 
-  getReviews(){
-    return this.reviewSvc.reviews$;
+  getReviews() {
+    return this.reviewSvc.reviews$.pipe(
+      map((reviews: Reviews[]) => {
+        if (this.selectedRating) {
+          // Filtrar las reviews por rating
+          return reviews.filter((review: Reviews) => review.rating == this.selectedRating);
+        } else {
+          // Si no se ha seleccionado un rating, mostrar todas las reviews
+          return reviews;
+        }
+      })
+    );
   }
+  
+  
 
   onAddReview(review){
     this.presentReviewsForm(null);
