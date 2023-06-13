@@ -38,6 +38,10 @@ export class ReviewPage implements OnInit {
 
   ngOnInit() { 
     this.onResize();
+    this.getReviews().subscribe(hotelReviews => {
+      this.hotelReviews = hotelReviews;
+      this.filteredReviews = hotelReviews;
+    });
     this.currentUser = this.userService.currentUser;
   }
 
