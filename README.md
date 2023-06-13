@@ -66,8 +66,6 @@ Finalización de la parte de python donde en las páginas de clientes, hoteles y
 
 ## Aplicación subida a la Web
 
-
-
 ## Historial de Commits
 [Ver historial de commits](https://github.com/AlbertoParraToval/Host_Hotel/commits)
 
