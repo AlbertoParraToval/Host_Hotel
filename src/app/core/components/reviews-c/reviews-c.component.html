@@ -25,15 +25,11 @@
       
     </ion-grid>
 
-    <ion-button color="success" *ngIf=" _review.id_user === currentUser.docId || currentUser.admin === true" class="item-expanded"slot="end" fill="clear" (click)="onEditClick()">
-      <div class="vertical">
+    <ion-button color="success" *ngIf=" _review.id_user === currentUser.docId || currentUser.admin === true" slot="end" fill="clear"  (click)="onEditClick()">
         <ion-icon name="create"></ion-icon>
-      </div>
     </ion-button>
-    <ion-button *ngIf=" _review.id_user === currentUser.docId || currentUser.admin === true" class="item-expanded"  slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
-      <div class="vertical">
+    <ion-button *ngIf=" _review.id_user === currentUser.docId || currentUser.admin === true"  slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
         <ion-icon name="trash" ></ion-icon>
-      </div>
     </ion-button>
   </ion-card-content>
 </ion-card>

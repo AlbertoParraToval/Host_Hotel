@@ -52,7 +52,7 @@ ion-title{
   }
 }
 
-// Estilos para dispositivos de escritorio
+// Estilos para dispositivos de movil
 @media only screen and (max-width: 768px) {
   .container {
       max-width: 400px;
@@ -65,10 +65,7 @@ ion-title{
     height: 25px;
   }
 
-  .icon_option{
-    width: auto;
-    height: auto;
-  }
+
 
   #edit_btn{
     margin-left: 25%;
