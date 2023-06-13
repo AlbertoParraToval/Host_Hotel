@@ -1,21 +1,19 @@
 <ion-card>
-    <ion-card-header>
-        <ion-img *ngIf="!_hotel.url_img" alt="Silhouette of a driver's head" src="https://docs-demo.ionic.io/assets/madison.jpg"></ion-img>
-        <ion-img  *ngIf="_hotel.url_img" alt="driver picture" [src]="_hotel.url_img"></ion-img>
-      <ion-card-title>{{_hotel.name_hotel}}, {{_hotel.localtion_hotel}}</ion-card-title>
-      <ion-card-subtitle>{{_hotel.info_hotel}}</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      <ion-button class="icon_option" *ngIf="(user.user$ | async) | isAdmin" color="success" class="item-expanded"  slot="end" fill="clear" (click)="onEditClick()">
-        <div class="vertical">
-          <ion-icon class="icon_option" name="create"></ion-icon>
-        </div>
-      </ion-button>
-      <ion-button class="icon_option"  *ngIf="(user.user$ | async) | isAdmin" class="item-expanded"  slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
-        <div class="vertical">
-          <ion-icon class="icon_option" name="trash" ></ion-icon>
-        </div>
-      </ion-button>
-    </ion-card-content>
-  </ion-card>
+  <ion-card-header>
+    <ion-img *ngIf="!_hotel.url_img" alt="default picture" src="https://docs-demo.ionic.io/assets/madison.jpg"></ion-img>
+    <ion-img *ngIf="_hotel.url_img" alt="hotel picture" [src]="_hotel.url_img"></ion-img>
+    <ion-card-title>{{_hotel.name_hotel}}, {{_hotel.localtion_hotel}}</ion-card-title>
+      {{_hotel.street_hotel}}
+    <ion-card-subtitle>{{_hotel.info_hotel}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-button *ngIf="(user.user$ | async) | isAdmin" color="success" fill="clear" (click)="onEditClick()" slot="end">
+      <ion-icon name="create"></ion-icon>
+    </ion-button>
+
+    <ion-button *ngIf="(user.user$ | async) | isAdmin" color="danger" fill="clear" (click)="onDeleteClick()" slot="end">
+      <ion-icon name="trash"></ion-icon>
+    </ion-button>
+  </ion-card-content>
+</ion-card>

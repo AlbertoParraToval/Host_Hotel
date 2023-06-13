@@ -28,6 +28,7 @@ export class HotelsService {
       name_hotel:doc.data().name_hotel,
       localtion_hotel:doc.data().localtion_hotel,
       url_img:doc.data().url_img,
+      street_hotel:doc.data().street_hotel,
       info_hotel:doc.data().info_hotel,
     };
   }
@@ -52,7 +53,9 @@ export class HotelsService {
           name_hotel: hotel.data.name_hotel,
           localtion_hotel: hotel.data.location_hotel,
           url_img: hotel.data.url_img,
+          street_hotel:hotel.data.street_hotel,
           info_hotel: hotel.data.info_hotel,
+
         });
       } catch (error) {
         reject(error);
@@ -74,6 +77,7 @@ export class HotelsService {
       docId:hotel.id,
       name_hotel:hotel.name_hotel,
       localtion_hotel:hotel.localtion_hotel,
+      street_hotel:hotel.street_hotel,
       info_hotel:hotel.info_hotel,
     };
     console.log(hotel.docId)
@@ -105,6 +109,7 @@ export class HotelsService {
       docId:hotel.id,
       name_hotel:hotel.name_hotel,
       localtion_hotel:hotel.localtion_hotel,
+      street_hotel:hotel.street_hotel,
       info_hotel:hotel.info_hotel,
     };
     if(hotel['pictureFile']){

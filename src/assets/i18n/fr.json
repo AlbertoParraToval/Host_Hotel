@@ -71,7 +71,8 @@
         "info_hotel" : "Information",
         "name_input" : "Entrez le nom de l'hôtel",
         "location_input" : "Entrez la localisation",
-        "info_input" : "Ajouter des informations sur l'hôtel"
+        "info_input" : "Ajouter des informations sur l'hôtel",
+        "street_hotel":"Ajouter la rue"
     },
 
     "profile":{

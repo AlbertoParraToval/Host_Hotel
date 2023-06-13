@@ -43,6 +43,7 @@ export class FormHotelComponent implements OnInit {
       this.form.controls.name_hotel.setValue(hotel.name_hotel);
       this.form.controls.localtion_hotel.setValue(hotel.localtion_hotel);
       this.form.controls.info_hotel.setValue(hotel.info_hotel);
+      this.form.controls.street_hotel.setValue(hotel.street_hotel)
       this.form.controls.url_img.setValue(hotel.url_img);
       
       if (hotel.url_img) 
@@ -67,6 +68,7 @@ export class FormHotelComponent implements OnInit {
       docId: [''],
       name_hotel: ['', [Validators.required]],
       localtion_hotel: ['', [Validators.required]],
+      street_hotel: ['', [Validators.required]],
       info_hotel: ['', [Validators.required]],
       url_img: [''],
       pictureFile: [null],

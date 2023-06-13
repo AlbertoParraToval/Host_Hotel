@@ -26,7 +26,7 @@ export class HotelCComponent implements OnInit {
   @Output() onEdit = new EventEmitter(); // Event emitted when the edit button is clicked
   @Output() onDelete = new EventEmitter(); // Event emitted when the delete button is clicked
   @Input() _hotel: hotels; // The hotel data to display
-
+  accordionExpanded = false;
   esMovil: boolean; // Flag indicating whether the device is a mobile
   esPc: boolean; // Flag indicating whether the device is a desktop
 
@@ -35,6 +35,12 @@ export class HotelCComponent implements OnInit {
     public user: UserService
   ) { }
 
+  /**
+   * @brief Toggles the accordion state.
+   */
+  toggleAccordion() {
+    this.accordionExpanded = !this.accordionExpanded;
+  }
   ngOnInit() {
     this.onResize();
   }
