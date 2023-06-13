@@ -55,7 +55,8 @@
         "btn_edit":"Éditer",
         "btn_new":"Nouveau",
         "text_config":"Paramètres linguistiques",
-        "text_config2" : "Configuration du thème"
+        "text_config2" : "Configuration du thème",
+        "export":"Export"
     },
 
     "aboutUs":{

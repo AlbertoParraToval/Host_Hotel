@@ -24,10 +24,15 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">
-        {{'form_review.rating' | translate}}
-      </ion-label>
-      <ion-input type="number" placeholder="{{'hoteles.location_input' | translate}}" formControlName="rating"></ion-input>
+      <ion-label>{{ 'form_review.rating' | translate }}</ion-label>
+      <div class="star-rating">
+        <ion-icon
+          *ngFor="let star of stars"
+          name="star"
+          (click)="setRating(star)"
+          [color]="star <= form.controls.rating.value ? 'primary' : 'medium'"
+        ></ion-icon>
+      </div>
     </ion-item>
   </form>
 

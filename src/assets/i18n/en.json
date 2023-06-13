@@ -55,7 +55,8 @@
         "btn_edit": "Edit",
         "btn_new":"New",
         "text_config": "Language Configuration",
-        "text_config2": "Theme Configuration"
+        "text_config2": "Theme Configuration",
+        "export":"Export"
     },
 
     "aboutUs":{

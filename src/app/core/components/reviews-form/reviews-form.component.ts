@@ -55,17 +55,23 @@ export class ReviewsFormComponent implements OnInit {
       id_user: [''],
       id_hoteles: [''],
       text_review: ['', [Validators.required]],
-      rating: ['', [Validators.required]],
+      rating: ['', [Validators.required, Validators.min(1), Validators.max(5)]],
       fecha: [new Date().toISOString()],
     });
   }
-
+  
+  stars: number[] = [1, 2, 3, 4, 5];
+  
+  setRating(star: number) {
+    this.form.controls.rating.setValue(star);
+  }
+  
   async ngOnInit() {
-
-    if(this.mode == "Edit"){
-    this.button_text = await lastValueFrom(this.translate.get('settings.btn_edit')); } 
-    else{
-    this.button_text = await this.translate.get('settings.btn_new').toPromise();}
+    if (this.mode == "Edit") {
+      this.button_text = await lastValueFrom(this.translate.get('settings.btn_edit'));
+    } else {
+      this.button_text = await this.translate.get('settings.btn_new').toPromise();
+    }
 
     this.onResize();
     this.populateForm(); 
@@ -73,7 +79,6 @@ export class ReviewsFormComponent implements OnInit {
     if (currentUser) {
       this.form.controls.id_user.setValue(currentUser.docId);
     }
-
   }
 
   // Esta función se ejecuta cada vez que se redimensiona la pantalla

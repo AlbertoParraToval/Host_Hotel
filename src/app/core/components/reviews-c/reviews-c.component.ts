@@ -70,5 +70,8 @@ export class ReviewsCComponent implements OnInit {
   onDeleteClick(){
     this.onDelete.emit(this._review);
   }
-
+  
+  getStarsArray(rating: number): number[] {
+    return Array.from({ length: rating }, (_, index) => index + 1);
+  }
 }

@@ -31,8 +31,8 @@
     </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-button (click)="downloadJson()">
-    Export
+  <ion-button *ngIf="esPc" (click)="downloadJson()">
+    {{"settings.export" | translate}}
   </ion-button>
 </ion-content>
 
