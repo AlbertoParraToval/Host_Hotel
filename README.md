@@ -25,7 +25,7 @@ A modo de que el profesorado tenga una idea de como se verá la aplicación he c
 - [Link a Figma](https://www.figma.com/file/iqHdZ8hMSmV776VCocHdak/Figma-Ex?node-id=0%3A1&t=96XJG13YhSgDAEdr-1)
 
 ## Modelo de la base de datos
-![image](https://user-images.githubusercontent.com/91873665/231753017-327a4c65-93bb-4ed7-a0d5-45d34dd2e243.png)
+![image](https://github.com/AlbertoParraToval/Host_Hotel/assets/91873665/994becf6-3ec3-4f24-b58c-5f3aab9fb9da)
 
 ## Desarrollo por Semanas
 ### Semana 1 (27 Marzo - 2 Abril)
