@@ -62,6 +62,7 @@ Realización de la parte de python y powerBi que son esenciales a la hora de doc
 - Borrado de Users en modo admin (Sin empezar)
 - Edición solo de las reviews de ese mismo usuario. (Implementado)
 - Estrellas a modo de Rating. (Implementado)
+- Filtrado de Reviews a través de Estrellas. (En proceso)
 
 ## Aplicación subida a la Web
 
