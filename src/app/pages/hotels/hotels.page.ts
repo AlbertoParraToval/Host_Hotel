@@ -74,7 +74,9 @@ export class HotelsPage implements OnInit {
    * @brief Filters hotels based on the selected province.
    */
   onProvinciaSelected() {
-    if (this.provinciaSeleccionada) {
+    if (this.provinciaSeleccionada === "") { // O cualquier valor especial que hayas asignado
+      this.filteredHotels = this.allHotels; // Mostrar todos los hoteles sin filtrar
+    } else if (this.provinciaSeleccionada) {
       this.filteredHotels = this.allHotels.filter(hotel =>
         hotel.localtion_hotel.includes(this.provinciaSeleccionada)
       );
@@ -82,7 +84,6 @@ export class HotelsPage implements OnInit {
       this.filteredHotels = this.allHotels; // Show all hotels if no province is selected
     }
   }
-
   /**
    * @brief Retrieves the hotels from the HotelsService.
    * @returns An observable that emits the list of hotels.

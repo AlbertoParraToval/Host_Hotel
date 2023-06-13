@@ -21,6 +21,7 @@
   </ion-fab>
 
   <ion-select [(ngModel)]="provinciaSeleccionada" placeholder="Selecciona una provincia" (ionChange)="onProvinciaSelected()">
+    <ion-select-option value="">Todos</ion-select-option>
     <ion-select-option *ngFor="let provincia of provincias" [value]="provincia">{{ provincia }}</ion-select-option>
   </ion-select>
   
