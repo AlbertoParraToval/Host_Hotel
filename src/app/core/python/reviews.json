@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "docId": "0iu72CouQSSEWyfYcVP6",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "8U8rQri5xaa2Hi5qsKus",
+    "fecha": "2023-05-24",
+    "rating": 4,
+    "text_review": "La comida era deliciosa, definitivamente volveré"
+  },
+  {
+    "id": 0,
+    "docId": "EyyTfdT8JvUKKw9PpCQQ",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "zAds1e1A7Zxy8JNliJus",
+    "fecha": "2023-05-02",
+    "rating": 1,
+    "text_review": "No tuve una buena experiencia, el servicio fue lento y el ambiente poco acogedor."
+  },
+  {
+    "id": 0,
+    "docId": "FleLDuuENYbQ3d0UyQZj",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "1Hzi8ztMo9twWHbeIVtu",
+    "fecha": "2023-02-08",
+    "rating": 3,
+    "text_review": "No quedé satisfecho con la calidad del producto, esperaba algo mejor por el precio que pagué"
+  },
+  {
+    "id": 0,
+    "docId": "XcdASFMLyvU12k2Utw4S",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "geRSPnO2NDW9pF8qS4NI",
+    "fecha": "2023-06-13",
+    "rating": 5,
+    "text_review": "Excelente servicio y atención al cliente. Altamente recomendado."
+  },
+  {
+    "id": 0,
+    "docId": "hWAm52JCp7Xu2eu0tev6",
+    "id_user": "53nLxYuwIlckMIUmlcnnBqCPMhh1",
+    "id_hoteles": "4enkcLMwjCrijt4GEEhQ",
+    "fecha": "2023-05-31",
+    "rating": 4,
+    "text_review": "Increíble lugar para relajarse y desconectar del estrés diario. Lo recomiendo totalmente"
+  }
+]
