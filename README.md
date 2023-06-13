@@ -13,7 +13,6 @@ Por otro lado el modo cliente donde, el usuario podrá buscar el hotel donde ha 
 
 A modo de que el profesorado tenga una idea de como se verá la aplicación he creado una carpeta en el proyecto llamada recaps donde he insertado cada una de las páginas que he creado en el proyecto.
 
-
 ## Tecnologías utilizadas
 - Creación de la base de datos, diseño App: MySQL WorkBench, Figma...
 - Aplicación móvil: Android Studio, Kotlin, Material Design...
@@ -57,6 +56,8 @@ Actualizaciones de la interfaz donde se ha modificado bastante para hacerla much
 
 ### Semana 8 (12 Junio - 15 Junio)
 Realización de la parte de python y powerBi que son esenciales a la hora de documentar y finalizar el proyecto de final de grado, además se ha estado realizando una serie de modificaciones tanto en el FIGMA, como en la base de datos para que esté actualizada. Cambios en la interfaz para hacerla más facil y detallata.
+
+Finalización de la parte de python donde en las páginas de clientes, hoteles y reviews hay un boton que exportara los datos de la página a un archivo .json y en el mismo proyecto se hará la manipulación de datos con python.
 
 ## Implementaciones siguientes
 - Edición solo de las reviews de ese mismo usuario. (Implementado)
