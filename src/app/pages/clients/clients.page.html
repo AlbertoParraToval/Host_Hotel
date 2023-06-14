@@ -14,6 +14,10 @@
     </ion-fab-button>
   </ion-fab>
 <app-clients-c *ngFor="let user of getAllUsers() | async" [_user]="user" (onEdit)="onEditUser($event)" (onDelete)="onDeleteUser($event)"></app-clients-c>
+
+<ion-button *ngIf="esPc" (click)="downloadJson()">
+  {{"settings.export" | translate}}
+</ion-button>
 </ion-content>
 
 <!--Para dispositivos moviles-->

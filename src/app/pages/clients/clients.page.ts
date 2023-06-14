@@ -4,6 +4,7 @@
  */
 
 import { Component, OnInit, HostListener } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ModalController, AlertController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
@@ -29,6 +30,8 @@ export class ClientsPage implements OnInit {
   currentLanguage;
   esMovil: boolean;
   esPc: boolean;
+  allUser: User[]
+
 
   constructor(
     private firebase: FirebaseService,
@@ -38,13 +41,18 @@ export class ClientsPage implements OnInit {
     private modal: ModalController,
     private alert: AlertController,
     public user: UserService,
-    private router: Router
+    private router: Router,
+    private sanitize :DomSanitizer
   ) {}
 
   /**
    * @brief Initializes the component.
    */
   ngOnInit() {
+
+    this.getAllUsers().subscribe(allUser => {
+      this.allUser = allUser;
+    });
     this.onResize();
     this.user.getUserList();
   }
@@ -162,5 +170,26 @@ export class ClientsPage implements OnInit {
    */
   onDeleteUser(user: User) {
     this.onDeleteUserAlert(user);
+  }
+
+
+
+  downloadJson(){
+    console.log(this.allUser)
+    this.userSvc.saveJsonFile(this.allUser);
+  }
+
+  getDownloadLink() {
+    const filePath = 'src\\app\\core\\python\\datos.json';
+    return this.sanitize.bypassSecurityTrustUrl(filePath);
+  }
+
+  downloadFile(): void {
+    const filePath = '../../python/graficos_reporte.zip'; // Reemplaza con la ruta correcta a tu archivo JSON
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = 'report.zip'; // Reemplaza con el nombre que deseas que tenga el archivo JSON descargado
+    link.target = '_blank'; // Para abrir el enlace en una nueva pestaña (opcional)
+    link.click();
   }
 }
