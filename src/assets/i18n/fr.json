@@ -48,7 +48,8 @@
         "username":"Nom d'utilisateur",
         "password" : "Mot de passe",
         "confirm_password" : "Répéter le mot de passe",
-        "send" : "Envoyer"
+        "send" : "Envoyer",
+        "forgot": "Mot de passe oublié ?"
     },
 
     "settings":{

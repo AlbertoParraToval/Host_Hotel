@@ -47,7 +47,8 @@
         "email": "Email",
         "password": "Contraseña",
         "confirm_password": "Repita la contraseña",
-        "send": "Enviar"
+        "send": "Enviar",
+        "forgot": "¿Olvidaste la contraseña?"
     },
 
     "settings":{

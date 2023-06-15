@@ -50,8 +50,8 @@
       >{{'validators.' + error | translate}}</span>
     </ion-item>
     <div>
-      <ion-button shape="round" color="primary" [disabled]="!form.valid" type="submit">{{"register.send"}}</ion-button>
-      <ion-button shape="round" color="secondary" (click)="onDismiss()" type="button">{{"modal.cancel"}}</ion-button>
+      <ion-button shape="round" color="primary" [disabled]="!form.valid" type="submit">{{"modal.edit" |translate}}</ion-button>
+      <ion-button shape="round" color="secondary" (click)="onDismiss()" type="button">{{"modal.close" |translate}}</ion-button>
     </div>
   </form>
 </ion-content>
