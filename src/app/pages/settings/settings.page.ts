@@ -82,12 +82,6 @@ export class SettingsPage implements OnInit {
     this.router.navigate(['login']);
   }
 
-  onLanguageChange() {
-    // Lógica para cambiar el idioma
-    this.translate.setDefaultLang(this.selectedLanguage);
-    // Otras acciones que puedas necesitar realizar al cambiar el idioma
-  }
-
   /**
    * @brief Initializes the component.
    * 
@@ -95,6 +89,12 @@ export class SettingsPage implements OnInit {
    */
   private async init() {
     this.translate.setDefaultLang('en');
+  }
+
+  onLanguageChange() {
+    // Lógica para cambiar el idioma
+    this.translate.setDefaultLang(this.selectedLanguage);
+    this.locale.registerCulture(this.selectedLanguage);
   }
 
   /**
@@ -132,10 +132,7 @@ export class SettingsPage implements OnInit {
    * @brief Sets the selected language as the default language and registers the culture for localization.
    * @param languageCode The code of the selected language.
    */
-  onLanguage(languageCode: string) {
-    this.translate.setDefaultLang(languageCode);
-    this.locale.registerCulture(languageCode);
-  }
+
 
   /**
    * @brief This function is executed whenever the window is resized.
