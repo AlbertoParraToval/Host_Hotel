@@ -133,7 +133,6 @@ export class SigninComponent implements OnInit {
     modal.onDidDismiss().then(async (response) => {
       try{
         if(response.role = 'ok'){
-          console.log(response.data.email)
           await this.user.recoverPassword(response.data.email);
         }
       }catch(error){
