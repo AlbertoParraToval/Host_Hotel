@@ -110,6 +110,12 @@
         "star3":"3 stars",
         "star4":"4 stars",
         "star5":"5 stars"
+    },
+    "alerts":{
+        "deleteUser":"Are you sure you want to delete?",
+        "warning":"Warning",
+        "deleteReview":"Are you sure you want to delete?"
     }
+
 
 }

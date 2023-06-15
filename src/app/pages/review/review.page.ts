@@ -2,8 +2,10 @@ import { Component, HostListener, Input, OnInit, Sanitizer } from '@angular/core
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
-import { map } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { lastValueFrom, map } from 'rxjs';
 import { Reviews, UserService, HotelsService, ReviewsService, ReviewsFormComponent, User } from 'src/app/core';
+import { LocaleService } from 'src/app/core/services/locale.service';
 
 @Component({
   selector: 'app-review',
@@ -26,6 +28,8 @@ export class ReviewPage implements OnInit {
     private modal:ModalController,
     private reviewSvc: ReviewsService,
     private alert:AlertController,
+    private translate: TranslateService,
+    private locale: LocaleService,
     private hotelSvc:HotelsService,
     private userService:UserService,
     private sanitize:DomSanitizer
@@ -103,19 +107,20 @@ export class ReviewPage implements OnInit {
     this.presentReviewsForm(review);
   }
 
-  async onDeleteAlert(review){
+  async onDeleteAlert(review: Reviews) {
     const alert = await this.alert.create({
-      header: '¿Está seguro de que desear borrar la asignación de tarea?',
+      header: await lastValueFrom(this.translate.get('alerts.warning')),
+      message: await lastValueFrom(this.translate.get('alerts.deleteUser')),
       buttons: [
         {
-          text: 'Cancelar',
+          text: await lastValueFrom(this.translate.get('modal.close')),
           role: 'cancel',
           handler: () => {
-            console.log("Operacion cancelada");
+            console.log("Operation canceled");
           },
         },
         {
-          text: 'Borrar',
+          text: await lastValueFrom(this.translate.get('modal.delete')),
           role: 'confirm',
           handler: () => {
             this.reviewSvc.deleteReviewbyId(review);

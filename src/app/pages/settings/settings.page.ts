@@ -154,14 +154,14 @@ export class SettingsPage implements OnInit {
       message: await lastValueFrom(this.translate.get('alerts.deleteUser')),
       buttons: [
         {
-          text: await lastValueFrom(this.translate.get('home.cancel')),
+          text: await lastValueFrom(this.translate.get('modal.close')),
           role: 'cancel',
           handler: () => {
             console.log("Operation canceled");
           },
         },
         {
-          text: await lastValueFrom(this.translate.get('home.delete')),
+          text: await lastValueFrom(this.translate.get('modal.delete')),
           role: 'confirm',
           handler: () => {
             this.userSvc.deleteUser(user);
