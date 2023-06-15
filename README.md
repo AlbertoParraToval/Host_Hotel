@@ -30,9 +30,9 @@ Dando por hecho que tenemos ya instalado nuestro IDE (visual Studio Code), el fr
 - ionic serve --> Inicializa el proyecto en modo browser.
 - ionic serve -lab --> Inicializa el proyecto en modo móvil.
 
-## Aplicación subida a la Web
-[HostHotel](https://hosthotel-3c0d2.web.app/login)
-
+## Aplicación subida a la Web y la APK
+[HostHotel_Web](https://hosthotel-3c0d2.web.app/login)
+[HostHotel Movil](https://github.com/AlbertoParraToval/Host_Hotel/releases/tag/v7.0)
 ## Prototipo Figma
 - [Link a Figma](https://www.figma.com/file/iqHdZ8hMSmV776VCocHdak/Figma-Ex?node-id=0%3A1&t=96XJG13YhSgDAEdr-1)
 
