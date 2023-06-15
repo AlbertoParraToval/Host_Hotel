@@ -84,6 +84,9 @@ Finalización de la parte de python donde en las páginas de clientes, hoteles y
 - [Video de Checkpoint](https://youtu.be/Vv869Pm4sgc)
 - [Video Final]()
 
-## Repositorio DAM 2023
+## Repositorio DAM 2023 y Páginas Web Visitadas
 - [Presentacion 2023 DAM](https://github.com/IESCampanillas/proyectos-dam-2023)
-
+- [Firebase/doc](https://firebase.google.com/docs?hl=es-419)
+- [Pandas](https://pandas.pydata.org/docs/)
+- [Ionic Doc](https://ionicframework.com/docs)
+- [Tutoriales PowerBi](https://www.youtube.com/@Officefacil)
