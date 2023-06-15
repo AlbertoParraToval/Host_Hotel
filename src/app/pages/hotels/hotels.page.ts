@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 import { FormHotelComponent, HotelsService, ReviewsService, UserService, hotels, Reviews } from 'src/app/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { lastValueFrom } from 'rxjs';
+import { LocaleService } from 'src/app/core/services/locale.service';
+import { TranslateService } from '@ngx-translate/core';
 
 /**
  * @class HotelsPage
@@ -35,6 +38,7 @@ export class HotelsPage implements OnInit {
     public hotelsSvc: HotelsService,
     private router: Router,
     private modal: ModalController,
+    private translate: TranslateService,
     private reviewSvc: ReviewsService,
     private alert: AlertController,
     private sanitize:DomSanitizer
@@ -141,20 +145,20 @@ export class HotelsPage implements OnInit {
    * @brief Displays the delete hotel confirmation alert.
    * @param hoteldata The data of the hotel to be deleted.
    */
-  async onDeleteAlert(hoteldata) {
+  async onDeleteAlert(hoteldata: hotels) {
     const alert = await this.alert.create({
-      header: 'Atención',
-      message: '¿Estás seguro? Esta acción no se puede deshacer.',
+      header: await lastValueFrom(this.translate.get('alerts.warning')),
+      message: await lastValueFrom(this.translate.get('alerts.deleteUser')),
       buttons: [
         {
-          text: 'Cancelar',
+          text: await lastValueFrom(this.translate.get('modal.close')),
           role: 'cancel',
           handler: () => {
-            console.log("Operación cancelada");
+            console.log("Operation canceled");
           },
         },
         {
-          text: 'Borrar',
+          text: await lastValueFrom(this.translate.get('modal.delete')),
           role: 'confirm',
           handler: () => {
             this.hotelsSvc.deletehotel(hoteldata);
