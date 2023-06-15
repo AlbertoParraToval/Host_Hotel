@@ -21,7 +21,7 @@ A modo de que el profesorado tenga una idea de como se verá la aplicación he c
 - Exportación de datos: Python (Pandas), PowerBI...
 
 ## Vista de la App
-- [Link Screenshots]([https://youtu.be/Vv869Pm4sgc](https://github.com/AlbertoParraToval/Host_Hotel/tree/master/screenshots))
+- [Link Screenshots](https://github.com/AlbertoParraToval/Host_Hotel/tree/master/screenshots)
 
 
 ## Prototipo Figma
