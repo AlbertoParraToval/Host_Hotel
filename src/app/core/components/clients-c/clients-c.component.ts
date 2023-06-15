@@ -1,6 +1,6 @@
 /**
  * @file clients-c.component.ts
- * @brief This file contains the ClientsCComponent.
+ * @brief This file contains the ClientsCComponent class.
  */
 
 import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 /**
  * @class ClientsCComponent
- * @brief Represents the ClientsCComponent.
+ * @brief Represents the ClientsCComponent class.
  * 
  * This component is responsible for displaying the details of a client.
  */
@@ -21,18 +21,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./clients-c.component.scss'],
 })
 export class ClientsCComponent implements OnInit {
-  @Output() onEdit = new EventEmitter; // Event emitter for the edit event
-  @Output() onDelete = new EventEmitter; // Event emitter for the delete event
-  @Input() _user: User; // Input property for the client details
+  @Output() onEdit = new EventEmitter(); /**< Event emitter for the edit event */
+  @Output() onDelete = new EventEmitter(); /**< Event emitter for the delete event */
+  @Input() _user: User; /**< Input property for the client details */
 
-  esMovil: boolean; // Flag indicating whether the device is a mobile
-  esPc: boolean; // Flag indicating whether the device is a desktop
-  accordionExpanded = false; // Flag indicating whether the accordion is expanded
-  hotelReviews: Reviews[]; // Reviews for the client's hotel
+  esMovil: boolean; /**< Flag indicating whether the device is a mobile */
+  esPc: boolean; /**< Flag indicating whether the device is a desktop */
+  accordionExpanded = false; /**< Flag indicating whether the accordion is expanded */
+  hotelReviews: Reviews[]; /**< Reviews for the client's hotel */
 
   constructor(
     public locale: LocaleService,
-    public router: Router,
+    public router: Router
   ) {}
 
   ngOnInit() {
@@ -44,9 +44,9 @@ export class ClientsCComponent implements OnInit {
    * @param event The resize event object.
    */
   @HostListener('window:resize', ['$event'])
-  onResize(event?) {
-    this.esMovil = window.innerWidth < 768; // If the screen width is less than 768, it's considered a mobile device
-    this.esPc = window.innerWidth > 768; // If the screen width is greater than 768, it's considered a desktop device
+  onResize(event?: any) {
+    this.esMovil = window.innerWidth < 768; /**< If the screen width is less than 768, it's considered a mobile device */
+    this.esPc = window.innerWidth > 768; /**< If the screen width is greater than 768, it's considered a desktop device */
   }
 
   /**

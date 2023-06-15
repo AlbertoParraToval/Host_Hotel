@@ -2,19 +2,19 @@ import os
 import pandas as pd
 import json
 
-# Obtener la ruta completa del archivo "hoteles.json"
-ruta_hoteles = os.path.join(os.path.dirname(__file__), '')
-ruta_hoteles_json = os.path.join(ruta_hoteles, 'hoteles.json')
-ruta_hoteles_csv = os.path.join(ruta_hoteles, 'hoteles.csv')
+# Get the full path of the "hoteles.json" file
+path_hotels = os.path.join(os.path.dirname(__file__), '')
+path_hotels_json = os.path.join(path_hotels, 'hoteles.json')
+path_hotels_csv = os.path.join(path_hotels, 'hoteles.csv')
 
-# Cargar el JSON de hoteles en una lista de hoteles
-with open(ruta_hoteles_json, encoding='utf-8') as file:
+# Load the hotels JSON file into a list of hotels
+with open(path_hotels_json, encoding='utf-8') as file:
     data = json.load(file)
 
-# Crear una lista para almacenar los datos de los hoteles
+# Create a list to store the hotels' data
 hoteles_data = []
 
-# Iterar sobre los hoteles y extraer sus datos
+# Iterate over the hotels and extract their data
 for hotel in data:
     hotel_data = {
         "docId": hotel["docId"],
@@ -23,14 +23,14 @@ for hotel in data:
         "url_img": hotel["url_img"],
         "street_hotel": hotel["street_hotel"],
         "info_hotel": hotel["info_hotel"]
-        # Agrega más campos si es necesario
+        # Add more fields if necessary
     }
     hoteles_data.append(hotel_data)
 
-# Crear DataFrame para los hoteles
+# Create a DataFrame for the hotels
 hoteles_df = pd.DataFrame(hoteles_data)
 
-# Guardar el DataFrame en el archivo CSV con caracteres especiales
-hoteles_df.to_csv(ruta_hoteles_csv, index=False, header=True, encoding='utf-8-sig')
+# Save the DataFrame to the CSV file with special characters
+hoteles_df.to_csv(path_hotels_csv, index=False, header=True, encoding='utf-8-sig')
 
-print("Archivo CSV de hoteles creado con éxito.")
+print("CSV file 'hoteles.csv' created successfully.")

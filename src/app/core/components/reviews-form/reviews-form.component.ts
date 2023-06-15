@@ -1,3 +1,8 @@
+/**
+ * @file reviews-form.component.ts
+ * @brief This file contains the ReviewsFormComponent.
+ */
+
 import { ChangeDetectorRef, Component, HostListener, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,12 +15,17 @@ import { PlatformService } from '../../services/platform.service';
 import { FirebaseDocument, FirebaseService } from '../../services/firebase/firebase-service';
 import { TranslateService } from '@ngx-translate/core';
 
+/**
+ * @class ReviewsFormComponent
+ * @brief Represents the ReviewsFormComponent.
+ * 
+ * This component is responsible for displaying and handling the form for creating or editing reviews.
+ */
 @Component({
   selector: 'app-reviews-form',
   templateUrl: './reviews-form.component.html',
   styleUrls: ['./reviews-form.component.scss'],
 })
-
 export class ReviewsFormComponent implements OnInit {
   esMovil: boolean;
   esPc: boolean;
@@ -47,7 +57,7 @@ export class ReviewsFormComponent implements OnInit {
     private cdr: ChangeDetectorRef,
     private user: UserService,
     private router: Router,
-    private translate:TranslateService
+    private translate: TranslateService
   ) {
     this.form = this.fb.group({
       id: [null],
@@ -59,13 +69,20 @@ export class ReviewsFormComponent implements OnInit {
       fecha: [new Date().toISOString()],
     });
   }
-  
+
   stars: number[] = [1, 2, 3, 4, 5];
-  
+
+  /**
+   * @brief Sets the rating value in the form.
+   * @param star The selected star value.
+   */
   setRating(star: number) {
     this.form.controls.rating.setValue(star);
   }
-  
+
+  /**
+   * @brief Initializes the component.
+   */
   async ngOnInit() {
     if (this.mode == "Edit") {
       this.button_text = await lastValueFrom(this.translate.get('settings.btn_edit'));
@@ -74,33 +91,51 @@ export class ReviewsFormComponent implements OnInit {
     }
 
     this.onResize();
-    this.populateForm(); 
+    this.populateForm();
     const currentUser = this.user.currentUser;
     if (currentUser) {
       this.form.controls.id_user.setValue(currentUser.docId);
     }
   }
 
-  // Esta función se ejecuta cada vez que se redimensiona la pantalla
+  /**
+   * @brief Handles the window resize event.
+   * @param event The resize event.
+   */
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
-    this.esMovil = window.innerWidth < 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
-    this.esPc = window.innerWidth > 768; // Si el ancho de la pantalla es mayor a 768, se considera que se está en una pantalla de escritorio
+    this.esMovil = window.innerWidth < 768; // If the screen width is less than 768, it is considered a mobile screen
+    this.esPc = window.innerWidth > 768; // If the screen width is greater than 768, it is considered a desktop screen
   }
 
+  /**
+   * @brief Handles the form submission.
+   */
   onSubmit() {
     this.modal.dismiss({ review: this.form.value, mode: this.mode }, 'ok');
   }
 
+  /**
+   * @brief Dismisses the modal without returning any result.
+   * @param result The result data.
+   */
   onDismiss(result) {
     this.modal.dismiss(null, 'cancel');
   }
 
+  /**
+   * @brief Signs out the user and navigates to the login page.
+   */
   signOut() {
     this.user.signOut();
     this.router.navigate(['login']);
   }
 
+  /**
+   * @brief Changes the profile picture.
+   * @param fileLoader The file input element.
+   * @param mode The mode for selecting the picture.
+   */
   async changePic(fileLoader: HTMLInputElement, mode: 'library' | 'camera' | 'file') {
     var item: PhotoItem = await this.photoSvc.getPicture(mode, fileLoader);
     this.currentImage.next(item.base64);
@@ -108,11 +143,14 @@ export class ReviewsFormComponent implements OnInit {
     this.form.controls.pictureFile.setValue(item.blob);
   }
 
+  /**
+   * @brief Populates the form with the review data.
+   */
   populateForm() {
     if (this.review) {
       // ...
       if (!this.review.id_hoteles && this.hotel) {
-        this.form.controls.id_hoteles.setValue(this.hotel.docId); 
+        this.form.controls.id_hoteles.setValue(this.hotel.docId);
       }
     }
   }

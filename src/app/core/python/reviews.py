@@ -2,19 +2,19 @@ import os
 import pandas as pd
 import json
 
-# Obtener la ruta completa del archivo "reviews.json"
+# Get the full path of the "reviews.json" file
 ruta_reviews = os.path.join(os.path.dirname(__file__), '')
 ruta_reviews_json = os.path.join(ruta_reviews, 'reviews.json')
 ruta_reviews_csv = os.path.join(ruta_reviews, 'reviews.csv')
 
-# Cargar el JSON en una lista de reseñas
+# Load the JSON file into a list of reviews
 with open(ruta_reviews_json, encoding='utf-8') as file:
     data = json.load(file)
 
-# Crear una lista para almacenar los datos de las reseñas
+# Create a list to store the reviews' data
 reviews_data = []
 
-# Iterar sobre las reseñas y extraer sus datos
+# Iterate over the reviews and extract their data
 for review in data:
     review_data = {
         "docId": review["docId"],
@@ -26,10 +26,10 @@ for review in data:
     }
     reviews_data.append(review_data)
 
-# Crear DataFrame para las reseñas
+# Create a DataFrame for the reviews
 reviews_df = pd.DataFrame(reviews_data)
 
-# Guardar el DataFrame en el archivo CSV con caracteres especiales
+# Save the DataFrame to the CSV file with special characters
 reviews_df.to_csv(ruta_reviews_csv, index=False, header=True, encoding='utf-8-sig')
 
-print("Archivo CSV de reseñas creado con éxito.")
+print("CSV file 'reviews.csv' created successfully.")

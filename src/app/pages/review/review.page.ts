@@ -133,16 +133,27 @@ export class ReviewPage implements OnInit {
     this.onDeleteAlert(review);
   }
 
+
+  /**
+   * @brief Downloads the JSON file.
+   */
   downloadJson(){
     console.log(this.hotelReviews)
     this.reviewSvc.saveJsonFile(this.hotelReviews);
   }
 
+  /**
+   * @brief Retrieves the download link for a file.
+   * @returns The sanitized download link.
+   */
   getDownloadLink() {
     const filePath = 'src\\app\\core\\python\\reviews.json';
     return this.sanitize.bypassSecurityTrustUrl(filePath);
   }
 
+  /**
+   * @brief Downloads a file.
+   */
   downloadFile(): void {
     const filePath = '../../python/grafic_review.zip'; // Reemplaza con la ruta correcta a tu archivo JSON
     const link = document.createElement('a');

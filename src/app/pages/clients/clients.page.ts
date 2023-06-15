@@ -26,10 +26,29 @@ import { LocaleService } from 'src/app/core/services/locale.service';
 })
 export class ClientsPage implements OnInit {
 
-  language = 1; // 0 for Spanish, 1 for English
+  /**
+   * @brief Represents the language code (0 for Spanish, 1 for English).
+   */
+  language = 1;
+  
+  /**
+   * @brief Represents the current language.
+   */
   currentLanguage;
+
+  /**
+   * @brief Indicates whether the screen is a mobile screen.
+   */
   esMovil: boolean;
+
+  /**
+   * @brief Indicates whether the screen is a desktop screen.
+   */
   esPc: boolean;
+
+  /**
+   * @brief Represents the list of all users.
+   */
   allUser: User[]
 
 
@@ -49,7 +68,6 @@ export class ClientsPage implements OnInit {
    * @brief Initializes the component.
    */
   ngOnInit() {
-
     this.getAllUsers().subscribe(allUser => {
       this.allUser = allUser;
     });
@@ -172,24 +190,32 @@ export class ClientsPage implements OnInit {
     this.onDeleteUserAlert(user);
   }
 
-
-
+  /**
+   * @brief Downloads the JSON file.
+   */
   downloadJson(){
     console.log(this.allUser)
     this.userSvc.saveJsonFile(this.allUser);
   }
 
+  /**
+   * @brief Retrieves the download link for a file.
+   * @returns The sanitized download link.
+   */
   getDownloadLink() {
     const filePath = 'src\\app\\core\\python\\datos.json';
     return this.sanitize.bypassSecurityTrustUrl(filePath);
   }
 
+  /**
+   * @brief Downloads a file.
+   */
   downloadFile(): void {
-    const filePath = '../../python/graficos_reporte.zip'; // Reemplaza con la ruta correcta a tu archivo JSON
+    const filePath = '../../python/graficos_reporte.zip'; // Replace with the correct path to your JSON file
     const link = document.createElement('a');
     link.href = filePath;
-    link.download = 'report.zip'; // Reemplaza con el nombre que deseas que tenga el archivo JSON descargado
-    link.target = '_blank'; // Para abrir el enlace en una nueva pestaña (opcional)
+    link.download = 'report.zip'; // Replace with the desired name for the downloaded JSON file
+    link.target = '_blank'; // To open the link in a new tab (optional)
     link.click();
   }
 }
