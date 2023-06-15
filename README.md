@@ -88,5 +88,5 @@ Finalización de la parte de python donde en las páginas de clientes, hoteles y
 - [Presentacion 2023 DAM](https://github.com/IESCampanillas/proyectos-dam-2023)
 - [Firebase/doc](https://firebase.google.com/docs?hl=es-419)
 - [Pandas](https://pandas.pydata.org/docs/)
-- [Ionic Doc] (https://ionicframework.com/docs)
-- [Tutoriales PowerBi] (https://www.youtube.com/@Officefacil)
+- [Ionic Doc](https://ionicframework.com/docs)
+- [Tutoriales PowerBi](https://www.youtube.com/@Officefacil)
