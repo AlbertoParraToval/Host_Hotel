@@ -20,6 +20,10 @@ A modo de que el profesorado tenga una idea de como se verá la aplicación he c
 - Tecnologías conjuntas: Firebase (Firestore & Authentication).
 - Exportación de datos: Python (Pandas), PowerBI...
 
+## Vista de la App
+- [Link Screenshots]([https://youtu.be/Vv869Pm4sgc](https://github.com/AlbertoParraToval/Host_Hotel/tree/master/screenshots))
+
+
 ## Prototipo Figma
 - [Link a Figma](https://www.figma.com/file/iqHdZ8hMSmV776VCocHdak/Figma-Ex?node-id=0%3A1&t=96XJG13YhSgDAEdr-1)
 
