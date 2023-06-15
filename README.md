@@ -20,6 +20,19 @@ A modo de que el profesorado tenga una idea de como se verá la aplicación he c
 - Tecnologías conjuntas: Firebase (Firestore & Authentication).
 - Exportación de datos: Python (Pandas), PowerBI...
 
+## Vista de la App
+- [Link Screenshots](https://github.com/AlbertoParraToval/Host_Hotel/tree/master/screenshots)
+
+## Manual y dependencias para usar el proyecto
+Dando por hecho que tenemos ya instalado nuestro IDE (visual Studio Code), el framework de ionic y node.js para empezar a utilizar este proyecto debemos:
+1. Usar el comando "npm i" que nos instalará todas las dependencias que tiene el proyecto.
+2. Una vez que hemos realizado esto debemos usar el comando que iniciará nuestro proyecto de ionic, para ello tenemos dos posibilidades:
+- ionic serve --> Inicializa el proyecto en modo browser.
+- ionic serve -lab --> Inicializa el proyecto en modo móvil.
+
+## Aplicación subida a la Web
+
+
 ## Prototipo Figma
 - [Link a Figma](https://www.figma.com/file/iqHdZ8hMSmV776VCocHdak/Figma-Ex?node-id=0%3A1&t=96XJG13YhSgDAEdr-1)
 
@@ -64,20 +77,12 @@ Finalización de la parte de python donde en las páginas de clientes, hoteles y
 - Estrellas a modo de Rating. (Implementado)
 - Filtrado de Reviews a través de Estrellas. (Implementado)
 
-## Aplicación subida a la Web
-
 ## Historial de Commits
 [Ver historial de commits](https://github.com/AlbertoParraToval/Host_Hotel/commits)
 
 ## Videos Youtube
 - [Video de Checkpoint](https://youtu.be/Vv869Pm4sgc)
 - [Video Final]()
-
-## Mis Redes Sociales
-[![instagram (1)](https://user-images.githubusercontent.com/91873665/233010034-40b413d8-914f-46f6-b1d5-8c6e8b312e8c.png)
-](https://www.instragram.com/parra_038)
-[![gorjeo (1)](https://user-images.githubusercontent.com/91873665/233010174-8fa910b2-de43-433f-9bd6-677e8ba7487c.png)](https://www.instragram.com/parra_038)
-[![youtube](https://user-images.githubusercontent.com/91873665/233295017-1f68764a-0778-4181-8da6-1a38737ceaea.png)](https://www.youtube.com/channel/UCkUC0uFc9CQINQTXrUB77tg)
 
 ## Repositorio DAM 2023
 - [Presentacion 2023 DAM](https://github.com/IESCampanillas/proyectos-dam-2023)
