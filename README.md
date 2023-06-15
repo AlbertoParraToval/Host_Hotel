@@ -33,6 +33,10 @@ Dando por hecho que tenemos ya instalado nuestro IDE (visual Studio Code), el fr
 ## Aplicación subida a la Web y la APK
 - [HostHotel_Web](https://hosthotel-3c0d2.web.app/login)
 - [HostHotel Movil](https://github.com/AlbertoParraToval/Host_Hotel/releases/tag/v7.0)
+
+## Link a la Presentación del Proyecto 
+[Link](https://docs.google.com/presentation/d/1nTuE8U5YL1PO4eP63vgPDw0BTjZxpIUd7Xw0JWczvUA/edit#slide=id.g252ae9db524_0_28)
+Además he añadido el pdf de la presentación en una carpeta del repositorio.
 ## Prototipo Figma
 - [Link a Figma](https://www.figma.com/file/iqHdZ8hMSmV776VCocHdak/Figma-Ex?node-id=0%3A1&t=96XJG13YhSgDAEdr-1)
 
