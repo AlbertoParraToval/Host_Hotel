@@ -21,7 +21,7 @@
   </ion-fab>
 
   <ion-select [(ngModel)]="provinciaSeleccionada" placeholder="Selecciona una provincia" (ionChange)="onProvinciaSelected()">
-    <ion-select-option value="">Todos</ion-select-option>
+    <ion-select-option value="">{{"filtrados.all"|translate}}</ion-select-option>
     <ion-select-option *ngFor="let provincia of provincias" [value]="provincia">{{ provincia }}</ion-select-option>
   </ion-select>
   
@@ -32,7 +32,7 @@
     </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-button *ngIf="esPc" (click)="downloadJson()">
+  <ion-button shape="round"  *ngIf="esPc" (click)="downloadJson()">
     {{"settings.export" | translate}}
   </ion-button>
 </ion-content>

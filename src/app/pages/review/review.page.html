@@ -9,12 +9,12 @@
 
 <ion-content color="light">
   <ion-select [(ngModel)]="selectedRating">
-    <ion-select-option value="">Todos</ion-select-option>
-    <ion-select-option value="1">1 Estrella</ion-select-option>
-    <ion-select-option value="2">2 Estrellas</ion-select-option>
-    <ion-select-option value="3">3 Estrellas</ion-select-option>
-    <ion-select-option value="4">4 Estrellas</ion-select-option>
-    <ion-select-option value="5">5 Estrellas</ion-select-option>
+    <ion-select-option value="">{{"filtrados.all"|translate}}</ion-select-option>
+    <ion-select-option value="1">{{"filtrados.star1"|translate}}</ion-select-option>
+    <ion-select-option value="2">{{"filtrados.star2"|translate}}</ion-select-option>
+    <ion-select-option value="3">{{"filtrados.star3"|translate}}</ion-select-option>
+    <ion-select-option value="4">{{"filtrados.star4"|translate}}</ion-select-option>
+    <ion-select-option value="5">{{"filtrados.star5"|translate}}</ion-select-option>
   </ion-select>
   <ion-fab  vertical="bottom" horizontal="end" edge="false" slot="fixed" *ngIf="esPc">
     <ion-fab-button (click)="onAddReview($event)">
@@ -34,7 +34,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-button *ngIf="esPc" (click)="downloadJson()">
+  <ion-button shape="round"  *ngIf="esPc" (click)="downloadJson()">
     {{"settings.export" | translate}}
   </ion-button>
 </ion-content>

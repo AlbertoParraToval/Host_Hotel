@@ -2,7 +2,7 @@
   <ion-toolbar color="secondary">
     <ion-title>{{"Add Review" | translate}}</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="onDismiss(null)">{{'modal.close' | translate}}</ion-button>
+      <ion-button shape="round" (click)="onDismiss(null)">{{'modal.close' | translate}}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -36,7 +36,7 @@
     </ion-item>
   </form>
 
-  <ion-button color="secondary" [disabled]="!form.valid" (click)="onSubmit()">{{button_text}}</ion-button>
+  <ion-button shape="round" color="secondary" [disabled]="!form.valid" (click)="onSubmit()">{{button_text}}</ion-button>
 </ion-content>
 
 <ion-footer *ngIf="esMovil">

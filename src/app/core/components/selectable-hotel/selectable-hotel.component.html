@@ -8,7 +8,7 @@
         </ion-avatar>
         <ion-label>{{selectedHotel?.name_hotel}}, {{selectedHotel?.localtion_hotel}}</ion-label>
       </ng-container>
-      <ion-label *ngIf="!selectedHotel">Selecciona un hotel</ion-label>
+      <ion-label *ngIf="!selectedHotel">{{"selectable_hotel.select"}}</ion-label>
     </ion-item>
     <div class="ion-padding" slot="content">
       <ion-list>

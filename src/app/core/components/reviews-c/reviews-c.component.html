@@ -17,7 +17,7 @@
 
   <ion-card-content>
     <ion-grid>
-      <ion-text>User: {{(user$ | async)?.username}}</ion-text>
+      <ion-text>{{"reviews.user"| translate}} {{(user$ | async)?.username}}</ion-text>
       
       <ion-row>
         <ion-text>{{_review.text_review}}</ion-text>
@@ -25,10 +25,10 @@
       
     </ion-grid>
 
-    <ion-button color="primary" *ngIf=" _review.id_user === currentUser.docId || currentUser.admin === true" slot="end" fill="clear"  (click)="onEditClick()">
+    <ion-button shape="round" color="primary" *ngIf=" _review.id_user === currentUser.docId || currentUser.admin === true" slot="end" fill="clear"  (click)="onEditClick()">
         <ion-icon name="create"></ion-icon>
     </ion-button>
-    <ion-button *ngIf=" _review.id_user === currentUser.docId || currentUser.admin === true"  slot="end" fill="clear" color="secondary" (click)="onDeleteClick()">
+    <ion-button shape="round" *ngIf=" _review.id_user === currentUser.docId || currentUser.admin === true"  slot="end" fill="clear" color="secondary" (click)="onDeleteClick()">
         <ion-icon name="trash" ></ion-icon>
     </ion-button>
   </ion-card-content>

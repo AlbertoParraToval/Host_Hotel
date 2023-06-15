@@ -11,13 +11,13 @@
       <img *ngIf="(hotels$ | async)?.url_img" alt="hotels picture" [src]="(hotels$ | async)?.url_img" />
     </ion-avatar>
     <ion-label class="ion-text-center ion-text-wrap">{{review?.fecha | date:'short':undefined:locale.locale}}</ion-label>
-    <ion-button class="item-expanded"slot="end" fill="clear" (click)="onEditClick()">
+    <ion-button shape="round" class="item-expanded"slot="end" fill="clear" (click)="onEditClick()">
       <div class="vertical">
         <ion-icon name="create" ></ion-icon>
         {{'modal.edit' | translate | uppercase}}
       </div>
     </ion-button>
-    <ion-button class="item-expanded"  slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
+    <ion-button shape="round" class="item-expanded"  slot="end" fill="clear" color="danger" (click)="onDeleteClick()">
       <div class="vertical">
         <ion-icon name="trash" ></ion-icon>
         {{'modal.delete' | translate | uppercase}}

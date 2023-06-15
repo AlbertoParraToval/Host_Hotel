@@ -5,8 +5,8 @@
   <input id="fileLoader" type="file" #fileLoader name="files" title="Load Files" hidden>
   <ion-img *ngIf="currentImage.value" [src]="currentImage.value"></ion-img>
   <ion-img *ngIf="!currentImage.value" src="https://ionicframework.com/docs/img/demos/thumbnail.svg"></ion-img>
-  <ion-button   *ngIf="(platform.isNative$ | async)" expand="full" id="picture-button">{{'change-picture.title' | translate}}</ion-button>
-  <ion-button *ngIf="!(platform.isNative$ | async)" expand="full" (click)="changePic(fileLoader, 'file')">{{'settings.btn_new' | translate}}</ion-button>
+  <ion-button shape="round"   *ngIf="(platform.isNative$ | async)" expand="full" id="picture-button">{{'change-picture.title' | translate}}</ion-button>
+  <ion-button shape="round" *ngIf="!(platform.isNative$ | async)" expand="full" (click)="changePic(fileLoader, 'file')">{{'settings.btn_new' | translate}}</ion-button>
   <ion-popover *ngIf="platform.isNative$ | async" style="width:100%" trigger="picture-button" [dismissOnSelect]="true">
     <ng-template>
       <ion-content class="ion-padding">
@@ -50,8 +50,8 @@
       >{{'validators.' + error | translate}}</span>
     </ion-item>
     <div>
-      <ion-button color="primary" [disabled]="!form.valid" type="submit">Send</ion-button>
-      <ion-button color="secondary" (click)="onDismiss()" type="button">Cancel</ion-button>
+      <ion-button shape="round" color="primary" [disabled]="!form.valid" type="submit">{{"register.send"}}</ion-button>
+      <ion-button shape="round" color="secondary" (click)="onDismiss()" type="button">{{"modal.cancel"}}</ion-button>
     </div>
   </form>
 </ion-content>

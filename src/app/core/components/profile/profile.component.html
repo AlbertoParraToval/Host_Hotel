@@ -7,11 +7,11 @@
               <ion-img  *ngIf="user.profilePick" alt="hotel picture" [src]="user.profilePick"></ion-img>
             </ion-avatar>
             <ion-card-title>{{user.first_name}}</ion-card-title>
-            <ion-card-subtitle>Email: {{user.email}}</ion-card-subtitle>
+            <ion-card-subtitle>{{"profile.email"| translate}} {{user.email}}</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
-          <ion-button id="btn_borrar" color="primary" (click)="onEditClick()"><ion-icon name="create-outline" ></ion-icon></ion-button>
-          <ion-button id="btn_borrar" color="secondary" (click)="onDeleteClick()"><ion-icon name="trash-outline" ></ion-icon></ion-button>
+          <ion-button shape="round" id="btn_borrar" color="primary" (click)="onEditClick()"><ion-icon name="create-outline" ></ion-icon></ion-button>
+          <ion-button  shape="round" id="btn_borrar" color="secondary" (click)="onDeleteClick()"><ion-icon name="trash-outline" ></ion-icon></ion-button>
           </ion-card-content>
     </ion-card>
 

@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-title>{{"Edit Hotel" | translate}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="onDismiss(null)">{{'modal.close' | translate}}</ion-button>
+    <ion-buttons  slot="end">
+      <ion-button shape="round" (click)="onDismiss(null)">{{'modal.close' | translate}}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -10,8 +10,8 @@
   <input id="fileLoader" type="file" #fileLoader name="files" title="Load Files" hidden>
   <ion-img  *ngIf="currentImage.value" [src]="currentImage$ | async"></ion-img>
   <ion-img   *ngIf="!currentImage.value" src="https://ionicframework.com/docs/img/demos/thumbnail.svg"></ion-img>
-  <ion-button  *ngIf="(platform.isNative$ | async)" expand="full" id="picture-button">{{'change-picture.title' | translate}}</ion-button>
-  <ion-button *ngIf="!(platform.isNative$ | async)" expand="full" (click)="changePic(fileLoader, 'file')">{{'settings.btn_new' | translate}}</ion-button>
+  <ion-button shape="round"  *ngIf="(platform.isNative$ | async)" expand="full" id="picture-button">{{'change-picture.title' | translate}}</ion-button>
+  <ion-button shape="round" *ngIf="!(platform.isNative$ | async)" expand="full" (click)="changePic(fileLoader, 'file')">{{'change-picture.title' | translate}}</ion-button>
   <ion-popover *ngIf="platform.isNative$ | async" style="width:100%" trigger="picture-button" [dismissOnSelect]="true">
     <ng-template>
       <ion-content  class="ion-padding">
@@ -61,7 +61,7 @@
     </ion-item>
   </form>
 
-  <ion-button color="secondary" [disabled]="!form.valid" (click)="onSubmit()">{{mode=="Edit"?('settings.btn_edit' | translate):('settings.btn_new' | translate)}}</ion-button>
+  <ion-button shape="round"  color="secondary" [disabled]="!form.valid" (click)="onSubmit()">{{mode=="Edit"?('settings.btn_edit' | translate):('settings.btn_new' | translate)}}</ion-button>
 </ion-content>
 
 <ion-footer *ngIf="esMovil">

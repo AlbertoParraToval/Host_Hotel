@@ -77,7 +77,8 @@
     },
 
     "profile":{
-        "btn_borrar":"Eliminar cuenta"
+        "btn_borrar":"Eliminar cuenta",
+        "email":"Correo Electrónico: "
     },
     "review":{
         "title":"Reseñas"
@@ -94,5 +95,20 @@
         "last_name":"Apellidos",
         "username": "Nombre de usuario",
         "img":"Imagen"
+    },
+    "selectable_hotel":{
+        "select":"Selecciona un hotel"
+    },
+    
+    "reviews":{
+        "user":"Usuario: "
+    },
+    "filtrados":{
+        "all":"All",
+        "star1":"1 estrella",
+        "star2":"2 estrellas",
+        "star3":"3 estrellas",
+        "star4":"4 estrellas",
+        "star5":"5 estrellas"
     }
 }

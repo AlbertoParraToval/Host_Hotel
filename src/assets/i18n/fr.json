@@ -77,7 +77,8 @@
     },
 
     "profile":{
-        "btn_borrar":"Supprimer le compte"
+        "btn_borrar":"Supprimer le compte",
+        "email":"Email: "
     },
     "form_review":{
         "fecha":"Date",
@@ -92,5 +93,19 @@
         "last_name" : "Last_name",
         "username" : "Nom d'utilisateur",
         "img" : "Image"
+    },
+    "selectable_hotel":{
+        "select":"Choisissez un hôtel"
+    },
+    "reviews":{
+        "user":"User: "
+    },
+    "filtrados":{
+        "all":"All",
+        "star1":"1 étoile",
+        "star2":"2 étoiles",
+        "star3":"3 étoiles",
+        "star4":"4 étoiles",
+        "star5":"5 étoiles"
     }
 }
