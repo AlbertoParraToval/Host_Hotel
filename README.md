@@ -20,7 +20,7 @@ A modo de que el profesorado tenga una idea de como se verá la aplicación he c
 - Tecnologías conjuntas: Firebase (Firestore & Authentication).
 - Exportación de datos: Python (Pandas), PowerBI...
 
-## Vista de la App
+## Vista de la App (Manual de Usuario)
 - [Link Screenshots](https://github.com/AlbertoParraToval/Host_Hotel/tree/master/screenshots)
 
 ## Manual y dependencias para usar el proyecto
@@ -30,10 +30,15 @@ Dando por hecho que tenemos ya instalado nuestro IDE (visual Studio Code), el fr
 - ionic serve --> Inicializa el proyecto en modo browser.
 - ionic serve -lab --> Inicializa el proyecto en modo móvil.
 
+Para Generar la Apk de la aplicación debemos realizar los siguientes comandos
+1.  npx cap add android 
+2.  ionic build
+3.  npx cap copy
+Luego abrimos nuestro proyecto con el Android Studio y nos vamos a build y luego a Build/Apk
+
 ## Aplicación subida a la Web y la APK
 - [HostHotel_Web](https://hosthotel-3c0d2.web.app/login)
 - [HostHotel Movil](https://github.com/AlbertoParraToval/Host_Hotel/releases/tag/v7.0)
-
 ## Link a la Presentación del Proyecto 
 [Link](https://docs.google.com/presentation/d/1nTuE8U5YL1PO4eP63vgPDw0BTjZxpIUd7Xw0JWczvUA/edit#slide=id.g252ae9db524_0_28)
 - Además he añadido el pdf de la presentación en una carpeta del repositorio.
@@ -80,6 +85,7 @@ Finalización de la parte de python donde en las páginas de clientes, hoteles y
 - Edición solo de las reviews de ese mismo usuario. (Implementado)
 - Estrellas a modo de Rating. (Implementado)
 - Filtrado de Reviews a través de Estrellas. (Implementado)
+- Arreglar el bug de añadir hotel con imagen (Actualmente solo se puede añadir sin imagen y luego editarla y añadirla)
 
 ## Historial de Commits
 [Ver historial de commits](https://github.com/AlbertoParraToval/Host_Hotel/commits)
