@@ -20,7 +20,7 @@ A modo de que el profesorado tenga una idea de como se verá la aplicación he c
 - Tecnologías conjuntas: Firebase (Firestore & Authentication).
 - Exportación de datos: Python (Pandas), PowerBI...
 
-## Vista de la App
+## Vista de la App (Manual de Usuario)
 - [Link Screenshots](https://github.com/AlbertoParraToval/Host_Hotel/tree/master/screenshots)
 
 ## Manual y dependencias para usar el proyecto
